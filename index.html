@@ -7,8 +7,9 @@
     <style>
         /* --- General Styling --- */
         :root {
-            --primary-color: #ee4d2d; /* Warna oranye Shopee (digunakan untuk SeaBank juga) */
+            --primary-color: #00428f; /* Warna biru QRIS */
             --secondary-color: #ee4d2d; /* Warna oranye Shopee */
+            --seabank-color: #ee4d2d; /* Warna oranye SeaBank */
             --light-gray: #f8f9fa;
             --dark-gray: #343a40;
             --text-color: #495057;
@@ -40,7 +41,7 @@
 
         /* --- Header --- */
         .header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
             color: #ffffff;
             padding: 2rem;
             text-align: center;
@@ -79,7 +80,7 @@
             align-items: center;
             padding: 1.5rem;
             border-bottom: 1px solid var(--border-color);
-            background-color: var(--light-gray);
+            background-color: #fcfcfc;
         }
 
         .method-header img {
@@ -87,7 +88,7 @@
             height: 32px;
             margin-right: 1rem;
             flex-shrink: 0;
-            object-fit: contain; /* Ensure the entire image fits within the container */
+            object-fit: contain;
         }
 
         .method-header h2 {
@@ -98,6 +99,32 @@
 
         .method-body {
             padding: 1.5rem;
+        }
+        
+        /* --- QRIS Section --- */
+        .qris-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .qris-image {
+            max-width: 280px;
+            width: 100%;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .qris-note {
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin-top: 1rem;
+            background-color: var(--light-gray);
+            padding: 0.8rem;
+            border-radius: 8px;
         }
 
         .account-info {
@@ -132,7 +159,7 @@
         }
 
         .copy-btn:hover {
-            background-color: #b83c1e; /* Darker shade of orange */
+            opacity: 0.85;
         }
 
         .copy-btn:active {
@@ -223,7 +250,6 @@
                 text-align: center;
             }
         }
-
     </style>
 </head>
 <body>
@@ -231,49 +257,69 @@
     <div class="container">
         <header class="header">
             <h1>Payment RZDK Store</h1>
-            <p>Silakan selesaikan pembayaran Anda melalui salah satu metode di bawah ini.</p>
+            <p>Pindai QRIS atau pilih metode pembayaran lain di bawah ini.</p>
         </header>
 
         <main class="content">
+            <!-- ========== QRIS Payment Method ========== -->
             <div class="payment-method">
-                <div class="method-header" style="--primary-color: var(--secondary-color);">
-                    <img src="1.png" alt="Logo SeaBank">
+                <div class="method-header">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/QRIS_logo.svg/1200px-QRIS_logo.svg.png" alt="Logo QRIS" style="width: 48px; height: auto; margin-right: 0.8rem;">
+                    <h2>QRIS</h2>
+                </div>
+                <div class="method-body">
+                    <p>Mendukung semua E-Wallet (GoPay, OVO, Dana, ShopeePay, LinkAja) dan Mobile Banking.</p>
+                    <div class="qris-container">
+                        <!-- GANTI 'qris.jpg' DENGAN FILE GAMBAR QRIS ANDA -->
+                        <img src="qris.jpg" alt="QRIS Code RZDK Store" class="qris-image" onerror="this.onerror=null;this.src='https://placehold.co/280x280/eef0f2/777?text=QRIS+Anda';">
+                    </div>
+                    <p class="qris-note"><strong>Penting:</strong> Pastikan nama Merchant yang muncul adalah <strong>"RZDK STORE"</strong> sebelum menyelesaikan pembayaran.</p>
+                </div>
+            </div>
+
+            <!-- ========== SeaBank Payment Method ========== -->
+            <div class="payment-method">
+                <div class="method-header">
+                    <img src="1.png" alt="Logo SeaBank" onerror="this.onerror=null;this.src='https://placehold.co/32x32/ee4d2d/ffffff?text=S';">
                     <h2>SeaBank</h2>
                 </div>
                 <div class="method-body">
                     <p>Silakan transfer ke nomor rekening berikut:</p>
                     <div class="account-info">
                         <span class="account-number" id="seabank-number">901168533320</span>
-                        <button class="copy-btn" data-copy-target="seabank-number">Salin</button>
+                        <button class="copy-btn" data-copy-target="seabank-number" style="background-color: var(--seabank-color);">Salin</button>
                     </div>
                 </div>
             </div>
 
+            <!-- ========== ShopeePay Payment Method ========== -->
             <div class="payment-method">
                 <div class="method-header">
-                     <img src="2.png" alt="Logo ShopeePay">
+                     <img src="2.png" alt="Logo ShopeePay" onerror="this.onerror=null;this.src='https://placehold.co/32x32/ee4d2d/ffffff?text=S
+                     P';">
                     <h2>ShopeePay</h2>
                 </div>
                 <div class="method-body">
                     <p>Silakan transfer ke nomor ShopeePay berikut:</p>
                     <div class="account-info">
                         <span class="account-number" id="shopeepay-number">082242118818</span>
-                        <button class="copy-btn" data-copy-target="shopeepay-number"">Salin</button>
+                        <!-- PERBAIKAN: Menghapus style inline agar warna hijau bisa muncul -->
+                        <button class="copy-btn" data-copy-target="shopeepay-number" style="background-color: var(--secondary-color);">Salin</button>
                     </div>
 
                     <div class="shopee-note">
-                        <img src="2.png" alt="Ikon ShopeePay">
+                        <img src="https://seeklogo.com/images/S/shopeepay-logo-C3603A4E16-seeklogo.com.png" alt="Ikon ShopeePay" onerror="this.onerror=null;this.src='https.placehold.co/24x24/ee4d2d/ffffff?text=!';">
                         <div class="note-content">
                             <p><strong>PENTING: Harap sesuaikan nominal transfer Anda.</strong></p>
                             <ul>
                                 <li>
-                                    <strong>Transfer dari Bank / E-Wallet lain:</strong><br>
+                                    <strong>Transfer dari Bank / E-Wallet lain (selain ShopeePay):</strong><br>
                                     Mohon tambahkan <strong>Rp1.000</strong> untuk biaya admin.<br>
                                     <em>Contoh: Tagihan Rp100.000 → transfer <strong>Rp101.000</strong></em>
                                 </li>
                                 <li>
                                     <strong>Transfer dari sesama ShopeePay:</strong><br>
-                                    Cukup bayar sesuai total tagihan (tanpa tambahan).<br>
+                                    Bayar sesuai total tagihan (tanpa tambahan).<br>
                                     <em>Contoh: Tagihan Rp100.000 → transfer <strong>Rp100.000</strong></em>
                                 </li>
                             </ul>
@@ -286,7 +332,7 @@
     </div>
 
     <footer class="footer">
-        <p>Terima kasih atas pembayaran Anda.</p>
+        <p>&copy; 2024 RZDK Store. Terima kasih atas pembayaran Anda.</p>
     </footer>
 
     <script>
@@ -294,6 +340,9 @@
             const copyButtons = document.querySelectorAll('.copy-btn');
 
             copyButtons.forEach(button => {
+                // Simpan warna asli tombol
+                const originalColor = button.style.backgroundColor;
+
                 button.addEventListener('click', function() {
                     const targetId = this.getAttribute('data-copy-target');
                     const textToCopy = document.getElementById(targetId).innerText;
@@ -302,14 +351,23 @@
                         const originalText = this.innerText;
                         this.innerText = 'Tersalin!';
                         this.classList.add('copied');
+                        // Hapus style inline sementara agar class .copied bisa bekerja
+                        this.style.backgroundColor = ''; 
 
                         setTimeout(() => {
                             this.innerText = originalText;
                             this.classList.remove('copied');
-                        }, 2000); // Revert back after 2 seconds
+                            // Kembalikan warna asli setelah selesai
+                            this.style.backgroundColor = originalColor;
+                        }, 2000);
                     }).catch(err => {
                         console.error('Gagal menyalin teks: ', err);
-                        alert('Gagal menyalin. Silakan coba secara manual.');
+                        // Hindari penggunaan alert, bisa diganti dengan notifikasi custom jika perlu
+                        const originalText = this.innerText;
+                        this.innerText = 'Gagal!';
+                        setTimeout(() => {
+                           this.innerText = originalText;
+                        }, 2000);
                     });
                 });
             });
