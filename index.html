@@ -15,6 +15,9 @@
             --primary-color: #00428f; /* Warna biru QRIS */
             --secondary-color: #ee4d2d; /* Warna oranye Shopee */
             --seabank-color: #ee4d2d; /* Warna oranye SeaBank */
+            --jago-color: #FDB813; /* Warna kuning Bank Jago */
+            --dana-color: #108EE9; /* Warna biru DANA */
+            --gopay-color: #0081A0; /* Warna biru GoPay */
             --light-gray: #f8f9fa;
             --dark-gray: #343a40;
             --text-color: #495057;
@@ -266,7 +269,6 @@
         </header>
 
         <main class="content">
-            <!-- ========== QRIS Payment Method ========== -->
             <div class="payment-method">
                 <div class="method-header">
                     <img src="logo-qris.png" alt="Logo QRIS" style="width: 48px; height: auto; margin-right: 0.8rem;">
@@ -275,14 +277,54 @@
                 <div class="method-body">
                     <p>Mendukung semua E-Wallet (GoPay, OVO, Dana, ShopeePay, LinkAja, dll.) dan Mobile Banking.</p>
                     <div class="qris-container">
-                        <!-- GANTI 'qris.jpg' DENGAN FILE GAMBAR QRIS ANDA -->
                         <img src="qris.png" alt="QRIS Code RZDK Store" class="qris-image" onerror="this.onerror=null;this.src='https://placehold.co/280x280/eef0f2/777?text=QRIS+Anda';">
                     </div>
                     <p class="qris-note"><strong>Penting:</strong> Pastikan nama Merchant yang muncul adalah <strong>"RZDK STORE"</strong> sebelum menyelesaikan pembayaran.</p>
                 </div>
             </div>
+            
+            <div class="payment-method">
+                <div class="method-header">
+                    <img src="https://www.jago.com/assets/images/logo/logo-jago-dark.svg" alt="Logo Bank Jago">
+                    <h2>Bank Jago</h2>
+                </div>
+                <div class="method-body">
+                    <p>Silakan transfer ke nomor rekening / Kantong Jago berikut:</p>
+                    <div class="account-info">
+                        <span class="account-number" id="jago-number">102242118818</span>
+                        <button class="copy-btn" data-copy-target="jago-number" style="background-color: var(--jago-color); color: var(--dark-gray);">Salin</button>
+                    </div>
+                </div>
+            </div>
 
-            <!-- ========== SeaBank Payment Method ========== -->
+            <div class="payment-method">
+                <div class="method-header">
+                    <img src="https://www.dana.id/images/logo-dana-blue.png" alt="Logo DANA">
+                    <h2>DANA</h2>
+                </div>
+                <div class="method-body">
+                    <p>Silakan transfer ke nomor DANA berikut:</p>
+                    <div class="account-info">
+                        <span class="account-number" id="dana-number">082242118818</span>
+                        <button class="copy-btn" data-copy-target="dana-number" style="background-color: var(--dana-color);">Salin</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-method">
+                <div class="method-header">
+                    <img src="https://www.gojek.com/gopay/assets/images/logo-gopay-vector.png" alt="Logo GoPay">
+                    <h2>GoPay</h2>
+                </div>
+                <div class="method-body">
+                    <p>Silakan transfer ke nomor GoPay berikut:</p>
+                    <div class="account-info">
+                        <span class="account-number" id="gopay-number">082242118818</span>
+                        <button class="copy-btn" data-copy-target="gopay-number" style="background-color: var(--gopay-color);">Salin</button>
+                    </div>
+                </div>
+            </div>
+
             <div class="payment-method">
                 <div class="method-header">
                     <img src="1.png" alt="Logo SeaBank" onerror="this.onerror=null;this.src='https://placehold.co/32x32/ee4d2d/ffffff?text=S';">
@@ -297,7 +339,6 @@
                 </div>
             </div>
 
-            <!-- ========== ShopeePay Payment Method ========== -->
             <div class="payment-method">
                 <div class="method-header">
                      <img src="2.png" alt="Logo ShopeePay" onerror="this.onerror=null;this.src='https://placehold.co/32x32/ee4d2d/ffffff?text=S
@@ -308,12 +349,11 @@
                     <p>Silakan transfer ke nomor ShopeePay berikut:</p>
                     <div class="account-info">
                         <span class="account-number" id="shopeepay-number">082242118818</span>
-                        <!-- PERBAIKAN: Menghapus style inline agar warna hijau bisa muncul -->
                         <button class="copy-btn" data-copy-target="shopeepay-number" style="background-color: var(--secondary-color);">Salin</button>
                     </div>
 
                     <div class="shopee-note">
-                        <img src="warning.png" alt="Ikon ShopeePay" onerror="this.onerror=null;this.src='https.placehold.co/24x24/ee4d2d/ffffff?text=!';">
+                        <img src="warning.png" alt="Ikon Peringatan" onerror="this.onerror=null;this.src='https://placehold.co/24x24/ee4d2d/ffffff?text=!';">
                         <div class="note-content">
                             <p><strong>PENTING: Harap sesuaikan nominal transfer Anda.</strong></p>
                             <ul>
@@ -345,8 +385,8 @@
             const copyButtons = document.querySelectorAll('.copy-btn');
 
             copyButtons.forEach(button => {
-                // Simpan warna asli tombol
                 const originalColor = button.style.backgroundColor;
+                const originalTextColor = button.style.color;
 
                 button.addEventListener('click', function() {
                     const targetId = this.getAttribute('data-copy-target');
@@ -356,18 +396,17 @@
                         const originalText = this.innerText;
                         this.innerText = 'Tersalin!';
                         this.classList.add('copied');
-                        // Hapus style inline sementara agar class .copied bisa bekerja
                         this.style.backgroundColor = ''; 
+                        this.style.color = '';
 
                         setTimeout(() => {
                             this.innerText = originalText;
                             this.classList.remove('copied');
-                            // Kembalikan warna asli setelah selesai
                             this.style.backgroundColor = originalColor;
+                            this.style.color = originalTextColor;
                         }, 2000);
                     }).catch(err => {
                         console.error('Gagal menyalin teks: ', err);
-                        // Hindari penggunaan alert, bisa diganti dengan notifikasi custom jika perlu
                         const originalText = this.innerText;
                         this.innerText = 'Gagal!';
                         setTimeout(() => {
