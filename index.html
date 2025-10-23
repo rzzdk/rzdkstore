@@ -80,6 +80,48 @@
                 padding: 2.5rem;
             }
 
+            /* --- PENYESUAIAN 1: Tab System --- */
+            .tab-container {
+                display: flex;
+                border-bottom: 1px solid var(--border-color);
+                margin-bottom: 2rem;
+                justify-content: center; /* <-- PERUBAHAN DI SINI: Tab rata tengah */
+            }
+
+            .tab-link {
+                padding: 0.75rem 1.25rem;
+                cursor: pointer;
+                background-color: transparent;
+                border: none;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: var(--text-color);
+                transition: all 0.2s ease-in-out;
+                margin-bottom: -1px; /* Agar border bawah menyatu */
+                border-bottom: 3px solid transparent;
+                white-space: nowrap; /* Mencegah teks tab terpotong/wrap */
+            }
+
+            .tab-link:hover {
+                background-color: #f9f9f9;
+                color: var(--dark-gray);
+            }
+
+            .tab-link.active {
+                color: var(--primary-color);
+                font-weight: 600;
+                border-bottom: 3px solid var(--primary-color);
+            }
+
+            .tab-content {
+                display: none; /* Sembunyikan semua konten tab secara default */
+            }
+
+            .tab-content.active {
+                display: block; /* Tampilkan hanya konten tab yang aktif */
+            }
+            /* --- AKHIR PENYESUAIAN 1: Tab System --- */
+
             /* --- Payment Method Card --- */
             .payment-method {
                 border: 1px solid var(--border-color);
@@ -144,7 +186,6 @@
                 border-radius: 8px;
             }
 
-            /* --- Penambahan Baru (1) --- */
             .account-name {
                 margin-top: -0.5rem;
                 margin-bottom: 1rem;
@@ -169,7 +210,6 @@
                 margin-right: 1rem;
             }
 
-            /* --- Penambahan Baru (3) --- */
             .button-group {
                 display: flex;
                 flex-shrink: 0;
@@ -191,9 +231,8 @@
                 white-space: nowrap;
             }
 
-            /* --- Penambahan Baru (3) --- */
             .copy-btn.deeplink-btn {
-                text-decoration: none; /* Menghilangkan garis bawah tautan */
+                text-decoration: none;
             }
 
             .copy-btn:hover {
@@ -257,6 +296,18 @@
                 color: #888;
             }
 
+            /* --- PENYESUAIAN 2: Konten QRIS Rata Tengah --- */
+            /* Mengatur header (logo + teks) QRIS ke tengah */
+            #qris .method-header {
+                justify-content: center;
+            }
+
+            /* Mengatur paragraf deskripsi pertama QRIS ke tengah */
+            #qris .method-body > p:first-of-type {
+                text-align: center;
+            }
+            /* --- AKHIR PENYESUAIAN 2 --- */
+
             /* --- Responsive Design --- */
             @media (max-width: 600px) {
                 body {
@@ -287,18 +338,100 @@
                     width: 100%;
                     text-align: center;
                 }
-
-                /* --- Penambahan Baru (3) --- */
                 .button-group {
                     width: 100%;
                     display: flex;
                 }
                 .button-group .copy-btn {
-                    flex: 1; /* Membuat tombol berbagi lebar */
+                    flex: 1;
+                }
+                .tab-container {
+                    width: 100%;
+                    /* Justify-content: center; tidak diperlukan di mobile
+                       karena tab-link di bawah sudah diatur flex: 1 */
+                }
+                .tab-link {
+                    flex: 1; /* Membuat 3 tab memenuhi lebar */
+                    text-align: center;
+                    font-size: 0.9rem; /* Perkecil font di HP */
+                    padding: 0.75rem 0.25rem;
+                }
+
+                /* PERUBAHAN RESPONSIF: Pastikan header QRIS tetap tengah di mobile */
+                #qris .method-header {
+                    justify-content: center;
                 }
             }
         </style>
     </head>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            /* --- PENAMBAHAN BARU: Logika Tab --- */
+            const tabLinks = document.querySelectorAll(".tab-link");
+            const tabContents = document.querySelectorAll(".tab-content");
+
+            tabLinks.forEach((link) => {
+                link.addEventListener("click", () => {
+                    const targetTab = link.getAttribute("data-tab"); // misal: "bank"
+
+                    // 1. Nonaktifkan semua tab link dan konten
+                    tabLinks.forEach((item) => item.classList.remove("active"));
+                    tabContents.forEach((item) =>
+                        item.classList.remove("active"),
+                    );
+
+                    // 2. Aktifkan tab link yang diklik
+                    link.classList.add("active");
+
+                    // 3. Aktifkan konten yang sesuai
+                    document.getElementById(targetTab).classList.add("active");
+                });
+            });
+            /* --- AKHIR PENAMBAHAN: Logika Tab --- */
+
+            /* --- Logika Tombol Salin (Copy) Anda yang sudah ada --- */
+            const copyButtons = document.querySelectorAll(".copy-btn");
+
+            copyButtons.forEach((button) => {
+                // Hanya tambahkan event listener jika bukan tombol deeplink
+                if (!button.classList.contains("deeplink-btn")) {
+                    const originalColor = button.style.backgroundColor;
+                    const originalTextColor = button.style.color;
+
+                    button.addEventListener("click", function () {
+                        const targetId = this.getAttribute("data-copy-target");
+                        const textToCopy =
+                            document.getElementById(targetId).innerText;
+
+                        navigator.clipboard
+                            .writeText(textToCopy)
+                            .then(() => {
+                                const originalText = this.innerText;
+                                this.innerText = "Tersalin!";
+                                this.classList.add("copied");
+                                this.style.backgroundColor = "";
+                                this.style.color = "";
+
+                                setTimeout(() => {
+                                    this.innerText = originalText;
+                                    this.classList.remove("copied");
+                                    this.style.backgroundColor = originalColor;
+                                    this.style.color = originalTextColor;
+                                }, 2000);
+                            })
+                            .catch((err) => {
+                                console.error("Gagal menyalin teks: ", err);
+                                const originalText = this.innerText;
+                                this.innerText = "Gagal!";
+                                setTimeout(() => {
+                                    this.innerText = originalText;
+                                }, 2000);
+                            });
+                    });
+                }
+            });
+        });
+    </script>
     <body>
         <div class="container">
             <header class="header">
@@ -307,108 +440,115 @@
             </header>
 
             <main class="content">
-                <div class="payment-method">
-                    <div class="method-header">
-                        <img
-                            src="logo-qris.png"
-                            alt="Logo QRIS"
-                            style="
-                                width: 48px;
-                                height: auto;
-                                margin-right: 0.8rem;
-                            "
-                            onerror="this.onerror=null;this.src='https://placehold.co/48x32/eef0f2/777?text=QRIS';"
-                        />
-                        <h2>QRIS</h2>
-                    </div>
-                    <div class="method-body">
-                        <p>
-                            Mendukung semua E-Wallet (GoPay, OVO, Dana,
-                            ShopeePay, LinkAja, dll.) dan Mobile Banking.
-                        </p>
-                        <div class="qris-container">
+                <div class="tab-container">
+                    <button class="tab-link active" data-tab="qris">
+                        QRIS
+                    </button>
+                    <button class="tab-link" data-tab="bank">
+                        Transfer Bank
+                    </button>
+                    <button class="tab-link" data-tab="ewallet">
+                        E-Wallet
+                    </button>
+                </div>
+
+                <div id="qris" class="tab-content active">
+                    <div class="payment-method">
+                        <div class="method-header">
                             <img
-                                src="qris.png"
-                                alt="QRIS Code RZDK Store"
-                                class="qris-image"
-                                onerror="this.onerror=null;this.src='https://placehold.co/280x280/eef0f2/777?text=QRIS+Anda';"
+                                src="logo-qris.png"
+                                alt="Logo QRIS"
+                                style="
+                                    width: 48px;
+                                    height: auto;
+                                    margin-right: 0.8rem;
+                                "
+                                onerror="this.onerror=null;this.src='https://placehold.co/48x32/eef0f2/777?text=QRIS';"
                             />
                         </div>
-                        <p class="qris-note">
-                            <strong>Penting:</strong> Pastikan nama Merchant
-                            yang muncul adalah
-                            <strong>"RZDK STORE"</strong> sebelum menyelesaikan
-                            pembayaran.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="payment-method">
-                    <div class="method-header">
-                        <img
-                            src="logojago.png"
-                            alt="Logo Bank Jago"
-                            onerror="this.onerror=null;this.src='https://placehold.co/32x32/FDB813/333?text=J';"
-                        />
-                        <h2>Bank Jago Syariah</h2>
-                    </div>
-                    <div class="method-body">
-                        <p>
-                            Silakan transfer ke nomor rekening / Kantong Jago
-                            berikut:
-                        </p>
-                        <p class="account-name">
-                            a.n. <strong>REZA DITYA KESUMA</strong>
-                        </p>
-                        <div class="account-info">
-                            <span class="account-number" id="jago-number"
-                                >503936025107</span
-                            >
-                            <button
-                                class="copy-btn"
-                                data-copy-target="jago-number"
-                                style="
-                                    background-color: var(--jago-color);
-                                    color: var(--dark-gray);
-                                "
-                            >
-                                Salin
-                            </button>
+                        <div class="method-body">
+                            <p>
+                                Mendukung semua jenis E-Wallet dan Mobile
+                                Banking.
+                            </p>
+                            <div class="qris-container">
+                                <img
+                                    src="qris.png"
+                                    alt="QRIS Code RZDK Store"
+                                    class="qris-image"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/280x280/eef0f2/777?text=QRIS+Anda';"
+                                />
+                            </div>
+                            <p class="qris-note">
+                                <strong>PENTING!</strong><br />
+                                Pastikan nama Merchant yang muncul adalah
+                                <strong>"RZDK STORE"</strong> sebelum
+                                menyelesaikan pembayaran.
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="payment-method">
-                    <div class="method-header">
-                        <img
-                            src="logodana.png"
-                            alt="Logo DANA"
-                            onerror="this.onerror=null;this.src='https://placehold.co/32x32/108EE9/ffffff?text=D';"
-                        />
-                        <h2>DANA</h2>
-                    </div>
-                    <div class="method-body">
-                        <p>Silakan transfer ke nomor DANA berikut:</p>
-                        <p class="account-name">
-                            a.n. <strong>REZA DITYA KESUMA</strong>
-                        </p>
-
-                        <div class="account-info">
-                            <span class="account-number" id="dana-number"
-                                >082242118818</span
-                            >
-                            <div class="button-group">
-                                <a
-                                    href="https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012012020042987204315"
-                                    target="_blank"
-                                    class="copy-btn deeplink-btn"
-                                    style="background-color: var(--dana-color)"
-                                    >Buka DANA</a
+                <div id="bank" class="tab-content">
+                    <div class="payment-method">
+                        <div class="method-header">
+                            <img
+                                src="logojago.png"
+                                alt="Logo Bank Jago"
+                                onerror="this.onerror=null;this.src='https://placehold.co/32x32/FDB813/333?text=J';"
+                            />
+                            <h2>Bank Jago Syariah</h2>
+                        </div>
+                        <div class="method-body">
+                            <p>
+                                Silakan transfer ke nomor rekening / Kantong
+                                Jago berikut:
+                            </p>
+                            <p class="account-name">
+                                a.n. <strong>REZA DITYA KESUMA</strong>
+                            </p>
+                            <div class="account-info">
+                                <span class="account-number" id="jago-number"
+                                    >503936025107</span
                                 >
                                 <button
                                     class="copy-btn"
-                                    data-copy-target="dana-number"
-                                    style="background-color: var(--dana-color)"
+                                    data-copy-target="jago-number"
+                                    style="
+                                        background-color: var(--jago-color);
+                                        color: var(--dark-gray);
+                                    "
+                                >
+                                    Salin
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-method">
+                        <div class="method-header">
+                            <img
+                                src="1.png"
+                                alt="Logo SeaBank"
+                                onerror="this.onerror=null;this.src='https://placehold.co/32x32/ee4d2d/ffffff?text=S';"
+                            />
+                            <h2>SeaBank</h2>
+                        </div>
+                        <div class="method-body">
+                            <p>Silakan transfer ke nomor rekening berikut:</p>
+                            <p class="account-name">
+                                a.n. <strong>REZA DITYA KESUMA</strong>
+                            </p>
+                            <div class="account-info">
+                                <span class="account-number" id="seabank-number"
+                                    >901168533320</span
+                                >
+                                <button
+                                    class="copy-btn"
+                                    data-copy-target="seabank-number"
+                                    style="
+                                        background-color: var(--seabank-color);
+                                    "
                                 >
                                     Salin
                                 </button>
@@ -417,190 +557,161 @@
                     </div>
                 </div>
 
-                <div class="payment-method">
-                    <div class="method-header">
-                        <img
-                            src="logogopay.png"
-                            alt="Logo GoPay"
-                            onerror="this.onerror=null;this.src='https://placehold.co/32x32/0081A0/ffffff?text=G';"
-                        />
-                        <h2>GoPay</h2>
-                    </div>
-                    <div class="method-body">
-                        <p>Silakan transfer ke nomor GoPay berikut:</p>
-                        <p class="account-name">
-                            a.n. <strong>REZA DITYA KESUMA</strong>
-                        </p>
-                        <div class="account-info">
-                            <span class="account-number" id="gopay-number"
-                                >082242118818</span
-                            >
-                            <button
-                                class="copy-btn"
-                                data-copy-target="gopay-number"
-                                style="background-color: var(--gopay-color)"
-                            >
-                                Salin
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="payment-method">
-                    <div class="method-header">
-                        <img
-                            src="1.png"
-                            alt="Logo SeaBank"
-                            onerror="this.onerror=null;this.src='https://placehold.co/32x32/ee4d2d/ffffff?text=S';"
-                        />
-                        <h2>SeaBank</h2>
-                    </div>
-                    <div class="method-body">
-                        <p>Silakan transfer ke nomor rekening berikut:</p>
-                        <p class="account-name">
-                            a.n. <strong>REZA DITYA KESUMA</strong>
-                        </p>
-                        <div class="account-info">
-                            <span class="account-number" id="seabank-number"
-                                >901168533320</span
-                            >
-                            <button
-                                class="copy-btn"
-                                data-copy-target="seabank-number"
-                                style="background-color: var(--seabank-color)"
-                            >
-                                Salin
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="payment-method">
-                    <div class="method-header">
-                        <img
-                            src="2.png"
-                            alt="Logo ShopeePay"
-                            onerror="this.onerror=null;this.src='https://placehold.co/32x32/ee4d2d/ffffff?text=S
-                     P';"
-                        />
-                        <h2>ShopeePay</h2>
-                    </div>
-                    <div class="method-body">
-                        <p>Silakan transfer ke nomor ShopeePay berikut:</p>
-                        <p class="account-name">
-                            a.n. <strong>REZA DITYA KESUMA</strong>
-                        </p>
-                        <div class="account-info">
-                            <span class="account-number" id="shopeepay-number"
-                                >082242118818</span
-                            >
-                            <button
-                                class="copy-btn"
-                                data-copy-target="shopeepay-number"
-                                style="background-color: var(--secondary-color)"
-                            >
-                                Salin
-                            </button>
-                        </div>
-
-                        <div class="shopee-note">
+                <div id="ewallet" class="tab-content">
+                    <div class="payment-method">
+                        <div class="method-header">
                             <img
-                                src="warning.png"
-                                alt="Ikon Peringatan"
-                                onerror="this.onerror=null;this.src='https://placehold.co/24x24/ee4d2d/ffffff?text=!';"
+                                src="logodana.png"
+                                alt="Logo DANA"
+                                onerror="this.onerror=null;this.src='https://placehold.co/32x32/108EE9/ffffff?text=D';"
                             />
-                            <div class="note-content">
-                                <p>
-                                    <strong
-                                        >PENTING: Harap sesuaikan nominal
-                                        transfer Anda.</strong
+                            <h2>DANA</h2>
+                        </div>
+                        <div class="method-body">
+                            <p>Silakan transfer ke nomor DANA berikut:</p>
+                            <p class="account-name">
+                                a.n. <strong>REZA DITYA KESUMA</strong>
+                            </p>
+
+                            <div class="account-info">
+                                <span class="account-number" id="dana-number"
+                                    >082242118818</span
+                                >
+                                <div class="button-group">
+                                    <a
+                                        href="https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012012020042987204315"
+                                        target="_blank"
+                                        class="copy-btn deeplink-btn"
+                                        style="
+                                            background-color: var(--dana-color);
+                                        "
+                                        >Buka DANA</a
                                     >
-                                </p>
-                                <ul>
-                                    <li>
+                                    <button
+                                        class="copy-btn"
+                                        data-copy-target="dana-number"
+                                        style="
+                                            background-color: var(--dana-color);
+                                        "
+                                    >
+                                        Salin
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-method">
+                        <div class="method-header">
+                            <img
+                                src="logogopay.png"
+                                alt="Logo GoPay"
+                                onerror="this.onerror=null;this.src='https://placehold.co/32x32/0081A0/ffffff?text=G';"
+                            />
+                            <h2>GoPay</h2>
+                        </div>
+                        <div class="method-body">
+                            <p>Silakan transfer ke nomor GoPay berikut:</p>
+                            <p class="account-name">
+                                a.n. <strong>REZA DITYA KESUMA</strong>
+                            </p>
+                            <div class="account-info">
+                                <span class="account-number" id="gopay-number"
+                                    >082242118818</span
+                                >
+                                <button
+                                    class="copy-btn"
+                                    data-copy-target="gopay-number"
+                                    style="background-color: var(--gopay-color)"
+                                >
+                                    Salin
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-method">
+                        <div class="method-header">
+                            <img
+                                src="2.png"
+                                alt="Logo ShopeePay"
+                                onerror="this.onerror=null;this.src='https://placehold.co/32x32/ee4d2d/ffffff?text=S
+                     P';"
+                            />
+                            <h2>ShopeePay</h2>
+                        </div>
+                        <div class="method-body">
+                            <p>Silakan transfer ke nomor ShopeePay berikut:</p>
+                            <p class="account-name">
+                                a.n. <strong>REZA DITYA KESUMA</strong>
+                            </p>
+                            <div class="account-info">
+                                <span
+                                    class="account-number"
+                                    id="shopeepay-number"
+                                    >082242118818</span
+                                >
+                                <button
+                                    class="copy-btn"
+                                    data-copy-target="shopeepay-number"
+                                    style="
+                                        background-color: var(
+                                            --secondary-color
+                                        );
+                                    "
+                                >
+                                    Salin
+                                </button>
+                            </div>
+
+                            <div class="shopee-note">
+                                <img
+                                    src="warning.png"
+                                    alt="Ikon Peringatan"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/24x24/ee4d2d/ffffff?text=!';"
+                                />
+                                <div class="note-content">
+                                    <p>
                                         <strong
-                                            >Transfer dari Bank / E-Wallet lain
-                                            (selain ShopeePay):</strong
-                                        ><br />
-                                        Mohon tambahkan
-                                        <strong>Rp1.000</strong> untuk biaya
-                                        admin.<br />
-                                        <em
-                                            >Contoh: Tagihan Rp100.000 →
-                                            transfer
-                                            <strong>Rp101.000</strong></em
+                                            >PENTING: Harap sesuaikan nominal
+                                            transfer Anda.</strong
                                         >
-                                    </li>
-                                    <li>
-                                        <strong
-                                            >Transfer dari sesama
-                                            ShopeePay:</strong
-                                        ><br />
-                                        Bayar sesuai total tagihan (tanpa
-                                        tambahan).<br />
-                                        <em
-                                            >Contoh: Tagihan Rp100.000 →
-                                            transfer
-                                            <strong>Rp100.000</strong></em
-                                        >
-                                    </li>
-                                </ul>
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <strong
+                                                >Transfer dari Bank / E-Wallet
+                                                lain (selain ShopeePay):</strong
+                                            ><br />
+                                            Mohon tambahkan
+                                            <strong>Rp1.000</strong> untuk biaya
+                                            admin.<br />
+                                            <em
+                                                >Contoh: Tagihan Rp100.000 →
+                                                transfer
+                                                <strong>Rp101.000</strong></em
+                                            >
+                                        </li>
+                                        <li>
+                                            <strong
+                                                >Transfer dari sesama
+                                                ShopeePay:</strong
+                                            ><br />
+                                            Bayar sesuai total tagihan (tanpa
+                                            tambahan).<br />
+                                            <em
+                                                >Contoh: Tagihan Rp100.000 →
+                                                transfer
+                                                <strong>Rp100.000</strong></em
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
         </div>
-
-        <footer class="footer">
-            <p>&copy; 2024 RZDK Store. Terima kasih atas pembayaran Anda.</p>
-        </footer>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const copyButtons = document.querySelectorAll(".copy-btn");
-
-                copyButtons.forEach((button) => {
-                    // Hanya tambahkan event listener jika bukan tombol deeplink
-                    if (!button.classList.contains("deeplink-btn")) {
-                        const originalColor = button.style.backgroundColor;
-                        const originalTextColor = button.style.color;
-
-                        button.addEventListener("click", function () {
-                            const targetId =
-                                this.getAttribute("data-copy-target");
-                            const textToCopy =
-                                document.getElementById(targetId).innerText;
-
-                            navigator.clipboard
-                                .writeText(textToCopy)
-                                .then(() => {
-                                    const originalText = this.innerText;
-                                    this.innerText = "Tersalin!";
-                                    this.classList.add("copied");
-                                    this.style.backgroundColor = "";
-                                    this.style.color = "";
-
-                                    setTimeout(() => {
-                                        this.innerText = originalText;
-                                        this.classList.remove("copied");
-                                        this.style.backgroundColor =
-                                            originalColor;
-                                        this.style.color = originalTextColor;
-                                    }, 2000);
-                                })
-                                .catch((err) => {
-                                    console.error("Gagal menyalin teks: ", err);
-                                    const originalText = this.innerText;
-                                    this.innerText = "Gagal!";
-                                    setTimeout(() => {
-                                        this.innerText = originalText;
-                                    }, 2000);
-                                });
-                        });
-                    }
-                });
-            });
-        </script>
     </body>
 </html>
