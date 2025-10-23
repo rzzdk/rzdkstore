@@ -65,7 +65,7 @@
                 text-align: center;
             }
 
-            /* --- PENAMBAHAN BARU: Logo Header --- */
+            /* --- Logo Header --- */
             .header-logo {
                 width: 100px;
                 height: 100px;
@@ -74,7 +74,6 @@
                 object-fit: cover; /* Memastikan gambar mengisi lingkaran */
                 border: 3px solid rgba(255, 255, 255, 0.2);
             }
-            /* --- AKHIR PENAMBAHAN --- */
 
             .header h1 {
                 margin: 0;
@@ -253,7 +252,7 @@
                 text-decoration: none;
             }
 
-            /* --- PENAMBAHAN BARU: Tombol Unduh QRIS --- */
+            /* --- Tombol Unduh QRIS --- */
             .download-btn {
                 text-decoration: none;
                 display: inline-block;
@@ -265,7 +264,6 @@
                 background-color: #5a6268;
                 opacity: 1; /* Override opacity hover jika ada */
             }
-            /* --- AKHIR PENAMBAHAN --- */
 
             .copy-btn:hover {
                 opacity: 0.85;
@@ -340,7 +338,7 @@
             }
             /* --- AKHIR PENYESUAIAN 2 --- */
 
-            /* --- PENAMBAHAN BARU: CSS Akordeon --- */
+            /* ---  CSS Akordeon --- */
             #bank .method-body,
             #ewallet .method-body {
                 max-height: 0;
@@ -395,7 +393,6 @@
             #ewallet .payment-method:not(.active) .method-header {
                 border-bottom: none;
             }
-            /* --- AKHIR PENAMBAHAN CSS Akordeon --- */
 
             /* --- Responsive Design --- */
             @media (max-width: 600px) {
@@ -460,7 +457,7 @@
     </head>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            /* --- PENAMBAHAN BARU: Logika Tab --- */
+            /* ---  Logika Tab --- */
             const tabLinks = document.querySelectorAll(".tab-link");
             const tabContents = document.querySelectorAll(".tab-content");
 
@@ -485,9 +482,49 @@
                     document.getElementById(targetTab).classList.add("active");
                 });
             });
-            /* --- AKHIR PENAMBAHAN: Logika Tab --- */
 
-            /* --- PENAMBAHAN BARU: Logika Akordeon --- */
+            /* ---  Anti-Inspect & View Source --- */
+            // Peringatan: Ini tidak memberikan keamanan nyata dan
+            // merusak pengalaman pengguna (UX). Tidak direkomendasikan.
+
+            // Blok Klik Kanan
+            document.addEventListener(
+                "contextmenu",
+                function (e) {
+                    e.preventDefault();
+                },
+                false,
+            );
+
+            // Blok Shortcut Keyboard
+            document.addEventListener(
+                "keydown",
+                function (e) {
+                    // Ctrl+U (View Source)
+                    if (e.ctrlKey && e.keyCode == 85) {
+                        e.preventDefault();
+                    }
+                    // F12 (Dev Tools)
+                    if (e.keyCode == 123) {
+                        e.preventDefault();
+                    }
+                    // Ctrl+Shift+I (Dev Tools)
+                    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                        e.preventDefault();
+                    }
+                    // Ctrl+Shift+J (Dev Tools)
+                    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                        e.preventDefault();
+                    }
+                    // Ctrl+Shift+C (Dev Tools)
+                    if (e.ctrlKey && e.shiftKey && e.keyCode == 67) {
+                        e.preventDefault();
+                    }
+                },
+                false,
+            );
+
+            /* --- Logika Akordeon --- */
             const accordionTriggers = document.querySelectorAll(
                 "#bank .method-header, #ewallet .method-header",
             );
@@ -512,7 +549,6 @@
                     // Jika sudah aktif, langkah 1 sudah menonaktifkannya (efek toggle)
                 });
             });
-            /* --- AKHIR PENAMBAHAN: Logika Akordeon --- */
 
             /* --- Logika Tombol Salin (Copy) Anda yang sudah ada --- */
             const copyButtons = document.querySelectorAll(".copy-btn");
