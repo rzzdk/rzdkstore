@@ -65,6 +65,17 @@
                 text-align: center;
             }
 
+            /* --- PENAMBAHAN BARU: Logo Header --- */
+            .header-logo {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%; /* Membuat logo menjadi bulat */
+                margin-bottom: 1rem;
+                object-fit: cover; /* Memastikan gambar mengisi lingkaran */
+                border: 3px solid rgba(255, 255, 255, 0.2);
+            }
+            /* --- AKHIR PENAMBAHAN --- */
+
             .header h1 {
                 margin: 0;
                 font-size: 2rem;
@@ -242,7 +253,7 @@
                 text-decoration: none;
             }
 
-            /* --- Tombol Unduh QRIS --- */
+            /* --- PENAMBAHAN BARU: Tombol Unduh QRIS --- */
             .download-btn {
                 text-decoration: none;
                 display: inline-block;
@@ -254,6 +265,7 @@
                 background-color: #5a6268;
                 opacity: 1; /* Override opacity hover jika ada */
             }
+            /* --- AKHIR PENAMBAHAN --- */
 
             .copy-btn:hover {
                 opacity: 0.85;
@@ -328,7 +340,7 @@
             }
             /* --- AKHIR PENYESUAIAN 2 --- */
 
-            /* --- CSS Akordeon --- */
+            /* --- PENAMBAHAN BARU: CSS Akordeon --- */
             #bank .method-body,
             #ewallet .method-body {
                 max-height: 0;
@@ -383,6 +395,7 @@
             #ewallet .payment-method:not(.active) .method-header {
                 border-bottom: none;
             }
+            /* --- AKHIR PENAMBAHAN CSS Akordeon --- */
 
             /* --- Responsive Design --- */
             @media (max-width: 600px) {
@@ -399,6 +412,11 @@
                 }
                 .header {
                     padding: 1.5rem;
+                }
+                /* PENYESUAIAN RESPONSIF: Perkecil logo di HP */
+                .header-logo {
+                    width: 80px;
+                    height: 80px;
                 }
                 .header h1 {
                     font-size: 1.8rem;
@@ -442,7 +460,7 @@
     </head>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            /* --- Logika Tab --- */
+            /* --- PENAMBAHAN BARU: Logika Tab --- */
             const tabLinks = document.querySelectorAll(".tab-link");
             const tabContents = document.querySelectorAll(".tab-content");
 
@@ -469,7 +487,7 @@
             });
             /* --- AKHIR PENAMBAHAN: Logika Tab --- */
 
-            /* --- Logika Akordeon --- */
+            /* --- PENAMBAHAN BARU: Logika Akordeon --- */
             const accordionTriggers = document.querySelectorAll(
                 "#bank .method-header, #ewallet .method-header",
             );
@@ -494,6 +512,7 @@
                     // Jika sudah aktif, langkah 1 sudah menonaktifkannya (efek toggle)
                 });
             });
+            /* --- AKHIR PENAMBAHAN: Logika Akordeon --- */
 
             /* --- Logika Tombol Salin (Copy) Anda yang sudah ada --- */
             const copyButtons = document.querySelectorAll(".copy-btn");
@@ -544,6 +563,12 @@
     <body>
         <div class="container">
             <header class="header">
+                <img
+                    src="icon-web.jpg"
+                    alt="Logo RZDK Store"
+                    class="header-logo"
+                    onerror="this.onerror=null;this.src='https://placehold.co/100x100/ffffff/777?text=RZDK';"
+                />
                 <h1>Payment RZDK Store</h1>
                 <p>Pilih salah satu jenis metode pembayaran yang tersedia</p>
             </header>
@@ -705,7 +730,7 @@
                             <img
                                 src="1.png"
                                 alt="Logo SeaBank"
-                                onerror="this.onerror=null;this.src='https.placehold.co/32x32/ee4d2d/ffffff?text=S';"
+                                onerror="this.onerror=null;this.src='https://placehold.co/32x32/ee4d2d/ffffff?text=S';"
                             />
                             <h2>SeaBank</h2>
                         </div>
@@ -854,8 +879,7 @@
                                     <p style="margin: 0">
                                         <strong
                                             >PENTING: Mohon periksa rincian di
-                                            aplikasi Anda sebelum bayar ke
-                                            ShopeePay.</strong
+                                            aplikasi Anda sebelum bayar.</strong
                                         >
                                     </p>
                                     <ul
