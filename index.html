@@ -235,6 +235,20 @@
                 text-decoration: none;
             }
 
+            /* --- PENAMBAHAN BARU: Tombol Unduh QRIS --- */
+            .download-btn {
+                text-decoration: none;
+                display: inline-block;
+                margin-top: 1rem;
+                background-color: #6c757d; /* Warna abu-abu sekunder */
+                color: #ffffff;
+            }
+            .download-btn:hover {
+                background-color: #5a6268;
+                opacity: 1; /* Override opacity hover jika ada */
+            }
+            /* --- AKHIR PENAMBAHAN --- */
+
             .copy-btn:hover {
                 opacity: 0.85;
             }
@@ -375,13 +389,17 @@
                     const targetTab = link.getAttribute("data-tab"); // misal: "bank"
 
                     // 1. Nonaktifkan semua tab link dan konten
-                    tabLinks.forEach((item) => item.classList.remove("active"));
+                    tabLinks.forEach((item) => {
+                        item.classList.remove("active");
+                        item.setAttribute("aria-selected", "false"); // <-- MODIFIKASI ARIA
+                    });
                     tabContents.forEach((item) =>
                         item.classList.remove("active"),
                     );
 
                     // 2. Aktifkan tab link yang diklik
                     link.classList.add("active");
+                    link.setAttribute("aria-selected", "true"); // <-- MODIFIKASI ARIA
 
                     // 3. Aktifkan konten yang sesuai
                     document.getElementById(targetTab).classList.add("active");
@@ -393,8 +411,11 @@
             const copyButtons = document.querySelectorAll(".copy-btn");
 
             copyButtons.forEach((button) => {
-                // Hanya tambahkan event listener jika bukan tombol deeplink
-                if (!button.classList.contains("deeplink-btn")) {
+                // Hanya tambahkan event listener jika bukan tombol deeplink ATAU tombol download
+                if (
+                    !button.classList.contains("deeplink-btn") &&
+                    !button.classList.contains("download-btn")
+                ) {
                     const originalColor = button.style.backgroundColor;
                     const originalTextColor = button.style.color;
 
@@ -440,19 +461,45 @@
             </header>
 
             <main class="content">
-                <div class="tab-container">
-                    <button class="tab-link active" data-tab="qris">
+                <div class="tab-container" role="tablist">
+                    <button
+                        class="tab-link active"
+                        data-tab="qris"
+                        role="tab"
+                        aria-controls="qris"
+                        aria-selected="true"
+                        id="tab-qris"
+                    >
                         QRIS
                     </button>
-                    <button class="tab-link" data-tab="bank">
+                    <button
+                        class="tab-link"
+                        data-tab="bank"
+                        role="tab"
+                        aria-controls="bank"
+                        aria-selected="false"
+                        id="tab-bank"
+                    >
                         Transfer Bank
                     </button>
-                    <button class="tab-link" data-tab="ewallet">
+                    <button
+                        class="tab-link"
+                        data-tab="ewallet"
+                        role="tab"
+                        aria-controls="ewallet"
+                        aria-selected="false"
+                        id="tab-ewallet"
+                    >
                         E-Wallet
                     </button>
                 </div>
 
-                <div id="qris" class="tab-content active">
+                <div
+                    id="qris"
+                    class="tab-content active"
+                    role="tabpanel"
+                    aria-labelledby="tab-qris"
+                >
                     <div class="payment-method">
                         <div class="method-header">
                             <img
@@ -478,6 +525,13 @@
                                     class="qris-image"
                                     onerror="this.onerror=null;this.src='https://placehold.co/280x280/eef0f2/777?text=QRIS+Anda';"
                                 />
+                                <br /><a
+                                    href="qris.png"
+                                    download="QRIS_RZDK_STORE.png"
+                                    class="copy-btn download-btn"
+                                >
+                                    Unduh QRIS
+                                </a>
                             </div>
                             <p class="qris-note">
                                 <strong>PENTING!</strong><br />
@@ -489,7 +543,12 @@
                     </div>
                 </div>
 
-                <div id="bank" class="tab-content">
+                <div
+                    id="bank"
+                    class="tab-content"
+                    role="tabpanel"
+                    aria-labelledby="tab-bank"
+                >
                     <div class="payment-method">
                         <div class="method-header">
                             <img
@@ -557,7 +616,12 @@
                     </div>
                 </div>
 
-                <div id="ewallet" class="tab-content">
+                <div
+                    id="ewallet"
+                    class="tab-content"
+                    role="tabpanel"
+                    aria-labelledby="tab-ewallet"
+                >
                     <div class="payment-method">
                         <div class="method-header">
                             <img
@@ -671,41 +735,60 @@
                                     onerror="this.onerror=null;this.src='https://placehold.co/24x24/ee4d2d/ffffff?text=!';"
                                 />
                                 <div class="note-content">
-                                    <p>
+                                    <p style="margin: 0">
                                         <strong
-                                            >PENTING: Harap sesuaikan nominal
-                                            transfer Anda.</strong
+                                            >PENTING: Mohon periksa rincian di
+                                            aplikasi Anda sebelum bayar.</strong
                                         >
                                     </p>
-                                    <ul>
-                                        <li>
+                                    <ul
+                                        style="
+                                            padding-left: 20px;
+                                            margin: 0.5rem 0 0 0;
+                                        "
+                                    >
+                                        <li style="margin-bottom: 0.75rem">
                                             <strong
-                                                >Transfer dari Bank / E-Wallet
-                                                lain (selain ShopeePay):</strong
-                                            ><br />
-                                            Mohon tambahkan
-                                            <strong>Rp1.000</strong> untuk biaya
-                                            admin.<br />
+                                                >Jika TIDAK ADA 'Biaya
+                                                Admin'</strong
+                                            >
+                                            yang tertera di halaman konfirmasi,
+                                            mohon
+                                            <strong>tambahkan Rp1.000</strong>
+                                            pada nominal transfer Anda.
+                                            <br />
                                             <em
-                                                >Contoh: Tagihan Rp100.000 →
-                                                transfer
+                                                >Contoh: Tagihan Rp100.000
+                                                &rarr; transfer
                                                 <strong>Rp101.000</strong></em
                                             >
                                         </li>
                                         <li>
                                             <strong
-                                                >Transfer dari sesama
-                                                ShopeePay:</strong
-                                            ><br />
-                                            Bayar sesuai total tagihan (tanpa
-                                            tambahan).<br />
-                                            <em
-                                                >Contoh: Tagihan Rp100.000 →
-                                                transfer
-                                                <strong>Rp100.000</strong></em
+                                                >Jika SUDAH ADA 'Biaya
+                                                Admin'</strong
                                             >
+                                            yang tertera di halaman konfirmasi,
+                                            Anda cukup membayar sesuai total
+                                            yang muncul di aplikasi Anda (tidak
+                                            perlu ditambah Rp1.000 lagi).
                                         </li>
                                     </ul>
+                                    <p
+                                        style="
+                                            margin: 1rem 0 0 0;
+                                            font-size: 0.9em;
+                                            line-height: 1.5;
+                                        "
+                                    >
+                                        <em
+                                            >Penyesuaian ini diperlukan karena
+                                            beberapa layanan membebankan biaya
+                                            admin kepada penerima (penjual) jika
+                                            biaya tersebut tidak ditampilkan di
+                                            aplikasi pengirim.</em
+                                        >
+                                    </p>
                                 </div>
                             </div>
                         </div>
