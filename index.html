@@ -242,7 +242,7 @@
                 text-decoration: none;
             }
 
-            /* --- PENAMBAHAN BARU: Tombol Unduh QRIS --- */
+            /* --- Tombol Unduh QRIS --- */
             .download-btn {
                 text-decoration: none;
                 display: inline-block;
@@ -254,7 +254,6 @@
                 background-color: #5a6268;
                 opacity: 1; /* Override opacity hover jika ada */
             }
-            /* --- AKHIR PENAMBAHAN --- */
 
             .copy-btn:hover {
                 opacity: 0.85;
@@ -329,7 +328,7 @@
             }
             /* --- AKHIR PENYESUAIAN 2 --- */
 
-            /* --- PENAMBAHAN BARU: CSS Akordeon --- */
+            /* --- CSS Akordeon --- */
             #bank .method-body,
             #ewallet .method-body {
                 max-height: 0;
@@ -384,7 +383,6 @@
             #ewallet .payment-method:not(.active) .method-header {
                 border-bottom: none;
             }
-            /* --- AKHIR PENAMBAHAN CSS Akordeon --- */
 
             /* --- Responsive Design --- */
             @media (max-width: 600px) {
@@ -444,7 +442,7 @@
     </head>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            /* --- PENAMBAHAN BARU: Logika Tab --- */
+            /* --- Logika Tab --- */
             const tabLinks = document.querySelectorAll(".tab-link");
             const tabContents = document.querySelectorAll(".tab-content");
 
@@ -471,7 +469,7 @@
             });
             /* --- AKHIR PENAMBAHAN: Logika Tab --- */
 
-            /* --- PENAMBAHAN BARU: Logika Akordeon --- */
+            /* --- Logika Akordeon --- */
             const accordionTriggers = document.querySelectorAll(
                 "#bank .method-header, #ewallet .method-header",
             );
@@ -496,7 +494,6 @@
                     // Jika sudah aktif, langkah 1 sudah menonaktifkannya (efek toggle)
                 });
             });
-            /* --- AKHIR PENAMBAHAN: Logika Akordeon --- */
 
             /* --- Logika Tombol Salin (Copy) Anda yang sudah ada --- */
             const copyButtons = document.querySelectorAll(".copy-btn");
@@ -857,7 +854,8 @@
                                     <p style="margin: 0">
                                         <strong
                                             >PENTING: Mohon periksa rincian di
-                                            aplikasi Anda sebelum bayar.</strong
+                                            aplikasi Anda sebelum bayar ke
+                                            ShopeePay.</strong
                                         >
                                     </p>
                                     <ul
