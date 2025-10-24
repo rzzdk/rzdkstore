@@ -1,379 +1,464 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Katalog RZDK Store</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog RZDK Store</title>
+    
+    <style>
+        /* Reset dan Font Dasar */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        <style>
-            /* Reset dan Font Dasar */
-            * {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
-            }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
 
-            body {
-                font-family:
-                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                    "Helvetica Neue", Arial, sans-serif;
-                background-color: #f4f7f6;
-                color: #333;
-                line-height: 1.6;
-            }
+        /* Header */
+        header {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-bottom: 3px solid #007bff;
+        }
 
-            /* Header */
-            header {
-                background-color: #ffffff;
-                padding: 20px;
-                text-align: center;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-                border-bottom: 3px solid #007bff;
-            }
+        header h1 {
+            color: #007bff;
+            font-size: 2em;
+            margin: 0;
+        }
 
-            header h1 {
-                color: #007bff;
-                font-size: 2em;
-                margin: 0;
-            }
+        /* Info Kontak */
+        #info {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px 20px;
+            background: #e6f7ff;
+            border: 1px solid #b3e0ff;
+            border-radius: 8px;
+            text-align: center;
+        }
 
-            /* Info Kontak */
-            #info {
-                width: 90%;
-                max-width: 800px;
-                margin: 20px auto;
-                padding: 15px 20px;
-                background: #e6f7ff;
-                border: 1px solid #b3e0ff;
-                border-radius: 8px;
-                text-align: center;
-            }
+        #info strong {
+            color: #0056b3;
+        }
+        
+        /* Kontainer Utama Katalog */
+        main {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
 
-            #info strong {
-                color: #0056b3;
-            }
+        /* --- STYLING BARU: NAVIGASI TAB --- */
+        #tab-nav {
+            display: flex;
+            flex-wrap: wrap; /* Agar responsif di HP */
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 5px;
+            margin-bottom: 20px;
+        }
 
-            /* Kontainer Utama Katalog */
-            #katalog-container {
-                width: 90%;
-                max-width: 800px;
-                margin: 20px auto;
-            }
+        .tab-button {
+            flex-grow: 1; /* Tombol akan mengisi ruang */
+            padding: 12px 10px;
+            font-size: 1em;
+            font-weight: 600;
+            text-align: center;
+            border: none;
+            background: none;
+            color: #555;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 
-            /* Styling Kategori */
-            .kategori-judul {
-                font-size: 1.8em;
-                font-weight: 600;
-                color: #333;
-                margin-top: 30px;
-                margin-bottom: 20px;
-                padding-bottom: 10px;
-                border-bottom: 2px solid #007bff;
-            }
+        .tab-button:hover {
+            background-color: #f0f0f0;
+        }
 
-            /* Styling Kartu Produk */
-            .produk-card {
-                background: #ffffff;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                margin-bottom: 25px;
-                overflow: hidden; /* Menjaga border-radius */
-            }
+        .tab-button.active {
+            background-color: #007bff;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0,123,255,0.3);
+        }
+        /* --- AKHIR STYLING TAB --- */
 
-            .produk-judul {
-                font-size: 1.4em;
-                font-weight: 600;
-                background: #007bff;
-                color: white;
-                padding: 15px 20px;
-            }
 
-            /* Styling Daftar Varian */
-            .varian-list {
-                list-style: none;
-            }
+        /* --- STYLING BARU: KONTEN TAB --- */
+        .tab-panel {
+            display: none; /* Semua panel tersembunyi by default */
+        }
 
-            .varian-item {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                align-items: center;
-                padding: 20px;
-                border-bottom: 1px solid #f0f0f0;
-            }
+        .tab-panel.active {
+            display: block; /* Hanya panel aktif yang tampil */
+        }
+        /* --- AKHIR STYLING KONTEN TAB --- */
 
-            .varian-item:last-child {
-                border-bottom: none;
-            }
 
-            .varian-info {
-                flex-basis: 60%;
-                min-width: 250px;
-            }
+        /* Styling Kartu Produk */
+        .produk-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
 
-            .varian-nama {
-                font-size: 1.1em;
-                font-weight: 500;
-                display: block; /* Agar harga bisa di bawahnya */
-            }
+        /* --- STYLING BARU: ACCORDION --- */
+        .produk-judul-accordion {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            font-size: 1.4em;
+            font-weight: 600;
+            background: #fdfdfd;
+            color: #333;
+            padding: 15px 20px;
+            border: none;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .produk-judul-accordion:hover {
+            background-color: #f9f9f9;
+        }
 
-            .varian-harga {
-                font-size: 1.2em;
-                font-weight: 600;
-                color: #28a745; /* Warna hijau untuk harga */
-                margin-top: 5px;
-            }
+        .produk-judul-accordion.active {
+            background: #007bff;
+            color: white;
+            border-bottom: 1px solid #007bff;
+        }
 
-            /* Styling Tombol Order */
-            .btn-order {
-                padding: 10px 18px;
-                font-size: 1em;
-                font-weight: 600;
-                text-decoration: none;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition:
-                    background-color 0.3s ease,
-                    transform 0.2s ease;
-                text-align: center;
-                margin-top: 10px; /* Jarak di mobile */
-                flex-basis: 35%; /* Mengatur lebar tombol */
-                min-width: 120px;
-            }
+        .accordion-icon {
+            font-size: 1.4em;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+        }
 
-            /* Tombol Aktif (Stok Tersedia) */
-            .btn-order.tersedia {
-                background-color: #28a745;
-                color: white;
-            }
+        .produk-judul-accordion.active .accordion-icon {
+            transform: rotate(45deg); /* Mengubah '+' menjadi 'x' */
+        }
+        
+        .varian-list {
+            list-style: none;
+            max-height: 0; /* Tersembunyi by default */
+            overflow: hidden;
+            transition: max-height 0.4s ease-out; /* Animasi buka-tutup */
+        }
 
-            .btn-order.tersedia:hover {
-                background-color: #218838;
-                transform: translateY(-2px);
-            }
+        .varian-list.active {
+            max-height: 1500px; /* Atur angka yang cukup besar */
+            transition: max-height 0.5s ease-in;
+        }
+        /* --- AKHIR STYLING ACCORDION --- */
 
-            /* Tombol Non-Aktif (Stok Habis) */
-            .btn-order.stok-habis {
-                background-color: #e0e0e0;
-                color: #888;
-                cursor: not-allowed;
-            }
 
-            /* Styling untuk item yang stoknya habis */
-            .varian-item.stok-habis .varian-info {
-                color: #999;
-            }
+        /* Styling Daftar Varian (Tidak Berubah Banyak) */
+        .varian-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
 
-            .varian-item.stok-habis .varian-harga {
-                color: #aaa;
-            }
+        .varian-item:last-child {
+            border-bottom: none;
+        }
 
-            .varian-item.stok-habis .varian-harga::after {
-                content: " (Stok Habis)";
-                color: #d9534f; /* Merah */
-                font-size: 0.9em;
-                font-weight: 500;
-                margin-left: 8px;
-            }
+        .varian-info {
+            flex-basis: 60%;
+            min-width: 250px;
+        }
 
-            /* Footer */
-            footer {
-                text-align: center;
-                margin-top: 40px;
-                padding: 20px;
-                color: #777;
-                border-top: 1px solid #eee;
-            }
+        .varian-nama {
+            font-size: 1.1em;
+            font-weight: 500;
+            display: block;
+        }
 
-            /* Loader (Tampilan saat loading) */
-            #loader {
-                text-align: center;
-                font-size: 1.2em;
-                padding: 40px;
-                color: #555;
-            }
+        .varian-harga {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #28a745;
+            margin-top: 5px;
+        }
 
-            /* Media Query untuk Tampilan Mobile */
-            @media (max-width: 600px) {
-                header h1 {
-                    font-size: 1.6em;
-                }
+        /* Styling Tombol Order */
+        .btn-order {
+            padding: 10px 18px;
+            font-size: 1em;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+            margin-top: 10px;
+            flex-basis: 35%;
+            min-width: 120px;
+        }
+        
+        .btn-order.tersedia {
+            background-color: #28a745;
+            color: white;
+        }
 
-                .varian-item {
-                    flex-direction: column; /* Susun vertikal di mobile */
-                    align-items: flex-start;
-                }
+        .btn-order.tersedia:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
 
-                .btn-order {
-                    width: 100%; /* Tombol jadi lebar penuh */
-                    margin-top: 15px;
-                    flex-basis: 100%;
-                }
+        .btn-order.stok-habis {
+            background-color: #e0e0e0;
+            color: #888;
+            cursor: not-allowed;
+        }
 
-                .varian-info {
-                    min-width: 100%;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>🛒 Katalog RZDK Store</h1>
-        </header>
+        .varian-item.stok-habis .varian-info { color: #999; }
+        .varian-item.stok-habis .varian-harga { color: #aaa; }
+        
+        .varian-item.stok-habis .varian-harga::after {
+            content: " (Stok Habis)";
+            color: #d9534f;
+            font-size: 0.9em;
+            font-weight: 500;
+            margin-left: 8px;
+        }
 
-        <div id="info">
-            <p>Memuat info kontak...</p>
-        </div>
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #777;
+            border-top: 1px solid #eee;
+        }
 
-        <main id="katalog-container">
+        /* Loader */
+        #loader {
+            text-align: center;
+            font-size: 1.2em;
+            padding: 40px;
+            color: #555;
+        }
+
+        /* Media Query untuk Tampilan Mobile */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.6em; }
+            .tab-button { font-size: 0.9em; } /* Kecilkan font tab di HP */
+            .varian-item { flex-direction: column; align-items: flex-start; }
+            .btn-order { width: 100%; margin-top: 15px; flex-basis: 100%; }
+            .varian-info { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🛒 Katalog RZDK Store</h1>
+    </header>
+
+    <div id="info">
+        <p>Memuat info kontak...</p>
+    </div>
+
+    <main>
+        <nav id="tab-nav"></nav>
+        
+        <div id="tab-content-container">
             <div id="loader">
                 <p>Memuat katalog produk...</p>
             </div>
-        </main>
+        </div>
+    </main>
 
-        <footer>
-            <p>&copy; 2024 RZDK Store. All rights reserved.</p>
-        </footer>
+    <footer>
+        <p>&copy; 2024 RZDK Store. All rights reserved.</p>
+    </footer>
 
-        <script>
-            // Menunggu sampai seluruh halaman HTML dimuat
-            document.addEventListener("DOMContentLoaded", () => {
-                // --- KONFIGURASI ---
-                const fileJsonProduk = "produk.json"; // Nama file data Anda
-                const nomorWaAdmin = "6282242118818"; // Nomor WA Anda
-                const namaAdmin = "Admin RZDK Store";
-                // --- AKHIR KONFIGURASI ---
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // --- KONFIGURASI ---
+            const fileJsonProduk = 'produk.json';
+            const nomorWaAdmin = '6282242118818';
+            const namaAdmin = 'Admin RZDK Store';
+            // --- AKHIR KONFIGURASI ---
 
-                const katalogContainer =
-                    document.getElementById("katalog-container");
-                const infoContainer = document.getElementById("info");
-                const loader = document.getElementById("loader");
+            const infoContainer = document.getElementById('info');
+            const tabNav = document.getElementById('tab-nav');
+            const tabContentContainer = document.getElementById('tab-content-container');
+            const loader = document.getElementById('loader');
 
-                // 1. Mengisi Info Kontak
-                infoContainer.innerHTML = `<p><strong>Contact Person:</strong> ${namaAdmin} (${nomorWaAdmin})</p>`;
+            // 1. Mengisi Info Kontak
+            infoContainer.innerHTML = `<p><strong>Contact Person:</strong> ${namaAdmin} (${nomorWaAdmin})</p>`;
 
-                // 2. Fungsi untuk mengambil dan menampilkan data
-                async function muatProduk() {
-                    try {
-                        const respons = await fetch(fileJsonProduk);
-                        if (!respons.ok) {
-                            throw new Error(
-                                `Gagal memuat file: ${respons.statusText}`,
-                            );
-                        }
-                        const dataKatalog = await respons.json();
+            // 2. Fungsi untuk mengambil dan menampilkan data
+            async function muatProduk() {
+                try {
+                    const respons = await fetch(fileJsonProduk);
+                    if (!respons.ok) throw new Error(`Gagal memuat file: ${respons.statusText}`);
+                    
+                    const dataKatalog = await respons.json();
 
-                        // Bersihkan loader
-                        katalogContainer.innerHTML = "";
+                    // Bersihkan loader (karena loader ada di dalam kontainer)
+                    tabContentContainer.innerHTML = ''; 
 
-                        // 3. Memproses setiap Kategori
-                        dataKatalog.forEach((kategori) => {
-                            // Membuat elemen section untuk kategori
-                            const sectionKategori =
-                                document.createElement("section");
-                            sectionKategori.className = "kategori-grup";
+                    // 3. Memproses setiap Kategori (untuk buat Tab dan Panel)
+                    dataKatalog.forEach((kategori, index) => {
+                        const kategoriId = `kategori-${index}`;
+                        const isActive = (index === 0); // Kategori pertama aktif by default
 
-                            // Menambahkan judul kategori
-                            const judulKategori = document.createElement("h2");
-                            judulKategori.className = "kategori-judul";
-                            judulKategori.textContent = kategori.kategori;
-                            sectionKategori.appendChild(judulKategori);
+                        // 3a. Buat Tombol Tab
+                        const tabButton = document.createElement('button');
+                        tabButton.className = `tab-button ${isActive ? 'active' : ''}`;
+                        tabButton.textContent = kategori.kategori;
+                        tabButton.setAttribute('data-target', `#${kategoriId}`);
+                        tabNav.appendChild(tabButton);
 
-                            // 4. Memproses setiap Produk dalam Kategori
-                            kategori.produk.forEach((produk) => {
-                                // Membuat kartu produk
-                                const cardProduk =
-                                    document.createElement("div");
-                                cardProduk.className = "produk-card";
+                        // 3b. Buat Panel Konten Tab
+                        const tabPanel = document.createElement('div');
+                        tabPanel.className = `tab-panel ${isActive ? 'active' : ''}`;
+                        tabPanel.id = kategoriId;
 
-                                // Menambahkan judul produk
-                                const judulProduk =
-                                    document.createElement("h3");
-                                judulProduk.className = "produk-judul";
-                                judulProduk.textContent = produk.nama_produk;
-                                cardProduk.appendChild(judulProduk);
+                        // 4. Memproses setiap Produk dalam Kategori
+                        kategori.produk.forEach(produk => {
+                            // Membuat kartu produk (Accordion)
+                            const cardProduk = document.createElement('div');
+                            cardProduk.className = 'produk-card';
 
-                                // Membuat daftar varian
-                                const listVarian = document.createElement("ul");
-                                listVarian.className = "varian-list";
+                            // 4a. Buat Judul Accordion (Tombol)
+                            const judulAccordion = document.createElement('button');
+                            judulAccordion.className = 'produk-judul-accordion';
+                            judulAccordion.innerHTML = `
+                                <span>${produk.nama_produk}</span>
+                                <span class="accordion-icon">+</span>
+                            `;
+                            cardProduk.appendChild(judulAccordion);
 
-                                // 5. Memproses setiap Varian dalam Produk
-                                produk.varian.forEach((varian) => {
-                                    const itemVarian =
-                                        document.createElement("li");
+                            // 4b. Buat Daftar Varian (Konten Accordion)
+                            const listVarian = document.createElement('ul');
+                            listVarian.className = 'varian-list'; // Tidak aktif by default
 
-                                    // Format harga ke Rupiah
-                                    const formatter = new Intl.NumberFormat(
-                                        "id-ID",
-                                        {
-                                            style: "currency",
-                                            currency: "IDR",
-                                            minimumFractionDigits: 0,
-                                        },
-                                    );
-                                    const hargaFormatted = formatter.format(
-                                        varian.harga,
-                                    );
+                            // 5. Memproses setiap Varian dalam Produk
+                            produk.varian.forEach(varian => {
+                                const itemVarian = document.createElement('li');
+                                
+                                const formatter = new Intl.NumberFormat('id-ID', {
+                                    style: 'currency', currency: 'IDR', minimumFractionDigits: 0
+                                });
+                                const hargaFormatted = formatter.format(varian.harga);
+                                const stokTersedia = varian.stok;
 
-                                    // Cek Status Stok
-                                    const stokTersedia = varian.stok;
-                                    let tombolOrderHTML = "";
+                                let tombolOrderHTML = '';
+                                if (stokTersedia) {
+                                    itemVarian.className = 'varian-item';
+                                    tombolOrderHTML = `<a href="${varian.link_wa}" class="btn-order tersedia" target="_blank" rel="noopener noreferrer">Order Sekarang</a>`;
+                                } else {
+                                    itemVarian.className = 'varian-item stok-habis';
+                                    tombolOrderHTML = `<a class="btn-order stok-habis" aria-disabled="true">Stok Habis</a>`;
+                                }
 
-                                    if (stokTersedia) {
-                                        // Jika stok ada, buat tombol "Order" dengan link WA
-                                        itemVarian.className = "varian-item";
-                                        tombolOrderHTML = `
-                                        <a href="${varian.link_wa}" class="btn-order tersedia" target="_blank" rel="noopener noreferrer">
-                                            Order Sekarang
-                                        </a>
-                                    `;
-                                    } else {
-                                        // Jika stok habis, buat tombol "Stok Habis" yang non-aktif
-                                        itemVarian.className =
-                                            "varian-item stok-habis";
-                                        tombolOrderHTML = `
-                                        <a class="btn-order stok-habis" aria-disabled="true">
-                                            Stok Habis
-                                        </a>
-                                    `;
-                                    }
-
-                                    // Menggabungkan HTML untuk satu varian
-                                    itemVarian.innerHTML = `
+                                itemVarian.innerHTML = `
                                     <div class="varian-info">
                                         <span class="varian-nama">${varian.nama_varian}</span>
                                         <span class="varian-harga">${hargaFormatted}</span>
                                     </div>
                                     ${tombolOrderHTML}
                                 `;
+                                listVarian.appendChild(itemVarian);
+                            }); // Akhir loop varian
 
-                                    listVarian.appendChild(itemVarian);
-                                }); // Akhir loop varian
+                            cardProduk.appendChild(listVarian);
+                            tabPanel.appendChild(cardProduk);
+                        }); // Akhir loop produk
 
-                                cardProduk.appendChild(listVarian);
-                                sectionKategori.appendChild(cardProduk);
-                            }); // Akhir loop produk
+                        tabContentContainer.appendChild(tabPanel);
+                    }); // Akhir loop kategori
 
-                            katalogContainer.appendChild(sectionKategori);
-                        }); // Akhir loop kategori
-                    } catch (error) {
-                        // Menampilkan pesan error jika JSON gagal dimuat
-                        console.error("Error memuat katalog:", error);
-                        katalogContainer.innerHTML = `
-                        <p style="text-align: center; color: red; font-size: 1.2em; padding: 20px; background: #fff; border-radius: 8px;">
-                            <strong>Oops!</strong> Gagal memuat katalog produk.
-                            <br>
-                            <small>Silakan periksa file 'produk.json' dan pastikan formatnya benar.</small>
-                        </p>
-                    `;
-                    }
-                } // Akhir fungsi muatProduk
+                } catch (error) {
+                    console.error('Error memuat katalog:', error);
+                    tabContentContainer.innerHTML = `<p style="text-align: center; color: red;"><strong>Oops!</strong> Gagal memuat katalog.</p>`;
+                }
+            } // Akhir fungsi muatProduk
 
-                // 6. Panggil fungsi utama untuk memulai
-                muatProduk();
+
+            // 6. LOGIKA BARU: Event Listener untuk Tab
+            tabNav.addEventListener('click', (e) => {
+                // Cek apakah yang diklik adalah tombol tab
+                const targetButton = e.target.closest('.tab-button');
+                if (!targetButton) return;
+
+                // Nonaktifkan semua tab
+                tabNav.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                tabContentContainer.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+
+                // Aktifkan tab yang diklik
+                targetButton.classList.add('active');
+                const targetPanelId = targetButton.getAttribute('data-target');
+                document.querySelector(targetPanelId).classList.add('active');
             });
-        </script>
-    </body>
-</html>
 
+
+            // 7. LOGIKA BARU: Event Listener untuk Accordion (Hide/Show)
+            tabContentContainer.addEventListener('click', (e) => {
+                // Cek apakah yang diklik adalah judul accordion
+                const targetAccordion = e.target.closest('.produk-judul-accordion');
+                if (!targetAccordion) return;
+
+                // Temukan panel varian yang sesuai
+                const varianList = targetAccordion.nextElementSibling; // .varian-list
+                // Temukan panel tab tempat accordion ini berada
+                const parentPanel = targetAccordion.closest('.tab-panel');
+                
+                // Cek apakah accordion ini sedang dibuka
+                const isAlreadyActive = targetAccordion.classList.contains('active');
+
+                // --- Logika "Auto-Close" Sesuai Permintaan ---
+                // 1. Tutup semua accordion LAIN di dalam panel tab ini
+                parentPanel.querySelectorAll('.produk-judul-accordion').forEach((accordion, index) => {
+                    if (accordion !== targetAccordion) { // Hanya tutup yang lain
+                        accordion.classList.remove('active');
+                        accordion.nextElementSibling.classList.remove('active'); // Sembunyikan .varian-list
+                        accordion.querySelector('.accordion-icon').textContent = '+';
+                    }
+                });
+
+                // 2. Buka/Tutup accordion yang diklik
+                if (isAlreadyActive) {
+                    // Jika sudah aktif, tutup
+                    targetAccordion.classList.remove('active');
+                    varianList.classList.remove('active');
+                    targetAccordion.querySelector('.accordion-icon').textContent = '+';
+                } else {
+                    // Jika belum aktif, buka
+                    targetAccordion.classList.add('active');
+                    varianList.classList.add('active');
+                    targetAccordion.querySelector('.accordion-icon').textContent = '×'; // 'x'
+                }
+            });
+
+            // 8. Panggil fungsi utama untuk memulai
+            muatProduk();
+
+        });
+    </script>
+
+</body>
+</html>
