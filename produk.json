@@ -4,7 +4,7 @@
     "produk": [
       {
         "nama_produk": "Bstation",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Bilibili_logo_en.svg/256px-Bilibili_logo_en.svg.png",
+        "logo_url": "logobs.png",
         "varian": [
           {
             "nama_varian": "Bstation Sharing 1 Bulan",
@@ -70,7 +70,7 @@
       },
       {
         "nama_produk": "Dramabox",
-        "logo_url": "https://i.playboard.app/p/2773d1de111c19b48c0f5f7f3295c697/default.jpg",
+        "logo_url": "logodramabox.webp",
         "varian": [
           {
             "nama_varian": "Dramabox Sharing 1 Bulan",
@@ -118,7 +118,7 @@
       },
       {
         "nama_produk": "IQIYI",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/IQIYI_logo.svg/256px-IQIYI_logo.svg.png",
+        "logo_url": "logoiqiyi.webp",
         "varian": [
           {
             "nama_varian": "IQIYI Sharing 1 Bulan (Standard)",
@@ -1141,3 +1141,4 @@
     ]
   }
 ]
+
