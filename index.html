@@ -519,23 +519,29 @@
                     overflow-x: auto;
                     -ms-overflow-style: none;
                     scrollbar-width: none;
-
-                    /* --- MODIFIKASI POIN 2: Indikator Gulir --- */
-                    -webkit-mask-image: linear-gradient(
-                        to right,
-                        black 95%,
-                        transparent 100%
-                    );
-                    mask-image: linear-gradient(
-                        to right,
-                        black 95%,
-                        transparent 100%
-                    );
-                    /* --- AKHIR MODIFIKASI POIN 2 --- */
+                    
+                    /* --- MODIFIKASI POIN 2.1: Hapus mask-image statis --- */
+                    /* Hapus baris mask-image dari sini */
                 }
                 #tab-nav::-webkit-scrollbar {
                     display: none;
                 }
+                
+                /* --- MODIFIKASI POIN 2.1: Tambahkan Class Indikator Gulir Dinamis --- */
+                #tab-nav.scroll-start {
+                    -webkit-mask-image: linear-gradient(to right, black 95%, transparent 100%);
+                    mask-image: linear-gradient(to right, black 95%, transparent 100%);
+                }
+                #tab-nav.scroll-end {
+                    -webkit-mask-image: linear-gradient(to left, black 95%, transparent 100%);
+                    mask-image: linear-gradient(to left, black 95%, transparent 100%);
+                }
+                #tab-nav.scroll-middle {
+                    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+                    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+                }
+                /* --- AKHIR MODIFIKASI POIN 2.1 --- */
+
 
                 .tab-button {
                     font-size: 0.9em;
@@ -688,6 +694,43 @@
                 // 1. Mengisi Info Kontak
                 infoContainer.innerHTML = `<p><strong>Contact Person:</strong> ${namaAdmin} (${nomorWaAdmin})</p>`;
 
+                
+                // --- MODIFIKASI POIN 2.1: Fungsi Indikator Gulir Dinamis ---
+                function perbaruiIndikatorGulir() {
+                    // Periksa apakah tabNav ada
+                    if (!tabNav) return;
+
+                    const scrollLeft = tabNav.scrollLeft;
+                    const scrollWidth = tabNav.scrollWidth;
+                    const clientWidth = tabNav.clientWidth;
+
+                    // Jika lebar konten tidak lebih besar dari lebar terlihat, jangan lakukan apa-apa
+                    if (scrollWidth <= clientWidth) {
+                        tabNav.classList.remove("scroll-start", "scroll-middle", "scroll-end");
+                        return;
+                    }
+
+                    // Tambahkan toleransi 1 piksel untuk kalkulasi float
+                    const isAtStart = scrollLeft <= 1;
+                    const isAtEnd = (scrollLeft + clientWidth) >= (scrollWidth - 1);
+
+                    tabNav.classList.remove("scroll-start", "scroll-middle", "scroll-end");
+
+                    if (isAtStart) {
+                        tabNav.classList.add("scroll-start");
+                    } else if (isAtEnd) {
+                        tabNav.classList.add("scroll-end");
+                    } else {
+                        tabNav.classList.add("scroll-middle");
+                    }
+                }
+
+                // --- MODIFIKASI POIN 2.1: Tambah Event Listener ---
+                tabNav.addEventListener("scroll", perbaruiIndikatorGulir);
+                window.addEventListener("resize", perbaruiIndikatorGulir);
+                // --- AKHIR MODIFIKASI POIN 2.1 ---
+
+
                 // 2. Fungsi untuk mengambil dan menampilkan data
                 async function muatProduk() {
                     try {
@@ -765,6 +808,11 @@
 
                             tabContentContainer.appendChild(tabPanel);
                         });
+                        
+                        // --- MODIFIKASI POIN 2.1: Panggil fungsi untuk set state awal ---
+                        // Panggil setelah jeda singkat untuk memastikan DOM selesai render
+                        setTimeout(perbaruiIndikatorGulir, 100); 
+
                     } catch (error) {
                         console.error("Error memuat katalog:", error);
                         tabContentContainer.innerHTML = `<p style="text-align: center; color: red;"><strong>Oops!</strong> Gagal memuat katalog.</p>`;
@@ -928,30 +976,15 @@
                                 accordion.nextElementSibling.classList.remove(
                                     "active",
                                 );
-                                /* MODIFIKASI POIN 4: Hapus perubahan teks ikon
-                                accordion.querySelector(
-                                    ".accordion-icon",
-                                ).textContent = "+";
-                                */
                             }
                         });
 
                     if (isAlreadyActive) {
                         targetAccordion.classList.remove("active");
                         varianList.classList.remove("active");
-                        /* MODIFIKASI POIN 4: Hapus perubahan teks ikon
-                        targetAccordion.querySelector(
-                            ".accordion-icon",
-                        ).textContent = "+";
-                        */
                     } else {
                         targetAccordion.classList.add("active");
                         varianList.classList.add("active");
-                        /* MODIFIKASI POIN 4: Hapus perubahan teks ikon
-                        targetAccordion.querySelector(
-                            ".accordion-icon",
-                        ).textContent = "×";
-                        */
                     }
                 });
 
