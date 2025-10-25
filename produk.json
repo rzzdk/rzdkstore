@@ -865,7 +865,7 @@
     "produk": [
       {
         "nama_produk": "BlackBox AI",
-        "logo_url": "https://assets-global.website-files.com/62e08a0e03e5f32b6e08f208/62e08a0e03e5f3140b08f24a_Blackbox%20Logo.svg",
+        "logo_url": "logobbai.png",
         "varian": [
           {
             "nama_varian": "Private 3 Bulan",
@@ -907,7 +907,7 @@
       },
       {
         "nama_produk": "Deepl Pro",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/DeepL_logo.svg/256px-DeepL_logo.svg.png",
+        "logo_url": "logodeepl.png",
         "varian": [
           {
             "nama_varian": "Invite Team 1 Bulan",
@@ -925,7 +925,7 @@
       },
       {
         "nama_produk": "Gemini Pro",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Gemini_logo.svg/256px-Google_Gemini_logo.svg.png",
+        "logo_url": "logogemini.webp",
         "varian": [
           {
             "nama_varian": "Sharing 1 Bulan",
@@ -949,7 +949,7 @@
       },
       {
         "nama_produk": "Grammarly",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Grammarly_logo.svg/256px-Grammarly_logo.svg.png",
+        "logo_url": "logogram.png",
         "varian": [
           {
             "nama_varian": "Sharing Lifetime",
@@ -961,7 +961,7 @@
       },
       {
         "nama_produk": "Perplexity Pro",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Perplexity_AI_logo.svg/256px-Perplexity_AI_logo.svg.png",
+        "logo_url": "logoperp.webp",
         "varian": [
           {
             "nama_varian": "Sharing (5 User) 1 Bulan",
@@ -979,7 +979,7 @@
       },
       {
         "nama_produk": "Quillbot",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/QuillBot_logo.svg/256px-QuillBot_logo.svg.png",
+        "logo_url": "logoquill.jpeg",
         "varian": [
           {
             "nama_varian": "Sharing 1 Bulan",
@@ -1003,7 +1003,7 @@
       },
       {
         "nama_produk": "Scribd Premium",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Scribd_logo.svg/256px-Scribd_logo.svg.png",
+        "logo_url": "logoscribd.jpg",
         "varian": [
           {
             "nama_varian": "Sharing 1 Bulan",
@@ -1033,7 +1033,7 @@
       },
       {
         "nama_produk": "Wattpad Premium",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Wattpad_logo.svg/256px-Wattpad_logo.svg.png",
+        "logo_url": "logowattpad.jpg",
         "varian": [
           {
             "nama_varian": "Sharing 1 Bulan",
@@ -1050,7 +1050,7 @@
     "produk": [
       {
         "nama_produk": "Apple iCloud",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/ICloud_logo.svg/256px-ICloud_logo.svg.png",
+        "logo_url": "logoicloud.png",
         "varian": [
           {
             "nama_varian": "Kode Redeem 50 GB (3 Bulan)",
@@ -1062,7 +1062,7 @@
       },
       {
         "nama_produk": "CamScanner",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/CamScanner_logo.svg/256px-CamScanner_logo.svg.png",
+        "logo_url": "logocs.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Tahun",
@@ -1074,7 +1074,7 @@
       },
       {
         "nama_produk": "Express VPN",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/ExpressVPN_logo.svg/256px-ExpressVPN_logo.svg.png",
+        "logo_url": "logoexpvpn.png",
         "varian": [
           {
             "nama_varian": "Private 1 Bulan",
@@ -1086,7 +1086,7 @@
       },
       {
         "nama_produk": "Getcontact Premium",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Getcontact_logo.svg/256px-Getcontact_logo.svg.png",
+        "logo_url": "logogetc.png",
         "varian": [
           {
             "nama_varian": "Private 1 Bulan",
@@ -1098,7 +1098,7 @@
       },
       {
         "nama_produk": "HMA VPN",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/HMA%21_logo.svg/256px-HMA%21_logo.svg.png",
+        "logo_url": "logohma.jpg",
         "varian": [
           {
             "nama_varian": "Private 1 Bulan",
@@ -1110,7 +1110,7 @@
       },
       {
         "nama_produk": "SurfShark VPN",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Surfshark_logo.svg/256px-Surfshark_logo.svg.png",
+        "logo_url": "logossvpn.png",
         "varian": [
           {
             "nama_varian": "Private 2 Bulan",
@@ -1122,7 +1122,7 @@
       },
       {
         "nama_produk": "Zoom Pro",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Zoom_logo.svg/256px-Zoom_logo.svg.png",
+        "logo_url": "logozoom.webp",
         "varian": [
           {
             "nama_varian": "Pro 7 Hari (100 Peserta)",
@@ -1141,6 +1141,7 @@
     ]
   }
 ]
+
 
 
 
