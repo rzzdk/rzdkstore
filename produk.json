@@ -4,7 +4,7 @@
     "produk": [
       {
         "nama_produk": "Bstation",
-        "logo_url": "logobs.jpg",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Bilibili_logo_en.svg/256px-Bilibili_logo_en.svg.png",
         "varian": [
           {
             "nama_varian": "Bstation Sharing 1 Bulan",
