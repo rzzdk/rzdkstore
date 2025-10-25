@@ -36,16 +36,14 @@
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             }
 
-            /* --- PERUBAHAN 2: Styling untuk Logo di Header --- */
             .header-logo {
-                width: 80px; /* Atur ukuran logo sesuai keinginan */
+                width: 80px;
                 height: 80px;
-                border-radius: 50%; /* Membuat logo bulat (opsional) */
-                object-fit: cover; /* Memastikan gambar mengisi area */
-                margin-bottom: 15px; /* Jarak antara logo dan judul */
-                border: 3px solid rgba(255, 255, 255, 0.2); /* Border halus (opsional) */
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 15px;
+                border: 3px solid rgba(255, 255, 255, 0.2);
             }
-            /* --- Akhir Perubahan 2 --- */
 
             header h1 {
                 color: #ffffff;
@@ -94,10 +92,12 @@
             /* Styling Pencarian */
             #search-container {
                 margin-bottom: 20px;
+                position: relative;
             }
             #search-bar {
                 width: 100%;
                 padding: 15px;
+                padding-right: 45px;
                 font-size: 1.1em;
                 border: 1px solid #ddd;
                 border-radius: 8px;
@@ -105,6 +105,30 @@
                     0 4px 6px -1px rgba(0, 0, 0, 0.05),
                     0 2px 4px -1px rgba(0, 0, 0, 0.03);
             }
+            /* PERBAIKAN 1: Sembunyikan tombol 'x' bawaan browser */
+            input[type="search"]::-webkit-search-cancel-button {
+                -webkit-appearance: none;
+                appearance: none;
+                display: none;
+            }
+
+            #search-clear-btn {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: none;
+                border: none;
+                font-size: 1.8em;
+                color: #888;
+                cursor: pointer;
+                padding: 0 5px;
+                line-height: 1;
+            }
+            #search-clear-btn:hover {
+                color: #333;
+            }
+
             #search-results {
                 background: #ffffff;
                 border-radius: 8px;
@@ -131,9 +155,10 @@
             }
 
             /* Styling Navigasi Tab */
+            /* PERBAIKAN 2: Kembalikan perilaku wrap di desktop */
             #tab-nav {
                 display: flex;
-                flex-wrap: wrap;
+                flex-wrap: wrap; /* <-- Ini default untuk desktop */
                 background: #ffffff;
                 border-radius: 8px;
                 box-shadow:
@@ -142,8 +167,10 @@
                 padding: 5px;
                 margin-bottom: 20px;
             }
+
             .tab-button {
                 flex-grow: 1;
+                flex-shrink: 0; /* Biarkan menyusut jika perlu di desktop */
                 padding: 12px 10px;
                 font-size: 1em;
                 text-align: center;
@@ -254,6 +281,7 @@
                 align-items: center;
                 padding: 20px;
                 border-bottom: 1px solid #f0f0f0;
+                transition: opacity 0.3s ease;
             }
             .varian-item:last-child {
                 border-bottom: none;
@@ -282,7 +310,8 @@
                 cursor: pointer;
                 transition:
                     background-color 0.3s ease,
-                    transform 0.2s ease;
+                    transform 0.2s ease,
+                    box-shadow 0.2s ease;
                 text-align: center;
                 margin-top: 10px;
                 flex-basis: 35%;
@@ -296,12 +325,37 @@
                 background-color: #218838;
                 transform: translateY(-2px);
             }
+            .btn-order.tersedia:active {
+                background-color: #1e7e34;
+                transform: translateY(0);
+                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+            }
+
+            /* PERBAIKAN 4: Tombol sekunder (untuk 'Batal' di modal) */
+            .btn-order.btn-secondary {
+                background-color: #e0e0e0;
+                color: #555;
+                cursor: pointer;
+            }
+            .btn-order.btn-secondary:hover {
+                background-color: #d5d5d5;
+                transform: translateY(-2px);
+            }
+            .btn-order.btn-secondary:active {
+                background-color: #ccc;
+                transform: translateY(0);
+                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
             .btn-order.stok-habis {
                 background-color: #e0e0e0;
                 color: #888;
                 cursor: not-allowed;
             }
 
+            .varian-item.stok-habis {
+                opacity: 0.7;
+            }
             .varian-item.stok-habis .varian-info {
                 color: #999;
             }
@@ -316,6 +370,129 @@
                 margin-left: 8px;
             }
 
+            /* --- Skeleton Loader --- */
+            #loader {
+                padding: 20px 0;
+            }
+            .skeleton-loader {
+                width: 100%;
+            }
+            .skeleton-card {
+                background: #fff;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+                box-shadow:
+                    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+                    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            }
+            .skeleton-header {
+                height: 30px;
+                width: 60%;
+                background-color: #e0e0e0;
+                border-radius: 6px;
+                margin-bottom: 20px;
+                animation: skeleton-pulse 1.5s ease-in-out infinite;
+            }
+            .skeleton-line {
+                height: 20px;
+                width: 90%;
+                background-color: #e0e0e0;
+                border-radius: 6px;
+                margin-bottom: 10px;
+                animation: skeleton-pulse 1.5s ease-in-out infinite;
+            }
+            .skeleton-line.short {
+                width: 70%;
+            }
+
+            @keyframes skeleton-pulse {
+                0% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.5;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            /* --- Styling Modal Konfirmasi --- */
+            #modal-container {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #modal-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                backdrop-filter: blur(5px);
+            }
+            #modal-content {
+                position: relative;
+                background: #fff;
+                padding: 25px;
+                border-radius: 8px;
+                width: 90%;
+                max-width: 400px;
+                text-align: center;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                animation: modal-fade-in 0.3s ease-out;
+            }
+            #modal-content h3 {
+                font-family: "Poppins", sans-serif;
+                font-size: 1.4em;
+                margin-bottom: 15px;
+            }
+            #modal-content p {
+                font-size: 1.1em;
+                margin-bottom: 5px;
+            }
+            #modal-varian-nama {
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                font-size: 1.2em;
+                color: #0056b3;
+                display: block;
+                margin-bottom: 15px;
+            }
+            .modal-question {
+                font-size: 1.1em;
+                font-weight: 500;
+                margin-bottom: 20px !important;
+            }
+            #modal-buttons {
+                display: flex;
+                justify-content: space-between;
+                gap: 15px;
+            }
+            #modal-buttons .btn-order {
+                flex-grow: 1;
+                margin-top: 0;
+            }
+            /* Animasi modal */
+            @keyframes modal-fade-in {
+                from {
+                    opacity: 0;
+                    transform: scale(0.9);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
             /* Footer */
             footer {
                 text-align: center;
@@ -324,27 +501,34 @@
                 color: #777;
                 border-top: 1px solid #eee;
             }
-            #loader {
-                text-align: center;
-                font-size: 1.2em;
-                padding: 40px;
-                color: #555;
-            }
 
             /* Media Query */
             @media (max-width: 600px) {
                 header h1 {
                     font-size: 1.6em;
                 }
-                /* --- PERUBAHAN 4: Perkecil logo header di HP --- */
                 .header-logo {
                     width: 60px;
                     height: 60px;
                     margin-bottom: 10px;
                 }
-                /* --- Akhir Perubahan 4 --- */
+
+                /* PERBAIKAN 2: Terapkan scroll horizontal HANYA di mobile */
+                #tab-nav {
+                    flex-wrap: nowrap; /* Cegah wrapping di mobile */
+                    overflow-x: auto; /* Aktifkan scroll horizontal */
+                    /* Sembunyikan scrollbar di mobile */
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+                #tab-nav::-webkit-scrollbar {
+                    display: none;
+                }
+
                 .tab-button {
                     font-size: 0.9em;
+                    padding: 12px 15px;
+                    flex-shrink: 0; /* Cegah tab menyusut di mobile */
                 }
                 .varian-item {
                     flex-direction: column;
@@ -390,17 +574,61 @@
                     id="search-bar"
                     placeholder="Cari produk atau varian..."
                 />
+                <button
+                    id="search-clear-btn"
+                    class="hidden"
+                    title="Hapus pencarian"
+                >
+                    &times;
+                </button>
             </div>
             <div id="search-results" class="hidden"></div>
             <div id="main-content">
                 <nav id="tab-nav"></nav>
                 <div id="tab-content-container">
                     <div id="loader">
-                        <p>Memuat katalog produk...</p>
+                        <div class="skeleton-loader">
+                            <div class="skeleton-card">
+                                <div class="skeleton-header"></div>
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line short"></div>
+                            </div>
+                            <div class="skeleton-card">
+                                <div class="skeleton-header"></div>
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line short"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
+
+        <div id="modal-container" class="hidden">
+            <div id="modal-overlay"></div>
+            <div id="modal-content">
+                <h3>Konfirmasi Pesanan</h3>
+                <p>Anda akan memesan:</p>
+                <strong id="modal-varian-nama">Nama Varian Disini</strong>
+                <p class="modal-question">Lanjutkan ke WhatsApp?</p>
+                <div id="modal-buttons">
+                    <button
+                        id="modal-btn-batal"
+                        class="btn-order btn-secondary"
+                    >
+                        Batal
+                    </button>
+                    <a
+                        id="modal-btn-lanjut"
+                        href="#"
+                        class="btn-order tersedia"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Lanjutkan</a
+                    >
+                </div>
+            </div>
+        </div>
 
         <footer>
             <p>&copy; 2024 RZDK Store. All rights reserved.</p>
@@ -408,7 +636,6 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", () => {
-                // ... (Kode JavaScript Anda dari sebelumnya, tidak perlu diubah) ...
                 // --- KONFIGURASI ---
                 const fileJsonProduk = "produk.json";
                 const nomorWaAdmin = "6282242118818";
@@ -434,6 +661,18 @@
                     document.getElementById("search-results");
                 const mainContent = document.getElementById("main-content");
 
+                // --- Selektor untuk elemen baru ---
+                const searchClearBtn =
+                    document.getElementById("search-clear-btn");
+                const modalContainer =
+                    document.getElementById("modal-container");
+                const modalVarianNama =
+                    document.getElementById("modal-varian-nama");
+                const modalBtnBatal =
+                    document.getElementById("modal-btn-batal");
+                const modalBtnLanjut =
+                    document.getElementById("modal-btn-lanjut");
+
                 // 1. Mengisi Info Kontak
                 infoContainer.innerHTML = `<p><strong>Contact Person:</strong> ${namaAdmin} (${nomorWaAdmin})</p>`;
 
@@ -447,8 +686,7 @@
                             );
 
                         dataKatalogMaster = await respons.json();
-
-                        tabContentContainer.innerHTML = "";
+                        tabContentContainer.innerHTML = ""; // Hapus loader
 
                         // 3. Memproses Kategori
                         dataKatalogMaster.forEach((kategori, index) => {
@@ -523,16 +761,21 @@
 
                 // 6. Helper untuk membuat HTML Varian
                 function buatVarianHTML(varian, namaProduk = null) {
-                    const itemVarian = document.createElement("div");
                     const hargaFormatted = formatter.format(varian.harga);
                     const stokTersedia = varian.stok;
 
                     let tombolOrderHTML = "";
+                    let itemClassName = "";
+
                     if (stokTersedia) {
-                        itemVarian.className = "varian-item";
-                        tombolOrderHTML = `<a href="${varian.link_wa}" class="btn-order tersedia" target="_blank" rel="noopener noreferrer">Order Sekarang</a>`;
+                        itemClassName = "varian-item";
+                        tombolOrderHTML = `<button
+                        class="btn-order tersedia btn-buka-modal"
+                        data-link-wa="${varian.link_wa}"
+                        data-nama-varian="${varian.nama_varian}"
+                    >Order Sekarang</button>`;
                     } else {
-                        itemVarian.className = "varian-item stok-habis";
+                        itemClassName = "varian-item stok-habis";
                         tombolOrderHTML = `<a class="btn-order stok-habis" aria-disabled="true">Stok Habis</a>`;
                     }
 
@@ -546,7 +789,7 @@
                         wrapper.innerHTML = infoProdukAsal;
 
                         const itemVarianInner = document.createElement("div");
-                        itemVarianInner.className = itemVarian.className;
+                        itemVarianInner.className = itemClassName;
                         itemVarianInner.innerHTML = `
                         <div class="varian-info">
                             <span class="varian-nama">${varian.nama_varian}</span>
@@ -557,16 +800,15 @@
                         wrapper.appendChild(itemVarianInner);
                         return wrapper;
                     } else {
-                        itemVarian.innerHTML = `
+                        const li = document.createElement("li");
+                        li.className = itemClassName;
+                        li.innerHTML = `
                         <div class="varian-info">
                             <span class="varian-nama">${varian.nama_varian}</span>
                             <span class="varian-harga">${hargaFormatted}</span>
                         </div>
                         ${tombolOrderHTML}
                     `;
-                        const li = document.createElement("li");
-                        li.innerHTML = itemVarian.innerHTML;
-                        li.className = itemVarian.className;
                         return li;
                     }
                 }
@@ -578,12 +820,24 @@
                     if (searchTerm.length > 0) {
                         mainContent.classList.add("hidden");
                         searchResultsContainer.classList.remove("hidden");
+                        searchClearBtn.classList.remove("hidden");
                         renderPencarian(searchTerm);
                     } else {
                         mainContent.classList.remove("hidden");
                         searchResultsContainer.classList.add("hidden");
                         searchResultsContainer.innerHTML = "";
+                        searchClearBtn.classList.add("hidden");
                     }
+                });
+
+                // Event listener untuk tombol clear search
+                searchClearBtn.addEventListener("click", () => {
+                    searchBar.value = "";
+                    mainContent.classList.remove("hidden");
+                    searchResultsContainer.classList.add("hidden");
+                    searchResultsContainer.innerHTML = "";
+                    searchClearBtn.classList.add("hidden");
+                    searchBar.focus();
                 });
 
                 // 8. Fungsi untuk Render Hasil Pencarian
@@ -682,6 +936,53 @@
                         ).textContent = "×";
                     }
                 });
+
+                // --- Logika Modal Konfirmasi ---
+                function bukaModal(namaVarian, linkWa) {
+                    modalVarianNama.textContent = namaVarian;
+                    modalBtnLanjut.href = linkWa;
+                    modalContainer.classList.remove("hidden");
+
+                    // Fokuskan tombol 'Lanjutkan' untuk aksesibilitas
+                    modalBtnLanjut.focus();
+                }
+
+                function tutupModal() {
+                    modalContainer.classList.add("hidden");
+                }
+
+                modalBtnBatal.addEventListener("click", tutupModal);
+                document
+                    .getElementById("modal-overlay")
+                    .addEventListener("click", tutupModal);
+
+                modalBtnLanjut.addEventListener("click", () => {
+                    setTimeout(tutupModal, 300); // Tutup modal setelah link diklik
+                });
+
+                // Tutup modal dengan tombol 'Escape'
+                document.addEventListener("keydown", (e) => {
+                    if (
+                        e.key === "Escape" &&
+                        !modalContainer.classList.contains("hidden")
+                    ) {
+                        tutupModal();
+                    }
+                });
+
+                // Event listener delegasi untuk tombol "Order Sekarang"
+                document
+                    .querySelector("main")
+                    .addEventListener("click", (e) => {
+                        const targetButton =
+                            e.target.closest(".btn-buka-modal");
+                        if (targetButton) {
+                            e.preventDefault();
+                            const namaVarian = targetButton.dataset.namaVarian;
+                            const linkWa = targetButton.dataset.linkWa;
+                            bukaModal(namaVarian, linkWa);
+                        }
+                    });
 
                 // 11. Panggil fungsi utama untuk memulai
                 muatProduk();
