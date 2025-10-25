@@ -519,6 +519,19 @@
                     overflow-x: auto;
                     -ms-overflow-style: none;
                     scrollbar-width: none;
+
+                    /* --- MODIFIKASI POIN 2: Indikator Gulir --- */
+                    -webkit-mask-image: linear-gradient(
+                        to right,
+                        black 95%,
+                        transparent 100%
+                    );
+                    mask-image: linear-gradient(
+                        to right,
+                        black 95%,
+                        transparent 100%
+                    );
+                    /* --- AKHIR MODIFIKASI POIN 2 --- */
                 }
                 #tab-nav::-webkit-scrollbar {
                     display: none;
@@ -915,24 +928,30 @@
                                 accordion.nextElementSibling.classList.remove(
                                     "active",
                                 );
+                                /* MODIFIKASI POIN 4: Hapus perubahan teks ikon
                                 accordion.querySelector(
                                     ".accordion-icon",
                                 ).textContent = "+";
+                                */
                             }
                         });
 
                     if (isAlreadyActive) {
                         targetAccordion.classList.remove("active");
                         varianList.classList.remove("active");
+                        /* MODIFIKASI POIN 4: Hapus perubahan teks ikon
                         targetAccordion.querySelector(
                             ".accordion-icon",
                         ).textContent = "+";
+                        */
                     } else {
                         targetAccordion.classList.add("active");
                         varianList.classList.add("active");
+                        /* MODIFIKASI POIN 4: Hapus perubahan teks ikon
                         targetAccordion.querySelector(
                             ".accordion-icon",
                         ).textContent = "×";
+                        */
                     }
                 });
 
