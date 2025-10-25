@@ -4,7 +4,7 @@
     "produk": [
       {
         "nama_produk": "Bstation",
-        "logo_url": "logobs.png",
+        "logo_url": "logobs.jpeg",
         "varian": [
           {
             "nama_varian": "Bstation Sharing 1 Bulan",
@@ -154,7 +154,7 @@
       },
       {
         "nama_produk": "Loklok",
-        "logo_url": "https://i.playboard.app/p/a1a15a77f9040a6b7d72b0568019056a/default.jpg",
+        "logo_url": "logoloklok.webp",
         "varian": [
           {
             "nama_varian": "Loklok Sharing Basic 1 Bulan",
@@ -256,7 +256,7 @@
       },
       {
         "nama_produk": "Prime Video",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Prime_Video_logo.svg/256px-Prime_Video_logo.svg.png",
+        "logo_url": "logoprimevid.webp",
         "varian": [
           {
             "nama_varian": "Prime Video Sharing 1 Bulan",
@@ -274,7 +274,7 @@
       },
       {
         "nama_produk": "RCTI+ (Ultimate)",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RCTI%2B_logo_2020.svg/256px-RCTI%2B_logo_2020.svg.png",
+        "logo_url": "logorctip.webp",
         "varian": [
           {
             "nama_varian": "RCTI+ Ultimate Sharing 1 Bulan",
@@ -292,7 +292,7 @@
       },
       {
         "nama_produk": "Vidio",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Vidio_logo_2022.svg/256px-Vidio_logo_2022.svg.png",
+        "logo_url": "logovidio.png",
         "varian": [
           {
             "nama_varian": "Vidio Sharing 1 Bulan (All Device)",
@@ -334,7 +334,7 @@
       },
       {
         "nama_produk": "VISION+",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Logo_Vision%2B.svg/256px-Logo_Vision%2B.svg.png",
+        "logo_url": "logovisionplus.png",
         "varian": [
           {
             "nama_varian": "VISION+ Sharing 1 Bulan",
@@ -376,7 +376,7 @@
       },
       {
         "nama_produk": "Viu",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Viu_logo_2021.svg/256px-Viu_logo_2021.svg.png",
+        "logo_url": "logoviu.jpg",
         "varian": [
           {
             "nama_varian": "Viu Sharing Viu+ 1 Bulan",
@@ -424,7 +424,7 @@
       },
       {
         "nama_produk": "We TV",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/WeTV_logo.svg/256px-WeTV_logo.svg.png",
+        "logo_url": "logowetv.webp",
         "varian": [
           {
             "nama_varian": "We TV Sharing (3 User) 1 Bulan",
@@ -448,7 +448,7 @@
       },
       {
         "nama_produk": "Youtube Premium",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/YouTube_Premium_logo.svg/256px-YouTube_Premium_logo.svg.png",
+        "logo_url": "logoyt.png",
         "varian": [
           {
             "nama_varian": "Youtube Premium Individual Plan 1 Bulan",
@@ -1141,4 +1141,5 @@
     ]
   }
 ]
+
 
