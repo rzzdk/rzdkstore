@@ -4,6 +4,7 @@
     "produk": [
       {
         "nama_produk": "Bstation",
+        "logo_url": "logobs.jpg",
         "varian": [
           {
             "nama_varian": "Bstation Sharing 1 Bulan",
@@ -33,6 +34,7 @@
       },
       {
         "nama_produk": "Disney+",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disney%2B_logo.svg/256px-Disney%2B_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Disney+ Sharing (3 User) 1 Bulan",
@@ -68,6 +70,7 @@
       },
       {
         "nama_produk": "Dramabox",
+        "logo_url": "https://i.playboard.app/p/2773d1de111c19b48c0f5f7f3295c697/default.jpg",
         "varian": [
           {
             "nama_varian": "Dramabox Sharing 1 Bulan",
@@ -97,6 +100,7 @@
       },
       {
         "nama_produk": "HBO Max (Ultimate Plan)",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/HBO_Max_Logo.svg/256px-HBO_Max_Logo.svg.png",
         "varian": [
           {
             "nama_varian": "HBO Max (Ultimate Plan) Sharing 1 Bulan",
@@ -114,6 +118,7 @@
       },
       {
         "nama_produk": "IQIYI",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/IQIYI_logo.svg/256px-IQIYI_logo.svg.png",
         "varian": [
           {
             "nama_varian": "IQIYI Sharing 1 Bulan (Standard)",
@@ -149,6 +154,7 @@
       },
       {
         "nama_produk": "Loklok",
+        "logo_url": "https://i.playboard.app/p/a1a15a77f9040a6b7d72b0568019056a/default.jpg",
         "varian": [
           {
             "nama_varian": "Loklok Sharing Basic 1 Bulan",
@@ -172,6 +178,7 @@
       },
       {
         "nama_produk": "Netflix",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/128px-Netflix_2015_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing (1 Profile, 1 User) 1 Hari",
@@ -249,6 +256,7 @@
       },
       {
         "nama_produk": "Prime Video",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Prime_Video_logo.svg/256px-Prime_Video_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Prime Video Sharing 1 Bulan",
@@ -266,6 +274,7 @@
       },
       {
         "nama_produk": "RCTI+ (Ultimate)",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RCTI%2B_logo_2020.svg/256px-RCTI%2B_logo_2020.svg.png",
         "varian": [
           {
             "nama_varian": "RCTI+ Ultimate Sharing 1 Bulan",
@@ -283,6 +292,7 @@
       },
       {
         "nama_produk": "Vidio",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Vidio_logo_2022.svg/256px-Vidio_logo_2022.svg.png",
         "varian": [
           {
             "nama_varian": "Vidio Sharing 1 Bulan (All Device)",
@@ -324,6 +334,7 @@
       },
       {
         "nama_produk": "VISION+",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Logo_Vision%2B.svg/256px-Logo_Vision%2B.svg.png",
         "varian": [
           {
             "nama_varian": "VISION+ Sharing 1 Bulan",
@@ -365,6 +376,7 @@
       },
       {
         "nama_produk": "Viu",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Viu_logo_2021.svg/256px-Viu_logo_2021.svg.png",
         "varian": [
           {
             "nama_varian": "Viu Sharing Viu+ 1 Bulan",
@@ -412,6 +424,7 @@
       },
       {
         "nama_produk": "We TV",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/WeTV_logo.svg/256px-WeTV_logo.svg.png",
         "varian": [
           {
             "nama_varian": "We TV Sharing (3 User) 1 Bulan",
@@ -435,6 +448,7 @@
       },
       {
         "nama_produk": "Youtube Premium",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/YouTube_Premium_logo.svg/256px-YouTube_Premium_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Youtube Premium Individual Plan 1 Bulan",
@@ -493,6 +507,7 @@
     "produk": [
       {
         "nama_produk": "Apple Music",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/256px-Apple_Music_icon.svg.png",
         "varian": [
           {
             "nama_varian": "Individual Plan 1 Bulan (Android Only)",
@@ -534,6 +549,7 @@
       },
       {
         "nama_produk": "Spotify Premium",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/256px-Spotify_logo_without_text.svg.png",
         "varian": [
           {
             "nama_varian": "Individual Plan 1 Bulan",
@@ -574,6 +590,7 @@
     "produk": [
       {
         "nama_produk": "Alight Motion",
+        "logo_url": "https://i.playboard.app/p/A-s-l-g_L1fMblxGv1eW0J-J-g-CS-t-g-S-c-s/default.jpg",
         "varian": [
           {
             "nama_varian": "Sharing 1 Tahun",
@@ -603,6 +620,7 @@
       },
       {
         "nama_produk": "Canva Edu",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Canva_icon_2021.svg/256px-Canva_icon_2021.svg.png",
         "varian": [
           {
             "nama_varian": "Member Lifetime",
@@ -620,6 +638,7 @@
       },
       {
         "nama_produk": "Canva Pro",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Canva_icon_2021.svg/256px-Canva_icon_2021.svg.png",
         "varian": [
           {
             "nama_varian": "Member (Invite) 1 Bulan",
@@ -649,6 +668,7 @@
       },
       {
         "nama_produk": "Capcut Pro",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/CapCut_logo.svg/256px-CapCut_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing (3 User) 1 Hari",
@@ -714,6 +734,7 @@
       },
       {
         "nama_produk": "Ibis Paint",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Ibis_Paint_X_Logo.svg/256px-Ibis_Paint_X_Logo.svg.png",
         "varian": [
           {
             "nama_varian": "1 Tahun (Android Only)",
@@ -725,6 +746,7 @@
       },
       {
         "nama_produk": "Lightroom",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Adobe_Photoshop_Lightroom_CC_logo.svg/256px-Adobe_Photoshop_Lightroom_CC_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Tahun",
@@ -736,6 +758,7 @@
       },
       {
         "nama_produk": "Meitu",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Meitu_logo.svg/256px-Meitu_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing 7 Hari",
@@ -759,6 +782,7 @@
       },
       {
         "nama_produk": "Pics Art Pro",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Picsart_logo.svg/256px-Picsart_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Bulan",
@@ -788,6 +812,7 @@
       },
       {
         "nama_produk": "Remini",
+        "logo_url": "https://i.playboard.app/p/co-s-l-g_L1fMblxGv1eW0J-J-g-CS-t-g-S-c-s/default.jpg",
         "varian": [
           {
             "nama_varian": "Sharing 1 Bulan (Web Only)",
@@ -805,6 +830,7 @@
       },
       {
         "nama_produk": "VSCO",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/VSCO_logo.svg/256px-VSCO_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Tahun",
@@ -816,6 +842,7 @@
       },
       {
         "nama_produk": "Wink (Android Only)",
+        "logo_url": "https://i.playboard.app/p/43635740a3770337f7a01a3014a93a8e/default.jpg",
         "varian": [
           {
             "nama_varian": "Private 7 Hari",
@@ -838,6 +865,7 @@
     "produk": [
       {
         "nama_produk": "BlackBox AI",
+        "logo_url": "https://assets-global.website-files.com/62e08a0e03e5f32b6e08f208/62e08a0e03e5f3140b08f24a_Blackbox%20Logo.svg",
         "varian": [
           {
             "nama_varian": "Private 3 Bulan",
@@ -849,6 +877,7 @@
       },
       {
         "nama_produk": "ChatGPT Plus",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/256px-ChatGPT_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Minggu",
@@ -878,6 +907,7 @@
       },
       {
         "nama_produk": "Deepl Pro",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/DeepL_logo.svg/256px-DeepL_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Invite Team 1 Bulan",
@@ -895,6 +925,7 @@
       },
       {
         "nama_produk": "Gemini Pro",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Gemini_logo.svg/256px-Google_Gemini_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Bulan",
@@ -918,6 +949,7 @@
       },
       {
         "nama_produk": "Grammarly",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Grammarly_logo.svg/256px-Grammarly_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing Lifetime",
@@ -929,6 +961,7 @@
       },
       {
         "nama_produk": "Perplexity Pro",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Perplexity_AI_logo.svg/256px-Perplexity_AI_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing (5 User) 1 Bulan",
@@ -946,6 +979,7 @@
       },
       {
         "nama_produk": "Quillbot",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/QuillBot_logo.svg/256px-QuillBot_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Bulan",
@@ -969,6 +1003,7 @@
       },
       {
         "nama_produk": "Scribd Premium",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Scribd_logo.svg/256px-Scribd_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Bulan",
@@ -998,6 +1033,7 @@
       },
       {
         "nama_produk": "Wattpad Premium",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Wattpad_logo.svg/256px-Wattpad_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Bulan",
@@ -1014,6 +1050,7 @@
     "produk": [
       {
         "nama_produk": "Apple iCloud",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/ICloud_logo.svg/256px-ICloud_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Kode Redeem 50 GB (3 Bulan)",
@@ -1025,6 +1062,7 @@
       },
       {
         "nama_produk": "CamScanner",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/CamScanner_logo.svg/256px-CamScanner_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Tahun",
@@ -1036,6 +1074,7 @@
       },
       {
         "nama_produk": "Express VPN",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/ExpressVPN_logo.svg/256px-ExpressVPN_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Private 1 Bulan",
@@ -1047,6 +1086,7 @@
       },
       {
         "nama_produk": "Getcontact Premium",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Getcontact_logo.svg/256px-Getcontact_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Private 1 Bulan",
@@ -1058,6 +1098,7 @@
       },
       {
         "nama_produk": "HMA VPN",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/HMA%21_logo.svg/256px-HMA%21_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Private 1 Bulan",
@@ -1069,6 +1110,7 @@
       },
       {
         "nama_produk": "SurfShark VPN",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Surfshark_logo.svg/256px-Surfshark_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Private 2 Bulan",
@@ -1080,6 +1122,7 @@
       },
       {
         "nama_produk": "Zoom Pro",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Zoom_logo.svg/256px-Zoom_logo.svg.png",
         "varian": [
           {
             "nama_varian": "Pro 7 Hari (100 Peserta)",
