@@ -590,7 +590,7 @@
     "produk": [
       {
         "nama_produk": "Alight Motion",
-        "logo_url": "https://i.playboard.app/p/A-s-l-g_L1fMblxGv1eW0J-J-g-CS-t-g-S-c-s/default.jpg",
+        "logo_url": "logoam.webp",
         "varian": [
           {
             "nama_varian": "Sharing 1 Tahun",
@@ -620,7 +620,7 @@
       },
       {
         "nama_produk": "Canva Edu",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Canva_icon_2021.svg/256px-Canva_icon_2021.svg.png",
+        "logo_url": "logocanva.png",
         "varian": [
           {
             "nama_varian": "Member Lifetime",
@@ -638,7 +638,7 @@
       },
       {
         "nama_produk": "Canva Pro",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Canva_icon_2021.svg/256px-Canva_icon_2021.svg.png",
+        "logo_url": "logocanva.png",
         "varian": [
           {
             "nama_varian": "Member (Invite) 1 Bulan",
@@ -668,7 +668,7 @@
       },
       {
         "nama_produk": "Capcut Pro",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/CapCut_logo.svg/256px-CapCut_logo.svg.png",
+        "logo_url": "logocapcut.png",
         "varian": [
           {
             "nama_varian": "Sharing (3 User) 1 Hari",
@@ -734,7 +734,7 @@
       },
       {
         "nama_produk": "Ibis Paint",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Ibis_Paint_X_Logo.svg/256px-Ibis_Paint_X_Logo.svg.png",
+        "logo_url": "logoibis.jpg",
         "varian": [
           {
             "nama_varian": "1 Tahun (Android Only)",
@@ -746,7 +746,7 @@
       },
       {
         "nama_produk": "Lightroom",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Adobe_Photoshop_Lightroom_CC_logo.svg/256px-Adobe_Photoshop_Lightroom_CC_logo.svg.png",
+        "logo_url": "logolr.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Tahun",
@@ -758,7 +758,7 @@
       },
       {
         "nama_produk": "Meitu",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Meitu_logo.svg/256px-Meitu_logo.svg.png",
+        "logo_url": "logomeitu.jpeg",
         "varian": [
           {
             "nama_varian": "Sharing 7 Hari",
@@ -782,7 +782,7 @@
       },
       {
         "nama_produk": "Pics Art Pro",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Picsart_logo.svg/256px-Picsart_logo.svg.png",
+        "logo_url": "logopicsart.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Bulan",
@@ -812,7 +812,7 @@
       },
       {
         "nama_produk": "Remini",
-        "logo_url": "https://i.playboard.app/p/co-s-l-g_L1fMblxGv1eW0J-J-g-CS-t-g-S-c-s/default.jpg",
+        "logo_url": "logoremini.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Bulan (Web Only)",
@@ -830,7 +830,7 @@
       },
       {
         "nama_produk": "VSCO",
-        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/VSCO_logo.svg/256px-VSCO_logo.svg.png",
+        "logo_url": "logovsco.png",
         "varian": [
           {
             "nama_varian": "Sharing 1 Tahun",
@@ -842,7 +842,7 @@
       },
       {
         "nama_produk": "Wink (Android Only)",
-        "logo_url": "https://i.playboard.app/p/43635740a3770337f7a01a3014a93a8e/default.jpg",
+        "logo_url": "logowink.jpg",
         "varian": [
           {
             "nama_varian": "Private 7 Hari",
@@ -1141,5 +1141,6 @@
     ]
   }
 ]
+
 
 
