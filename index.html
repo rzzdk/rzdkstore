@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalog RZDK Store</title>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         /* Reset dan Font Dasar */
         * {
@@ -13,29 +17,48 @@
             padding: 0;
         }
 
+        /* --- PERUBAHAN 2: Font Body & Latar Belakang (dari indexpayment.html) --- */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f4f7f6;
+            font-family: 'Inter', sans-serif; /* Menggunakan font Inter */
+            background-color: #f8f9fa; /* Latar belakang dari indexpayment */
             color: #333;
             line-height: 1.6;
         }
 
-        /* Header */
+        /* --- PERUBAHAN 3: Header (Gradient & Font dari indexpayment.html) --- */
         header {
-            background-color: #ffffff;
+            /* Menggunakan gradient brand Anda */
+            background: linear-gradient(135deg, #171717, #01a35a);
+            color: #ffffff; /* Teks jadi putih agar kontras */
             padding: 20px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border-bottom: 3px solid #007bff;
+            /* border-bottom dihapus karena sudah ada gradient */
         }
 
         header h1 {
-            color: #007bff;
+            color: #ffffff; /* Teks header putih */
             font-size: 2em;
             margin: 0;
         }
 
-        /* Info Kontak */
+        /* --- PERUBAHAN 4: Terapkan Font 'Poppins' untuk Judul & Tombol --- */
+        header h1, .tab-button, .produk-judul-accordion, .btn-order, #search-bar {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        /* Haluskan font-weight untuk varian (menggunakan Inter) */
+        .varian-nama {
+            font-weight: 500;
+        }
+        .varian-harga {
+            font-weight: 600;
+        }
+        /* --- Akhir Perubahan Font --- */
+        
+
+        /* Info Kontak (Background disamakan dengan payment page) */
         #info {
             width: 90%;
             max-width: 800px;
@@ -58,7 +81,7 @@
             margin: 20px auto;
         }
 
-        /* --- STYLING BARU: PENCARIAN --- */
+        /* --- PERUBAHAN 5: Kedalaman Visual (Shadow) untuk Search & Tab --- */
         #search-container {
             margin-bottom: 20px;
         }
@@ -69,34 +92,25 @@
             font-size: 1.1em;
             border: 1px solid #ddd;
             border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            /* Menggunakan shadow yang lebih halus */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
-
+        
         #search-results {
             background: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             margin-bottom: 20px;
             overflow: hidden;
         }
         
-        /* Item hasil pencarian akan menggunakan style .varian-item */
-        /* Kita tambahkan style khusus untuk judul produk di hasil pencarian */
-        .search-result-item {
-            border-bottom: 1px solid #f0f0f0;
-        }
-
         .search-result-item .produk-asal {
             font-size: 0.9em;
             font-weight: 600;
-            color: #007bff;
+            color: #171717; /* --- PERUBAHAN 6: Warna Brand Primer --- */
             padding: 10px 20px 0 20px;
         }
         
-        .search-result-item .varian-item {
-            border-bottom: none; /* Hapus border ganda */
-        }
-
         #search-no-results {
             padding: 20px;
             text-align: center;
@@ -104,29 +118,27 @@
             font-size: 1.1em;
         }
         
-        /* Utility class untuk menyembunyikan elemen */
         .hidden {
             display: none !important;
         }
-        /* --- AKHIR STYLING PENCARIAN --- */
 
-
-        /* Navigasi Tab */
         #tab-nav {
             display: flex;
             flex-wrap: wrap;
             background: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            /* Menggunakan shadow yang lebih halus */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             padding: 5px;
             margin-bottom: 20px;
         }
+        /* --- Akhir Perubahan Shadow --- */
+
 
         .tab-button {
             flex-grow: 1;
             padding: 12px 10px;
             font-size: 1em;
-            font-weight: 600;
             text-align: center;
             border: none;
             background: none;
@@ -137,24 +149,35 @@
         }
 
         .tab-button:hover { background-color: #f0f0f0; }
+        
+        /* --- PERUBAHAN 7: Warna Brand Primer untuk Tab Aktif --- */
         .tab-button.active {
-            background-color: #007bff;
+            background-color: #171717; /* Warna brand Anda */
             color: white;
-            box-shadow: 0 2px 4px rgba(0,123,255,0.3);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         /* Konten Panel Tab */
         .tab-panel { display: none; }
         .tab-panel.active { display: block; }
 
-        /* Kartu Produk (Accordion) */
+        /* --- PERUBAHAN 8: Kedalaman Visual (Shadow) untuk Kartu Produk --- */
         .produk-card {
             background: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            /* Shadow lebih halus + transisi */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             margin-bottom: 20px;
             overflow: hidden;
+            transition: box-shadow 0.3s ease;
         }
+        
+        /* Efek hover untuk kedalaman (seperti di indexpayment) */
+        .produk-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+        }
+        /* --- Akhir Perubahan Shadow Kartu --- */
+
 
         .produk-judul-accordion {
             display: flex;
@@ -162,7 +185,6 @@
             align-items: center;
             width: 100%;
             font-size: 1.4em;
-            font-weight: 600;
             background: #fdfdfd;
             color: #333;
             padding: 15px 20px;
@@ -173,10 +195,12 @@
         }
         
         .produk-judul-accordion:hover { background-color: #f9f9f9; }
+        
+        /* --- PERUBAHAN 9: Warna Brand Primer untuk Accordion Aktif --- */
         .produk-judul-accordion.active {
-            background: #007bff;
+            background: #171717; /* Warna brand Anda */
             color: white;
-            border-bottom: 1px solid #007bff;
+            border-bottom: 1px solid #171717;
         }
 
         .accordion-icon {
@@ -219,13 +243,11 @@
 
         .varian-nama {
             font-size: 1.1em;
-            font-weight: 500;
             display: block;
         }
 
         .varian-harga {
             font-size: 1.2em;
-            font-weight: 600;
             color: #28a745;
             margin-top: 5px;
         }
@@ -234,7 +256,6 @@
         .btn-order {
             padding: 10px 18px;
             font-size: 1em;
-            font-weight: 600;
             text-decoration: none;
             border: none;
             border-radius: 5px;
@@ -306,7 +327,6 @@
         
         <div id="main-content">
             <nav id="tab-nav"></nav>
-            
             <div id="tab-content-container">
                 <div id="loader">
                     <p>Memuat katalog produk...</p>
@@ -326,14 +346,12 @@
             const fileJsonProduk = 'produk.json';
             const nomorWaAdmin = '6282242118818';
             const namaAdmin = 'Admin RZDK Store';
-            // --- AKHIR KONFIGURASI ---
 
-            // --- VARIABEL GLOBAL (dalam scope) ---
-            let dataKatalogMaster = []; // Menyimpan data JSON untuk pencarian
+            // --- VARIABEL GLOBAL ---
+            let dataKatalogMaster = []; 
             const formatter = new Intl.NumberFormat('id-ID', {
                 style: 'currency', currency: 'IDR', minimumFractionDigits: 0
             });
-            // --- AKHIR VARIABEL ---
 
             // --- Selektor Elemen ---
             const infoContainer = document.getElementById('info');
@@ -343,7 +361,6 @@
             const searchBar = document.getElementById('search-bar');
             const searchResultsContainer = document.getElementById('search-results');
             const mainContent = document.getElementById('main-content');
-            // --- Akhir Selektor ---
 
 
             // 1. Mengisi Info Kontak
@@ -355,12 +372,11 @@
                     const respons = await fetch(fileJsonProduk);
                     if (!respons.ok) throw new Error(`Gagal memuat file: ${respons.statusText}`);
                     
-                    dataKatalogMaster = await respons.json(); // Simpan data di variabel master
+                    dataKatalogMaster = await respons.json(); 
 
-                    // Bersihkan loader
                     tabContentContainer.innerHTML = ''; 
 
-                    // 3. Memproses setiap Kategori (untuk buat Tab dan Panel)
+                    // 3. Memproses Kategori
                     dataKatalogMaster.forEach((kategori, index) => {
                         const kategoriId = `kategori-${index}`;
                         const isActive = (index === 0);
@@ -377,7 +393,7 @@
                         tabPanel.className = `tab-panel ${isActive ? 'active' : ''}`;
                         tabPanel.id = kategoriId;
 
-                        // 4. Memproses setiap Produk dalam Kategori
+                        // 4. Memproses Produk
                         kategori.produk.forEach(produk => {
                             const cardProduk = document.createElement('div');
                             cardProduk.className = 'produk-card';
@@ -392,9 +408,9 @@
                             const listVarian = document.createElement('ul');
                             listVarian.className = 'varian-list';
 
-                            // 5. Memproses setiap Varian dalam Produk
+                            // 5. Memproses Varian
                             produk.varian.forEach(varian => {
-                                listVarian.appendChild(buatVarianHTML(varian)); // Panggil fungsi helper
+                                listVarian.appendChild(buatVarianHTML(varian)); 
                             }); 
 
                             cardProduk.appendChild(listVarian);
@@ -408,13 +424,12 @@
                     console.error('Error memuat katalog:', error);
                     tabContentContainer.innerHTML = `<p style="text-align: center; color: red;"><strong>Oops!</strong> Gagal memuat katalog.</p>`;
                 }
-            } // Akhir fungsi muatProduk
+            } 
             
             
-            // 6. LOGIKA BARU: Helper untuk membuat HTML Varian
-            // Ini di-refactor agar bisa dipakai oleh 'muatProduk' dan 'renderPencarian'
+            // 6. Helper untuk membuat HTML Varian
             function buatVarianHTML(varian, namaProduk = null) {
-                const itemVarian = document.createElement('div'); // Diubah dari <li> jadi <div>
+                const itemVarian = document.createElement('div'); 
                 const hargaFormatted = formatter.format(varian.harga);
                 const stokTersedia = varian.stok;
 
@@ -427,18 +442,15 @@
                     tombolOrderHTML = `<a class="btn-order stok-habis" aria-disabled="true">Stok Habis</a>`;
                 }
 
-                // Jika namaProduk ada (dari pencarian), tambahkan
                 const infoProdukAsal = namaProduk ? `<div class="produk-asal">dari: ${namaProduk}</div>` : '';
                 
-                // Jika dari pencarian, itemVarian butuh wrapper
                 if (namaProduk) {
                     const wrapper = document.createElement('div');
                     wrapper.className = 'search-result-item';
-                    wrapper.innerHTML = infoProdukAsal; // Taruh judul produk di luar .varian-item
+                    wrapper.innerHTML = infoProdukAsal; 
                     
-                    // Buat .varian-item nya
                     const itemVarianInner = document.createElement('div');
-                    itemVarianInner.className = itemVarian.className; // Salin kelas
+                    itemVarianInner.className = itemVarian.className; 
                     itemVarianInner.innerHTML = `
                         <div class="varian-info">
                             <span class="varian-nama">${varian.nama_varian}</span>
@@ -447,10 +459,9 @@
                         ${tombolOrderHTML}
                     `;
                     wrapper.appendChild(itemVarianInner);
-                    return wrapper; // Kembalikan wrapper lengkap
+                    return wrapper; 
                     
                 } else {
-                    // Jika BUKAN dari pencarian (dari muatProduk biasa)
                     itemVarian.innerHTML = `
                         <div class="varian-info">
                             <span class="varian-nama">${varian.nama_varian}</span>
@@ -458,7 +469,6 @@
                         </div>
                         ${tombolOrderHTML}
                     `;
-                    // Ubah jadi <li> seperti aslinya
                     const li = document.createElement('li');
                     li.innerHTML = itemVarian.innerHTML;
                     li.className = itemVarian.className;
@@ -467,27 +477,25 @@
             }
 
 
-            // 7. LOGIKA BARU: Event Listener untuk Pencarian
+            // 7. Event Listener untuk Pencarian
             searchBar.addEventListener('input', (e) => {
                 const searchTerm = e.target.value.trim().toLowerCase();
 
                 if (searchTerm.length > 0) {
-                    // Sembunyikan konten utama, tampilkan hasil pencarian
                     mainContent.classList.add('hidden');
                     searchResultsContainer.classList.remove('hidden');
                     renderPencarian(searchTerm);
                 } else {
-                    // Tampilkan konten utama, sembunyikan hasil pencarian
                     mainContent.classList.remove('hidden');
                     searchResultsContainer.classList.add('hidden');
-                    searchResultsContainer.innerHTML = ''; // Kosongkan hasil
+                    searchResultsContainer.innerHTML = ''; 
                 }
             });
 
 
-            // 8. LOGIKA BARU: Fungsi untuk Render Hasil Pencarian
+            // 8. Fungsi untuk Render Hasil Pencarian
             function renderPencarian(searchTerm) {
-                searchResultsContainer.innerHTML = ''; // Bersihkan hasil sebelumnya
+                searchResultsContainer.innerHTML = ''; 
                 let foundCount = 0;
 
                 dataKatalogMaster.forEach(kategori => {
@@ -497,9 +505,7 @@
                         produk.varian.forEach(varian => {
                             const namaVarianLower = varian.nama_varian.toLowerCase();
                             
-                            // Cek apakah search term cocok dengan NAMA PRODUK atau NAMA VARIAN
                             if (namaProdukLower.includes(searchTerm) || namaVarianLower.includes(searchTerm)) {
-                                // Buat HTML varian dan tambahkan nama produknya
                                 const varianHTML = buatVarianHTML(varian, produk.nama_produk);
                                 searchResultsContainer.appendChild(varianHTML);
                                 foundCount++;
@@ -508,14 +514,13 @@
                     });
                 });
 
-                // Jika tidak ada hasil
                 if (foundCount === 0) {
                     searchResultsContainer.innerHTML = `<div id="search-no-results">Tidak ada produk yang cocok untuk "${searchTerm}"</div>`;
                 }
             }
 
 
-            // 9. Event Listener untuk Tab (Tidak berubah)
+            // 9. Event Listener untuk Tab
             tabNav.addEventListener('click', (e) => {
                 const targetButton = e.target.closest('.tab-button');
                 if (!targetButton) return;
@@ -529,7 +534,7 @@
             });
 
 
-            // 10. Event Listener untuk Accordion (Tidak berubah)
+            // 10. Event Listener untuk Accordion
             tabContentContainer.addEventListener('click', (e) => {
                 const targetAccordion = e.target.closest('.produk-judul-accordion');
                 if (!targetAccordion) return;
