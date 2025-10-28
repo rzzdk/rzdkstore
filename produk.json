@@ -189,67 +189,67 @@
           {
             "nama_varian": "Sharing (1 Profile, 1 User) 2 Hari",
             "harga": 5000,
-            "stok": true,
+            "stok": false,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%201%20User)%202%20Hari%20nya%20ready?"
           },
           {
             "nama_varian": "Sharing (1 Profile, 1 User) 3 Hari",
             "harga": 7000,
-            "stok": true,
+            "stok": false,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%201%20User)%203%20Hari%20nya%20ready?"
           },
           {
             "nama_varian": "Sharing (1 Profile, 1 User) 7 Hari",
             "harga": 15000,
-            "stok": true,
+            "stok": false,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%201%20User)%207%20Hari%20nya%20ready?"
           },
           {
             "nama_varian": "Sharing (1 Profile, 1 User) 1 Bulan",
             "harga": 45000,
-            "stok": true,
+            "stok": false,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%201%20User)%201%20Bulan%20nya%20ready?"
           },
           {
             "nama_varian": "Sharing (1 Profile, 2 User) 1 Hari",
             "harga": 5000,
-            "stok": true,
+            "stok": false,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%202%20User)%201%20Hari%20nya%20ready?"
           },
           {
             "nama_varian": "Sharing (1 Profile, 2 User) 2 Hari",
             "harga": 9000,
-            "stok": true,
+            "stok": false,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%202%20User)%202%20Hari%20nya%20ready?"
           },
           {
             "nama_varian": "Sharing (1 Profile, 2 User) 3 Hari",
             "harga": 13000,
-            "stok": true,
+            "stok": false,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%202%20User)%203%20Hari%20nya%20ready?"
           },
           {
             "nama_varian": "Sharing (1 Profile, 2 User) 7 Hari",
             "harga": 25000,
-            "stok": true,
+            "stok": false,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%202%20User)%207%20Hari%20nya%20ready?"
           },
           {
             "nama_varian": "Sharing (1 Profile, 2 User) 1 Bulan",
             "harga": 70000,
-            "stok": true,
+            "stok": false,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%202%20User)%201%20Bulan%20nya%20ready?"
           },
           {
             "nama_varian": "Semi Private (1 Profile, 2 Device)",
             "harga": 90000,
-            "stok": true,
+            "stok": false,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Semi%20Private%20(1%20Profile,%202%20Device)%20nya%20ready?"
           },
           {
             "nama_varian": "Semi Private (Request Nama & PIN)",
             "harga": 95000,
-            "stok": true,
+            "stok": false,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Semi%20Private%20(Request%20Nama%20%26%20PIN)%20nya%20ready?"
           }
         ]
