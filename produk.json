@@ -7,25 +7,25 @@
         "logo_url": "logobs.jpeg",
         "varian": [
           {
-            "nama_varian": "Bstation Sharing 1 Bulan",
+            "nama_varian": "Sharing 1 Bulan",
             "harga": 15000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Bstation%20Sharing%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Bstation Sharing 3 Bulan",
+            "nama_varian": "Sharing 3 Bulan",
             "harga": 40000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Bstation%20Sharing%203%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Bstation Sharing 1 Tahun",
+            "nama_varian": "Sharing 1 Tahun",
             "harga": 120000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Bstation%20Sharing%201%20Tahun%20nya%20ready?"
           },
           {
-            "nama_varian": "Bstation Private 1 Bulan",
+            "nama_varian": "Private 1 Bulan",
             "harga": 30000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Bstation%20Private%201%20Bulan%20nya%20ready?"
@@ -37,31 +37,31 @@
         "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disney%2B_logo.svg/256px-Disney%2B_logo.svg.png",
         "varian": [
           {
-            "nama_varian": "Disney+ Sharing (3 User) 1 Bulan",
+            "nama_varian": "Sharing (3 User) 1 Bulan",
             "harga": 20000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Disney%2B%20Sharing%20(3%20User)%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Disney+ Sharing (6 User) 1 Bulan",
+            "nama_varian": "Sharing (6 User) 1 Bulan",
             "harga": 15000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Disney%2B%20Sharing%20(6%20User)%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Disney+ Sharing (10 User) 1 Bulan",
+            "nama_varian": "Sharing (10 User) 1 Bulan",
             "harga": 10000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Disney%2B%20Sharing%20(10%20User)%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Disney+ Private 1 Bulan (Basic)",
+            "nama_varian": "Private 1 Bulan (Basic)",
             "harga": 40000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Disney%2B%20Private%201%20Bulan%20(Basic)%20nya%20ready?"
           },
           {
-            "nama_varian": "Disney+ Private 1 Bulan (Premium)",
+            "nama_varian": "Private 1 Bulan (Premium)",
             "harga": 60000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Disney%2B%20Private%201%20Bulan%20(Premium)%20nya%20ready?"
@@ -73,25 +73,25 @@
         "logo_url": "logodramabox.webp",
         "varian": [
           {
-            "nama_varian": "Dramabox Sharing 1 Bulan",
+            "nama_varian": "Sharing 1 Bulan",
             "harga": 15000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Dramabox%20Sharing%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Dramabox Sharing 3 Bulan",
+            "nama_varian": "Sharing 3 Bulan",
             "harga": 40000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Dramabox%20Sharing%203%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Dramabox Sharing 6 Bulan",
+            "nama_varian": "Sharing 6 Bulan",
             "harga": 75000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Dramabox%20Sharing%206%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Dramabox Sharing 1 Tahun",
+            "nama_varian": "Sharing 1 Tahun",
             "harga": 130000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Dramabox%20Sharing%201%20Tahun%20nya%20ready?"
@@ -103,13 +103,13 @@
         "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/HBO_Max_Logo.svg/256px-HBO_Max_Logo.svg.png",
         "varian": [
           {
-            "nama_varian": "HBO Max (Ultimate Plan) Sharing 1 Bulan",
+            "nama_varian": "Sharing 1 Bulan",
             "harga": 25000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20HBO%20Max%20(Ultimate%20Plan)%20Sharing%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "HBO Max (Ultimate Plan) Private 1 Bulan",
+            "nama_varian": "Private 1 Bulan",
             "harga": 50000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20HBO%20Max%20(Ultimate%20Plan)%20Private%201%20Bulan%20nya%20ready?"
@@ -121,31 +121,31 @@
         "logo_url": "logoiqiyi.webp",
         "varian": [
           {
-            "nama_varian": "IQIYI Sharing 1 Bulan (Standard)",
+            "nama_varian": "Sharing 1 Bulan (Standard)",
             "harga": 15000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20IQIYI%20Sharing%201%20Bulan%20(Standard)%20nya%20ready?"
           },
           {
-            "nama_varian": "IQIYI Sharing 1 Bulan (Premium)",
+            "nama_varian": "Sharing 1 Bulan (Premium)",
             "harga": 20000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20IQIYI%20Sharing%201%20Bulan%20(Premium)%20nya%20ready?"
           },
           {
-            "nama_varian": "IQIYI Sharing 3 Bulan",
+            "nama_varian": "Sharing 3 Bulan",
             "harga": 50000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20IQIYI%20Sharing%203%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "IQIYI Sharing 1 Tahun",
+            "nama_varian": "Sharing 1 Tahun",
             "harga": 150000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20IQIYI%20Sharing%201%20Tahun%20nya%20ready?"
           },
           {
-            "nama_varian": "IQIYI Private 1 Bulan",
+            "nama_varian": "Private 1 Bulan",
             "harga": 45000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20IQIYI%20Private%201%20Bulan%20nya%20ready?"
@@ -157,19 +157,19 @@
         "logo_url": "logoloklok.webp",
         "varian": [
           {
-            "nama_varian": "Loklok Sharing Basic 1 Bulan",
+            "nama_varian": "Sharing Basic 1 Bulan",
             "harga": 10000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Loklok%20Sharing%20Basic%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Loklok Sharing Standar 1 Bulan",
+            "nama_varian": "Sharing Standar 1 Bulan",
             "harga": 15000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Loklok%20Sharing%20Standar%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Loklok Sharing (10 User) 1 Bulan",
+            "nama_varian": "Sharing (10 User) 1 Bulan",
             "harga": 8000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Loklok%20Sharing%20(10%20User)%201%20Bulan%20nya%20ready?"
@@ -259,13 +259,13 @@
         "logo_url": "logoprimevid.webp",
         "varian": [
           {
-            "nama_varian": "Prime Video Sharing 1 Bulan",
+            "nama_varian": "Sharing 1 Bulan",
             "harga": 15000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Prime%20Video%20Sharing%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Prime Video Private 1 Bulan",
+            "nama_varian": "Private 1 Bulan",
             "harga": 30000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Prime%20Video%20Private%201%20Bulan%20nya%20ready?"
@@ -277,13 +277,13 @@
         "logo_url": "logorctip.webp",
         "varian": [
           {
-            "nama_varian": "RCTI+ Ultimate Sharing 1 Bulan",
+            "nama_varian": "Sharing 1 Bulan",
             "harga": 10000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20RCTI%2B%20Ultimate%20Sharing%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "RCTI+ Ultimate Private 1 Bulan",
+            "nama_varian": "Private 1 Bulan",
             "harga": 20000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20RCTI%2B%20Ultimate%20Private%201%20Bulan%20nya%20ready?"
@@ -295,37 +295,37 @@
         "logo_url": "logovidio.png",
         "varian": [
           {
-            "nama_varian": "Vidio Sharing 1 Bulan (All Device)",
+            "nama_varian": "Sharing 1 Bulan (All Device)",
             "harga": 30000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Vidio%20Sharing%201%20Bulan%20(All%20Device)%20nya%20ready?"
           },
           {
-            "nama_varian": "Vidio Sharing 1 Bulan (Mobile Only)",
+            "nama_varian": "Sharing 1 Bulan (Mobile Only)",
             "harga": 20000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Vidio%20Sharing%201%20Bulan%20(Mobile%20Only)%20nya%20ready?"
           },
           {
-            "nama_varian": "Vidio Private 1 Bulan (All Device)",
+            "nama_varian": "Private 1 Bulan (All Device)",
             "harga": 55000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Vidio%20Private%201%20Bulan%20(All%20Device)%20nya%20ready?"
           },
           {
-            "nama_varian": "Vidio Private 1 Bulan (Mobile Only)",
+            "nama_varian": "Private 1 Bulan (Mobile Only)",
             "harga": 40000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Vidio%20Private%201%20Bulan%20(Mobile%20Only)%20nya%20ready?"
           },
           {
-            "nama_varian": "Vidio Private 3 Bulan (TV Only)",
+            "nama_varian": "Private 3 Bulan (TV Only)",
             "harga": 120000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Vidio%20Private%203%20Bulan%20(TV%20Only)%20nya%20ready?"
           },
           {
-            "nama_varian": "Vidio Private 1 Tahun (TV Only)",
+            "nama_varian": "Private 1 Tahun (TV Only)",
             "harga": 350000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Vidio%20Private%201%20Tahun%20(TV%20Only)%20nya%20ready?"
@@ -337,37 +337,37 @@
         "logo_url": "logovisionplus.png",
         "varian": [
           {
-            "nama_varian": "VISION+ Sharing 1 Bulan",
+            "nama_varian": "Sharing 1 Bulan",
             "harga": 10000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20VISION%2B%20Sharing%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "VISION+ Sharing 2 Bulan",
+            "nama_varian": "Sharing 2 Bulan",
             "harga": 18000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20VISION%2B%20Sharing%202%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "VISION+ Private 1 Bulan",
+            "nama_varian": "Private 1 Bulan",
             "harga": 25000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20VISION%2B%20Private%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "VISION+ Ultimate Sharing 1 Bulan",
+            "nama_varian": "Ultimate Sharing 1 Bulan",
             "harga": 20000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20VISION%2B%20Ultimate%20Sharing%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "VISION+ Ultimate Private 1 Bulan",
+            "nama_varian": "Ultimate Private 1 Bulan",
             "harga": 40000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20VISION%2B%20Ultimate%20Private%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "VISION+ Paket PAYTV + BEIN SPORT 1 Bulan",
+            "nama_varian": "Paket PAYTV + BEIN SPORT 1 Bulan",
             "harga": 50000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20VISION%2B%20Paket%20PAYTV%20%2B%20BEIN%20SPORT%201%20Bulan%20nya%20ready?"
@@ -379,43 +379,43 @@
         "logo_url": "logoviu.jpg",
         "varian": [
           {
-            "nama_varian": "Viu Sharing Viu+ 1 Bulan",
+            "nama_varian": "Sharing Viu+ 1 Bulan",
             "harga": 10000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Viu%20Sharing%20Viu%2B%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Viu Private 1 Bulan",
+            "nama_varian": "Private 1 Bulan",
             "harga": 20000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Viu%20Private%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Viu Private 2 Bulan",
+            "nama_varian": "Private 2 Bulan",
             "harga": 38000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Viu%20Private%202%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Viu Private 3 Bulan",
+            "nama_varian": "Private 3 Bulan",
             "harga": 55000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Viu%20Private%203%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Viu Private 6 Bulan",
+            "nama_varian": "Private 6 Bulan",
             "harga": 100000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Viu%20Private%206%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Viu Private 1 Tahun",
+            "nama_varian": "Private 1 Tahun",
             "harga": 180000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Viu%20Private%201%20Tahun%20nya%20ready?"
           },
           {
-            "nama_varian": "Viu Private Lifetime",
+            "nama_varian": "Private Lifetime",
             "harga": 250000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Viu%20Private%20Lifetime%20nya%20ready?"
@@ -427,19 +427,19 @@
         "logo_url": "logowetv.webp",
         "varian": [
           {
-            "nama_varian": "We TV Sharing (3 User) 1 Bulan",
+            "nama_varian": "Sharing (3 User) 1 Bulan",
             "harga": 15000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20We%20TV%20Sharing%20(3%20User)%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "We TV Sharing (6 User) 1 Bulan",
+            "nama_varian": "Sharing (6 User) 1 Bulan",
             "harga": 10000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20We%20TV%20Sharing%20(6%20User)%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "We TV Private 1 Bulan",
+            "nama_varian": "Private 1 Bulan",
             "harga": 30000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20We%20TV%20Private%201%20Bulan%20nya%20ready?"
@@ -451,49 +451,49 @@
         "logo_url": "logoyt.png",
         "varian": [
           {
-            "nama_varian": "Youtube Premium Individual Plan 1 Bulan",
+            "nama_varian": "Individual Plan 1 Bulan",
             "harga": 30000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Individual%20Plan%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Youtube Premium Individual Plan 44 Hari",
+            "nama_varian": "Individual Plan 44 Hari",
             "harga": 45000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Individual%20Plan%2044%20Hari%20nya%20ready?"
           },
           {
-            "nama_varian": "Youtube Premium Individual Plan 3 Bulan",
+            "nama_varian": "Individual Plan 3 Bulan",
             "harga": 80000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Individual%20Plan%203%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Youtube Premium Family Plan (Member) 1 Bulan",
+            "nama_varian": "Family Plan (Member) 1 Bulan",
             "harga": 15000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Family%20Plan%20(Member)%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Youtube Premium Family Plan (Member) 2 Bulan",
+            "nama_varian": "Family Plan (Member) 2 Bulan",
             "harga": 28000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Family%20Plan%20(Member)%202%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Youtube Premium Family Plan (Head) 1 Bulan",
+            "nama_varian": "Family Plan (Head) 1 Bulan",
             "harga": 45000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Family%20Plan%20(Head)%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Youtube Premium Mixed Plan 2 Bulan",
+            "nama_varian": "Mixed Plan 2 Bulan",
             "harga": 25000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Mixed%20Plan%202%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Youtube Premium Mixed Plan 3 Bulan",
+            "nama_varian": "Mixed Plan 3 Bulan",
             "harga": 35000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Mixed%20Plan%203%20Bulan%20nya%20ready?"
@@ -1141,7 +1141,3 @@
     ]
   }
 ]
-
-
-
-
