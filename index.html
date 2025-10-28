@@ -93,6 +93,8 @@
             #search-container {
                 margin-bottom: 20px;
                 position: relative;
+                /* --- MODIFIKASI POIN 6: Tambah z-index agar di atas overlay --- */
+                z-index: 102;
             }
             #search-bar {
                 width: 100%;
@@ -128,29 +130,71 @@
                 color: #333;
             }
 
-            /* --- MODIFIKASI PENGEMBALIAN: Menambahkan kembali styling #search-results --- */
-            #search-results {
+            /* --- MODIFIKASI POIN 6: Styling untuk Kotak Sugesti --- */
+            #suggestion-box {
+                position: absolute;
+                top: 105%;
+                left: 0;
+                width: 100%;
                 background: #ffffff;
+                border: 1px solid #ddd;
                 border-radius: 8px;
                 box-shadow:
-                    0 4px 6px -1px rgba(0, 0, 0, 0.05),
-                    0 2px 4px -1px rgba(0, 0, 0, 0.03);
-                margin-bottom: 20px;
-                overflow: hidden;
+                    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                /* Scrollable jika "meledak" */
+                max-height: 350px;
+                overflow-y: auto;
             }
-            .search-result-item .produk-asal {
-                font-size: 0.9em;
-                font-weight: 600;
-                color: #171717;
-                padding: 10px 20px 0 20px;
+            .suggestion-item {
+                padding: 12px 15px;
+                font-size: 1.05em;
+                cursor: pointer;
+                border-bottom: 1px solid #f0f0f0;
             }
-            #search-no-results {
-                padding: 20px;
+            .suggestion-item:last-child {
+                border-bottom: none;
+            }
+            .suggestion-item:hover {
+                background-color: #f9f9f9;
+            }
+            .suggestion-item strong {
+                color: #0056b3;
+            }
+            .suggestion-item .suggestion-type {
+                font-size: 0.85em;
+                color: #777;
+                display: block;
+                margin-top: 2px;
+            }
+            #suggestion-no-results {
+                padding: 15px;
                 text-align: center;
                 color: #777;
-                font-size: 1.1em;
             }
-            /* --- AKHIR MODIFIKASI PENGEMBALIAN --- */
+            /* --- AKHIR MODIFIKASI POIN 6 --- */
+            
+            /* --- MODIFIKASI POIN 6: Styling untuk Overlay --- */
+            #main-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(3px);
+                z-index: 101; /* Di bawah search-container, di atas main-content */
+            }
+            /* --- AKHIR MODIFIKASI POIN 6 --- */
+
+            /* Mengembalikan styling #search-results yang tidak terpakai */
+            #search-results {
+                /* Dikosongkan, karena kita tidak pakai ini lagi */
+            }
+            #search-no-results {
+                /* Dikosongkan */
+            }
+
 
             .hidden {
                 display: none !important;
@@ -213,12 +257,7 @@
                     0 10px 15px -3px rgba(0, 0, 0, 0.07),
                     0 4px 6px -2px rgba(0, 0, 0, 0.04);
             }
-
-            /* --- MODIFIKASI PENGEMBALIAN: Menghapus class .search-no-match --- */
-            /* .produk-card.search-no-match { ... } Dihapus */
-            /* .varian-item.search-no-match { ... } Dihapus */
-            /* --- AKHIR MODIFIKASI PENGEMBALIAN --- */
-
+            
             /* Styling Logo Produk */
             .produk-logo {
                 width: 28px;
@@ -526,46 +565,18 @@
                 #tab-nav::-webkit-scrollbar {
                     display: none;
                 }
-
+                
                 #tab-nav.scroll-start {
-                    -webkit-mask-image: linear-gradient(
-                        to right,
-                        black 95%,
-                        transparent 100%
-                    );
-                    mask-image: linear-gradient(
-                        to right,
-                        black 95%,
-                        transparent 100%
-                    );
+                    -webkit-mask-image: linear-gradient(to right, black 95%, transparent 100%);
+                    mask-image: linear-gradient(to right, black 95%, transparent 100%);
                 }
                 #tab-nav.scroll-end {
-                    -webkit-mask-image: linear-gradient(
-                        to left,
-                        black 95%,
-                        transparent 100%
-                    );
-                    mask-image: linear-gradient(
-                        to left,
-                        black 95%,
-                        transparent 100%
-                    );
+                    -webkit-mask-image: linear-gradient(to left, black 95%, transparent 100%);
+                    mask-image: linear-gradient(to left, black 95%, transparent 100%);
                 }
                 #tab-nav.scroll-middle {
-                    -webkit-mask-image: linear-gradient(
-                        to right,
-                        transparent 0%,
-                        black 5%,
-                        black 95%,
-                        transparent 100%
-                    );
-                    mask-image: linear-gradient(
-                        to right,
-                        transparent 0%,
-                        black 5%,
-                        black 95%,
-                        transparent 100%
-                    );
+                    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+                    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
                 }
 
                 .tab-button {
@@ -610,12 +621,15 @@
             <p>Memuat info kontak...</p>
         </div>
 
+        <div id="main-overlay" class="hidden"></div>
+        
         <main>
             <div id="search-container">
                 <input
                     type="search"
                     id="search-bar"
                     placeholder="Cari produk atau varian..."
+                    autocomplete="off"
                 />
                 <button
                     id="search-clear-btn"
@@ -624,13 +638,13 @@
                 >
                     &times;
                 </button>
+                
+                <div id="suggestion-box" class="hidden"></div>
             </div>
-
-            <div id="search-results" class="hidden"></div>
-
-            <div id="main-content">
+            
+            <div id="search-results" class="hidden"></div> <div id="main-content">
                 <nav id="tab-nav"></nav>
-
+                
                 <div id="tab-content-container">
                     <div id="loader">
                         <div class="skeleton-loader">
@@ -689,6 +703,10 @@
 
                 // --- VARIABEL GLOBAL ---
                 let dataKatalogMaster = [];
+                // --- MODIFIKASI POIN 6: Buat variabel untuk menyimpan referensi DOM ---
+                let mapProdukDOM = new Map();
+                // --- AKHIR MODIFIKASI POIN 6 ---
+
                 const formatter = new Intl.NumberFormat("id-ID", {
                     style: "currency",
                     currency: "IDR",
@@ -703,14 +721,8 @@
                 );
                 const loader = document.getElementById("loader");
                 const searchBar = document.getElementById("search-bar");
-
-                // --- MODIFIKASI PENGEMBALIAN: Mengubah kembali selektor ---
-                const searchResultsContainer =
-                    document.getElementById("search-results");
-                // const noResultsMessage = document.getElementById("search-no-results-main"); // Dihapus
-
+                
                 const mainContent = document.getElementById("main-content");
-
                 const searchClearBtn =
                     document.getElementById("search-clear-btn");
                 const modalContainer =
@@ -722,9 +734,15 @@
                 const modalBtnLanjut =
                     document.getElementById("modal-btn-lanjut");
 
+                // --- MODIFIKASI POIN 6: Selektor baru ---
+                const suggestionBox = document.getElementById("suggestion-box");
+                const mainOverlay = document.getElementById("main-overlay");
+                // --- AKHIR MODIFIKASI POIN 6 ---
+
                 // 1. Mengisi Info Kontak
                 infoContainer.innerHTML = `<p><strong>Contact Person:</strong> ${namaAdmin} (${nomorWaAdmin})</p>`;
 
+                
                 function perbaruiIndikatorGulir() {
                     if (!tabNav) return;
                     const scrollLeft = tabNav.scrollLeft;
@@ -732,22 +750,14 @@
                     const clientWidth = tabNav.clientWidth;
 
                     if (scrollWidth <= clientWidth) {
-                        tabNav.classList.remove(
-                            "scroll-start",
-                            "scroll-middle",
-                            "scroll-end",
-                        );
+                        tabNav.classList.remove("scroll-start", "scroll-middle", "scroll-end");
                         return;
                     }
 
                     const isAtStart = scrollLeft <= 1;
-                    const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 1;
+                    const isAtEnd = (scrollLeft + clientWidth) >= (scrollWidth - 1);
 
-                    tabNav.classList.remove(
-                        "scroll-start",
-                        "scroll-middle",
-                        "scroll-end",
-                    );
+                    tabNav.classList.remove("scroll-start", "scroll-middle", "scroll-end");
 
                     if (isAtStart) {
                         tabNav.classList.add("scroll-start");
@@ -760,6 +770,7 @@
 
                 tabNav.addEventListener("scroll", perbaruiIndikatorGulir);
                 window.addEventListener("resize", perbaruiIndikatorGulir);
+
 
                 // 2. Fungsi untuk mengambil dan menampilkan data
                 async function muatProduk() {
@@ -774,9 +785,9 @@
                         tabContentContainer.innerHTML = ""; // Hapus loader
 
                         // 3. Memproses Kategori
-                        dataKatalogMaster.forEach((kategori, index) => {
-                            const kategoriId = `kategori-${index}`;
-                            const isActive = index === 0;
+                        dataKatalogMaster.forEach((kategori, indexKat) => {
+                            const kategoriId = `kategori-${indexKat}`;
+                            const isActive = indexKat === 0;
 
                             const tabButton = document.createElement("button");
                             tabButton.className = `tab-button ${isActive ? "active" : ""}`;
@@ -792,10 +803,16 @@
                             tabPanel.id = kategoriId;
 
                             // 4. Memproses Produk
-                            kategori.produk.forEach((produk) => {
+                            kategori.produk.forEach((produk, indexProd) => {
                                 const cardProduk =
                                     document.createElement("div");
                                 cardProduk.className = "produk-card";
+                                
+                                // --- MODIFIKASI POIN 6: Simpan referensi DOM ---
+                                // Buat ID unik untuk produk ini
+                                const produkDomId = `${indexKat}-${indexProd}`;
+                                mapProdukDOM.set(produkDomId, cardProduk);
+                                // --- AKHIR MODIFIKASI POIN 6 ---
 
                                 const judulAccordion =
                                     document.createElement("button");
@@ -807,10 +824,7 @@
                                     produk.logo_url.trim() !== ""
                                         ? `<img src="${produk.logo_url}" class="produk-logo" alt="${produk.nama_produk} logo" onerror="this.style.display='none'">`
                                         : "";
-
-                                // --- MODIFIKASI PENGEMBALIAN: Menghapus data-attribute ---
-                                // judulAccordion.setAttribute("data-nama-produk", produk.nama_produk); // Dihapus
-
+                                
                                 judulAccordion.innerHTML = `
                                 <span>
                                     ${logoImg}
@@ -826,9 +840,8 @@
 
                                 // 5. Memproses Varian
                                 produk.varian.forEach((varian) => {
-                                    // Panggil helper dengan 1 argumen
                                     listVarian.appendChild(
-                                        buatVarianHTML(varian),
+                                        buatVarianHTML(varian), 
                                     );
                                 });
 
@@ -838,17 +851,17 @@
 
                             tabContentContainer.appendChild(tabPanel);
                         });
+                        
+                        setTimeout(perbaruiIndikatorGulir, 100); 
 
-                        setTimeout(perbaruiIndikatorGulir, 100);
                     } catch (error) {
                         console.error("Error memuat katalog:", error);
                         tabContentContainer.innerHTML = `<p style="text-align: center; color: red;"><strong>Oops!</strong> Gagal memuat katalog.</p>`;
                     }
                 }
 
-                // 6. Helper untuk membuat HTML Varian
-                // --- MODIFIKASI PENGEMBALIAN: Mengembalikan logika helper ---
-                function buatVarianHTML(varian, namaProduk = null) {
+                // 6. Helper untuk membuat HTML Varian (Kembali ke versi sederhana)
+                function buatVarianHTML(varian) {
                     const hargaFormatted = formatter.format(varian.harga);
                     const stokTersedia = varian.stok;
 
@@ -866,120 +879,206 @@
                         itemClassName = "varian-item stok-habis";
                         tombolOrderHTML = `<a class="btn-order stok-habis" aria-disabled="true">Stok Habis</a>`;
                     }
-
-                    const infoProdukAsal = namaProduk
-                        ? `<div class="produk-asal">dari: ${namaProduk}</div>`
-                        : "";
-
-                    // Jika namaProduk ada (dari pencarian), bungkus dengan div
-                    if (namaProduk) {
-                        const wrapper = document.createElement("div");
-                        wrapper.className = "search-result-item";
-                        wrapper.innerHTML = infoProdukAsal;
-
-                        const itemVarianInner = document.createElement("div");
-                        itemVarianInner.className = itemClassName;
-                        itemVarianInner.innerHTML = `
+                    
+                    const li = document.createElement("li");
+                    li.className = itemClassName;
+                    li.innerHTML = `
                         <div class="varian-info">
                             <span class="varian-nama">${varian.nama_varian}</span>
                             <span class="varian-harga">${hargaFormatted}</span>
                         </div>
                         ${tombolOrderHTML}
                     `;
-                        wrapper.appendChild(itemVarianInner);
-                        return wrapper;
-                    } else {
-                        // Jika tidak (dari pemuatan tab normal), kembalikan li
-                        const li = document.createElement("li");
-                        li.className = itemClassName;
-                        li.innerHTML = `
-                        <div class="varian-info">
-                            <span class="varian-nama">${varian.nama_varian}</span>
-                            <span class="varian-harga">${hargaFormatted}</span>
-                        </div>
-                        ${tombolOrderHTML}
-                    `;
-                        return li;
-                    }
+                    return li;
                 }
-                // --- AKHIR MODIFIKASI PENGEMBALIAN ---
 
-                // --- MODIFIKASI PENGEMBALIAN: Mengembalikan logika searchBar ---
-                searchBar.addEventListener("input", (e) => {
-                    const searchTerm = e.target.value.trim().toLowerCase();
-
-                    if (searchTerm.length > 0) {
-                        mainContent.classList.add("hidden"); // Sembunyikan tab
-                        searchResultsContainer.classList.remove("hidden"); // Tampilkan hasil
-                        searchClearBtn.classList.remove("hidden");
-                        renderPencarian(searchTerm); // Panggil fungsi render baru
-                    } else {
-                        mainContent.classList.remove("hidden"); // Tampilkan tab
-                        searchResultsContainer.classList.add("hidden"); // Sembunyikan hasil
-                        searchResultsContainer.innerHTML = "";
-                        searchClearBtn.classList.add("hidden");
+                // --- MODIFIKASI POIN 6: Tulis ulang semua logika pencarian ---
+                
+                // Fungsi untuk menutup sugesti
+                function tutupSugesti() {
+                    suggestionBox.classList.add("hidden");
+                    mainOverlay.classList.add("hidden");
+                }
+                
+                // Fungsi untuk menampilkan sugesti
+                function tampilkanSugesti(searchTerm) {
+                    if (searchTerm.length === 0) {
+                        tutupSugesti();
+                        return;
                     }
-                });
-                // --- AKHIR MODIFIKASI PENGEMBALIAN ---
 
-                // --- MODIFIKASI PENGEMBALIAN: Mengembalikan logika searchClearBtn ---
-                searchClearBtn.addEventListener("click", () => {
-                    searchBar.value = "";
-                    mainContent.classList.remove("hidden");
-                    searchResultsContainer.classList.add("hidden");
-                    searchResultsContainer.innerHTML = "";
-                    searchClearBtn.classList.add("hidden");
-                    searchBar.focus();
-                });
-                // --- AKHIR MODIFIKASI PENGEMBALIAN ---
-
-                // --- MODIFIKASI PENGEMBALIAN: Menambahkan kembali fungsi renderPencarian ---
-                function renderPencarian(searchTerm) {
-                    searchResultsContainer.innerHTML = "";
-                    let foundCount = 0;
-
-                    // Loop melalui data master, bukan DOM
-                    dataKatalogMaster.forEach((kategori) => {
-                        kategori.produk.forEach((produk) => {
-                            const namaProdukLower =
-                                produk.nama_produk.toLowerCase();
-
-                            produk.varian.forEach((varian) => {
-                                const namaVarianLower =
-                                    varian.nama_varian.toLowerCase();
-
-                                // Periksa kecocokan pada nama produk ATAU nama varian
-                                if (
-                                    namaProdukLower.includes(searchTerm) ||
-                                    namaVarianLower.includes(searchTerm)
-                                ) {
-                                    // Panggil helper dengan 2 argumen
-                                    const varianHTML = buatVarianHTML(
-                                        varian,
-                                        produk.nama_produk,
-                                    );
-                                    searchResultsContainer.appendChild(
-                                        varianHTML,
-                                    );
-                                    foundCount++;
+                    let results = [];
+                    // Cari di data master
+                    dataKatalogMaster.forEach((kat, indexKat) => {
+                        kat.produk.forEach((prod, indexProd) => {
+                            // Cek Nama Produk
+                            if (prod.nama_produk.toLowerCase().includes(searchTerm)) {
+                                results.push({
+                                    nama: prod.nama_produk,
+                                    tipe: "Produk",
+                                    indexKat: indexKat,
+                                    indexProd: indexProd
+                                });
+                            }
+                            // Cek Nama Varian
+                            prod.varian.forEach((varian) => {
+                                if (varian.nama_varian.toLowerCase().includes(searchTerm)) {
+                                    results.push({
+                                        nama: varian.nama_varian,
+                                        tipe: `dari ${prod.nama_produk}`,
+                                        indexKat: indexKat,
+                                        indexProd: indexProd
+                                    });
                                 }
                             });
                         });
                     });
 
-                    if (foundCount === 0) {
-                        searchResultsContainer.innerHTML = `<div id="search-no-results">Tidak ada produk yang cocok untuk "${searchTerm}"</div>`;
+                    suggestionBox.innerHTML = ""; // Kosongkan
+                    
+                    if (results.length > 0) {
+                        // Hilangkan duplikat (misal jika cari "Canva", 
+                        // akan muncul "Canva Pro" dan varian "Canva Pro Member")
+                        const uniqueResults = [...new Map(results.map(item => 
+                            [`${item.indexKat}-${item.indexProd}-${item.nama}`, item])).values()];
+
+                        uniqueResults.forEach(res => {
+                            const item = document.createElement("div");
+                            item.className = "suggestion-item";
+                            item.innerHTML = `
+                                <strong>${res.nama}</strong>
+                                <span class="suggestion-type">${res.tipe}</span>
+                            `;
+                            // Simpan data untuk aksi klik
+                            item.dataset.indexKat = res.indexKat;
+                            item.dataset.indexProd = res.indexProd;
+                            suggestionBox.appendChild(item);
+                        });
+                    } else {
+                        suggestionBox.innerHTML = `<div id="suggestion-no-results">Tidak ada hasil ditemukan</div>`;
+                    }
+                    
+                    suggestionBox.classList.remove("hidden");
+                    mainOverlay.classList.remove("hidden");
+                }
+
+                // Fungsi untuk menjalankan aksi "Locator"
+                function jalankanAksiLocator(indexKat, indexProd) {
+                    tutupSugesti();
+                    searchBar.value = ""; // Kosongkan search bar
+                    searchClearBtn.classList.add("hidden");
+
+                    // 1. Pindah Tab
+                    // Nonaktifkan semua
+                    tabNav.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
+                    tabContentContainer.querySelectorAll(".tab-panel").forEach(panel => panel.classList.remove("active"));
+                    // Aktifkan yang benar
+                    const targetTabButton = tabNav.children[indexKat];
+                    const targetTabPanel = tabContentContainer.children[indexKat];
+                    targetTabButton.classList.add("active");
+                    targetTabPanel.classList.add("active");
+                    
+                    // 2. Temukan Card dan Pindahkan ke Atas
+                    const produkDomId = `${indexKat}-${indexProd}`;
+                    const targetCard = mapProdukDOM.get(produkDomId);
+                    
+                    if (targetCard) {
+                        // 3. Pindahkan ke Atas
+                        targetTabPanel.prepend(targetCard);
+                        
+                        // 4. Buka Accordion
+                        const accordionBtn = targetCard.querySelector(".produk-judul-accordion");
+                        const varianList = targetCard.querySelector(".varian-list");
+                        if (!accordionBtn.classList.contains("active")) {
+                            accordionBtn.classList.add("active");
+                            varianList.classList.add("active");
+                        }
+                        
+                        // 5. Scroll ke Card
+                        // Beri sedikit delay agar tab switch selesai
+                        setTimeout(() => {
+                            targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100); 
                     }
                 }
-                // --- AKHIR MODIFIKASI PENGEMBALIAN ---
+
+                // Event listener untuk input
+                searchBar.addEventListener("input", (e) => {
+                    const searchTerm = e.target.value.trim().toLowerCase();
+                    if (searchTerm.length > 0) {
+                        searchClearBtn.classList.remove("hidden");
+                        tampilkanSugesti(searchTerm);
+                    } else {
+                        searchClearBtn.classList.add("hidden");
+                        tutupSugesti();
+                    }
+                });
+
+                // Event listener untuk tombol clear
+                searchClearBtn.addEventListener("click", () => {
+                    searchBar.value = "";
+                    searchClearBtn.classList.add("hidden");
+                    tutupSugesti();
+                    searchBar.focus();
+                });
+                
+                // Event listener untuk klik di suggestion box (Event Delegation)
+                suggestionBox.addEventListener("click", (e) => {
+                    const targetItem = e.target.closest(".suggestion-item");
+                    if (targetItem) {
+                        const indexKat = parseInt(targetItem.dataset.indexKat);
+                        const indexProd = parseInt(targetItem.dataset.indexProd);
+                        jalankanAksiLocator(indexKat, indexProd);
+                    }
+                });
+
+                // Event listener untuk 'Enter' di search bar
+                searchBar.addEventListener("keydown", (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault(); // Hentikan submit form
+                        const searchTerm = searchBar.value.trim().toLowerCase();
+                        if (searchTerm.length === 0) return;
+
+                        // Cari kecocokan 100% pada NAMA PRODUK
+                        let found = null;
+                        dataKatalogMaster.forEach((kat, indexKat) => {
+                            if (found) return; // Hentikan jika sudah ketemu
+                            kat.produk.forEach((prod, indexProd) => {
+                                if (found) return;
+                                if (prod.nama_produk.toLowerCase() === searchTerm) {
+                                    found = { indexKat, indexProd };
+                                }
+                            });
+                        });
+                        
+                        if (found) {
+                            // Jika ada kecocokan 100%, jalankan aksi
+                            jalankanAksiLocator(found.indexKat, found.indexProd);
+                        } else {
+                            // Jika tidak ada kecocokan 100%,
+                            // jalankan aksi untuk item pertama di suggestion box (jika ada)
+                            const firstSuggestion = suggestionBox.querySelector(".suggestion-item");
+                            if (firstSuggestion) {
+                                firstSuggestion.click();
+                            }
+                        }
+                    }
+                });
+                
+                // Event listener untuk klik di overlay (menutup)
+                mainOverlay.addEventListener("click", tutupSugesti);
+                // --- AKHIR MODIFIKASI POIN 6 ---
 
                 // 9. Event Listener untuk Tab
                 tabNav.addEventListener("click", (e) => {
                     const targetButton = e.target.closest(".tab-button");
                     if (!targetButton) return;
-
-                    // --- MODIFIKASI PENGEMBALIAN: Menghapus reset pencarian ---
-                    // Logika reset pencarian dihapus dari sini
+                    
+                    // --- MODIFIKASI POIN 6: Tutup sugesti jika pindah tab ---
+                    tutupSugesti();
+                    searchBar.value = "";
+                    searchClearBtn.classList.add("hidden");
+                    // --- AKHIR MODIFIKASI POIN 6 ---
 
                     tabNav
                         .querySelectorAll(".tab-button")
@@ -998,9 +1097,6 @@
 
                 // 10. Event Listener untuk Accordion
                 tabContentContainer.addEventListener("click", (e) => {
-                    // --- MODIFIKASI PENGEMBALIAN: Menghapus blokir accordion ---
-                    // if (searchBar.value.trim().length > 0) { ... } Dihapus
-
                     const targetAccordion = e.target.closest(
                         ".produk-judul-accordion",
                     );
