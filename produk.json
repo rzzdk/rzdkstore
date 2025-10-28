@@ -379,14 +379,8 @@
         "logo_url": "logoviu.jpg",
         "varian": [
           {
-            "nama_varian": "Sharing Viu+ 1 Bulan",
-            "harga": 15000,
-            "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Viu%20Sharing%20Viu%2B%201%20Bulan%20nya%20ready?"
-          },
-          {
             "nama_varian": "Private 1 Bulan",
-            "harga": 3000,
+            "harga": 2000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Viu%20Private%201%20Bulan%20nya%20ready?"
           },
@@ -410,7 +404,7 @@
           },
           {
             "nama_varian": "Private 1 Tahun",
-            "harga": 5000,
+            "harga": 4000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Viu%20Private%201%20Tahun%20nya%20ready?"
           },
@@ -869,7 +863,7 @@
           },
           {
             "nama_varian": "Private (Invite Email) 1 Bulan",
-            "harga": 70000,
+            "harga": 30000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20ChatGPT%20Plus%20Private%20(Invite%20Email)%201%20Bulan%20nya%20ready?"
           }
@@ -1105,3 +1099,4 @@
     ]
   }
 ]
+
