@@ -481,12 +481,6 @@
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Family%20Plan%20(Member)%202%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Family Plan (Head) 1 Bulan",
-            "harga": 11000,
-            "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Family%20Plan%20(Head)%201%20Bulan%20nya%20ready?"
-          },
-          {
             "nama_varian": "Mixed Plan 2 Bulan",
             "harga": 21000,
             "stok": true,
@@ -514,12 +508,6 @@
             "harga": 10000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Apple%20Music%20Individual%20Plan%201%20Bulan%20(Android%20Only)%20nya%20ready?"
-          },
-          {
-            "nama_varian": "Family Head 1 Bulan (Android Only, Invite 5)",
-            "harga": 11000,
-            "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Apple%20Music%20Family%20Head%201%20Bulan%20(Android%20Only,%20Invite%205)%20nya%20ready?"
           },
           {
             "nama_varian": "Member (Via Invite) 1 Bulan",
@@ -630,7 +618,7 @@
           },
           {
             "nama_varian": "Head Lifetime (Invite 500 member)",
-            "harga": 561000,
+            "harga": 60000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Canva%20Edu%20Head%20Lifetime%20(Invite%20500%20member)%20nya%20ready?"
           }
@@ -651,12 +639,6 @@
             "harga": 7500,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Canva%20Pro%20Member%20(Invite)%201%20Tahun%20nya%20ready?"
-          },
-          {
-            "nama_varian": "Head 1 Bulan",
-            "harga": 8500,
-            "stok": false,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Canva%20Pro%20Head%201%20Bulan%20nya%20ready?"
           },
           {
             "nama_varian": "Member Lifetime",
@@ -695,13 +677,13 @@
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Capcut%20Pro%20Sharing%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Private (3 User) 1 Minggu",
+            "nama_varian": "Private 1 Minggu",
             "harga": 10000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Capcut%20Pro%20Private%20(3%20User)%201%20Minggu%20nya%20ready?"
           },
           {
-            "nama_varian": "Private (3 User) 1 Bulan",
+            "nama_varian": "Private 1 Bulan",
             "harga": 12000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Capcut%20Pro%20Private%20(3%20User)%201%20Bulan%20nya%20ready?"
@@ -795,18 +777,6 @@
             "harga": 9500,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Pics%20Art%20Pro%20Private%201%20Bulan%20nya%20ready?"
-          },
-          {
-            "nama_varian": "Head 14 Hari",
-            "harga": 11000,
-            "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Pics%20Art%20Pro%20Head%2014%20Hari%20nya%20ready?"
-          },
-          {
-            "nama_varian": "Head 1 Bulan",
-            "harga": 21000,
-            "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Pics%20Art%20Pro%20Head%201%20Bulan%20nya%20ready?"
           }
         ]
       },
@@ -914,12 +884,6 @@
             "harga": 14000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Deepl%20Pro%20Invite%20Team%201%20Bulan%20nya%20ready?"
-          },
-          {
-            "nama_varian": "Head 1 Bulan (Invite 50 Member)",
-            "harga": 17000,
-            "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Deepl%20Pro%20Head%201%20Bulan%20(Invite%2050%20Member)%20nya%20ready?"
           }
         ]
       },
