@@ -173,7 +173,7 @@
                 color: #777;
             }
             /* --- AKHIR MODIFIKASI POIN 6 --- */
-            
+
             /* --- MODIFIKASI POIN 6: Styling untuk Overlay --- */
             #main-overlay {
                 position: fixed;
@@ -194,7 +194,6 @@
             #search-no-results {
                 /* Dikosongkan */
             }
-
 
             .hidden {
                 display: none !important;
@@ -257,7 +256,7 @@
                     0 10px 15px -3px rgba(0, 0, 0, 0.07),
                     0 4px 6px -2px rgba(0, 0, 0, 0.04);
             }
-            
+
             /* Styling Logo Produk */
             .produk-logo {
                 width: 28px;
@@ -565,18 +564,46 @@
                 #tab-nav::-webkit-scrollbar {
                     display: none;
                 }
-                
+
                 #tab-nav.scroll-start {
-                    -webkit-mask-image: linear-gradient(to right, black 95%, transparent 100%);
-                    mask-image: linear-gradient(to right, black 95%, transparent 100%);
+                    -webkit-mask-image: linear-gradient(
+                        to right,
+                        black 95%,
+                        transparent 100%
+                    );
+                    mask-image: linear-gradient(
+                        to right,
+                        black 95%,
+                        transparent 100%
+                    );
                 }
                 #tab-nav.scroll-end {
-                    -webkit-mask-image: linear-gradient(to left, black 95%, transparent 100%);
-                    mask-image: linear-gradient(to left, black 95%, transparent 100%);
+                    -webkit-mask-image: linear-gradient(
+                        to left,
+                        black 95%,
+                        transparent 100%
+                    );
+                    mask-image: linear-gradient(
+                        to left,
+                        black 95%,
+                        transparent 100%
+                    );
                 }
                 #tab-nav.scroll-middle {
-                    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-                    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+                    -webkit-mask-image: linear-gradient(
+                        to right,
+                        transparent 0%,
+                        black 5%,
+                        black 95%,
+                        transparent 100%
+                    );
+                    mask-image: linear-gradient(
+                        to right,
+                        transparent 0%,
+                        black 5%,
+                        black 95%,
+                        transparent 100%
+                    );
                 }
 
                 .tab-button {
@@ -622,7 +649,7 @@
         </div>
 
         <div id="main-overlay" class="hidden"></div>
-        
+
         <main>
             <div id="search-container">
                 <input
@@ -638,13 +665,15 @@
                 >
                     &times;
                 </button>
-                
+
                 <div id="suggestion-box" class="hidden"></div>
             </div>
-            
-            <div id="search-results" class="hidden"></div> <div id="main-content">
+
+            <div id="search-results" class="hidden"></div>
+
+            <div id="main-content">
                 <nav id="tab-nav"></nav>
-                
+
                 <div id="tab-content-container">
                     <div id="loader">
                         <div class="skeleton-loader">
@@ -703,9 +732,10 @@
 
                 // --- VARIABEL GLOBAL ---
                 let dataKatalogMaster = [];
-                // --- MODIFIKASI POIN 6: Buat variabel untuk menyimpan referensi DOM ---
                 let mapProdukDOM = new Map();
-                // --- AKHIR MODIFIKASI POIN 6 ---
+                // --- MODIFIKASI POIN 7: Variabel baru untuk reset ---
+                let mapTabPanelAsli = new Map();
+                // --- AKHIR MODIFIKASI POIN 7 ---
 
                 const formatter = new Intl.NumberFormat("id-ID", {
                     style: "currency",
@@ -721,7 +751,7 @@
                 );
                 const loader = document.getElementById("loader");
                 const searchBar = document.getElementById("search-bar");
-                
+
                 const mainContent = document.getElementById("main-content");
                 const searchClearBtn =
                     document.getElementById("search-clear-btn");
@@ -734,15 +764,12 @@
                 const modalBtnLanjut =
                     document.getElementById("modal-btn-lanjut");
 
-                // --- MODIFIKASI POIN 6: Selektor baru ---
                 const suggestionBox = document.getElementById("suggestion-box");
                 const mainOverlay = document.getElementById("main-overlay");
-                // --- AKHIR MODIFIKASI POIN 6 ---
 
                 // 1. Mengisi Info Kontak
                 infoContainer.innerHTML = `<p><strong>Contact Person:</strong> ${namaAdmin} (${nomorWaAdmin})</p>`;
 
-                
                 function perbaruiIndikatorGulir() {
                     if (!tabNav) return;
                     const scrollLeft = tabNav.scrollLeft;
@@ -750,14 +777,22 @@
                     const clientWidth = tabNav.clientWidth;
 
                     if (scrollWidth <= clientWidth) {
-                        tabNav.classList.remove("scroll-start", "scroll-middle", "scroll-end");
+                        tabNav.classList.remove(
+                            "scroll-start",
+                            "scroll-middle",
+                            "scroll-end",
+                        );
                         return;
                     }
 
                     const isAtStart = scrollLeft <= 1;
-                    const isAtEnd = (scrollLeft + clientWidth) >= (scrollWidth - 1);
+                    const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 1;
 
-                    tabNav.classList.remove("scroll-start", "scroll-middle", "scroll-end");
+                    tabNav.classList.remove(
+                        "scroll-start",
+                        "scroll-middle",
+                        "scroll-end",
+                    );
 
                     if (isAtStart) {
                         tabNav.classList.add("scroll-start");
@@ -770,7 +805,6 @@
 
                 tabNav.addEventListener("scroll", perbaruiIndikatorGulir);
                 window.addEventListener("resize", perbaruiIndikatorGulir);
-
 
                 // 2. Fungsi untuk mengambil dan menampilkan data
                 async function muatProduk() {
@@ -807,12 +841,9 @@
                                 const cardProduk =
                                     document.createElement("div");
                                 cardProduk.className = "produk-card";
-                                
-                                // --- MODIFIKASI POIN 6: Simpan referensi DOM ---
-                                // Buat ID unik untuk produk ini
+
                                 const produkDomId = `${indexKat}-${indexProd}`;
                                 mapProdukDOM.set(produkDomId, cardProduk);
-                                // --- AKHIR MODIFIKASI POIN 6 ---
 
                                 const judulAccordion =
                                     document.createElement("button");
@@ -824,7 +855,7 @@
                                     produk.logo_url.trim() !== ""
                                         ? `<img src="${produk.logo_url}" class="produk-logo" alt="${produk.nama_produk} logo" onerror="this.style.display='none'">`
                                         : "";
-                                
+
                                 judulAccordion.innerHTML = `
                                 <span>
                                     ${logoImg}
@@ -841,7 +872,7 @@
                                 // 5. Memproses Varian
                                 produk.varian.forEach((varian) => {
                                     listVarian.appendChild(
-                                        buatVarianHTML(varian), 
+                                        buatVarianHTML(varian),
                                     );
                                 });
 
@@ -849,18 +880,25 @@
                                 tabPanel.appendChild(cardProduk);
                             });
 
+                            // --- MODIFIKASI POIN 7: Simpan urutan asli ---
+                            // Simpan array statis dari node anak asli
+                            mapTabPanelAsli.set(
+                                tabPanel.id,
+                                Array.from(tabPanel.children),
+                            );
+                            // --- AKHIR MODIFIKASI POIN 7 ---
+
                             tabContentContainer.appendChild(tabPanel);
                         });
-                        
-                        setTimeout(perbaruiIndikatorGulir, 100); 
 
+                        setTimeout(perbaruiIndikatorGulir, 100);
                     } catch (error) {
                         console.error("Error memuat katalog:", error);
                         tabContentContainer.innerHTML = `<p style="text-align: center; color: red;"><strong>Oops!</strong> Gagal memuat katalog.</p>`;
                     }
                 }
 
-                // 6. Helper untuk membuat HTML Varian (Kembali ke versi sederhana)
+                // 6. Helper untuk membuat HTML Varian
                 function buatVarianHTML(varian) {
                     const hargaFormatted = formatter.format(varian.harga);
                     const stokTersedia = varian.stok;
@@ -879,7 +917,7 @@
                         itemClassName = "varian-item stok-habis";
                         tombolOrderHTML = `<a class="btn-order stok-habis" aria-disabled="true">Stok Habis</a>`;
                     }
-                    
+
                     const li = document.createElement("li");
                     li.className = itemClassName;
                     li.innerHTML = `
@@ -892,15 +930,39 @@
                     return li;
                 }
 
-                // --- MODIFIKASI POIN 6: Tulis ulang semua logika pencarian ---
-                
-                // Fungsi untuk menutup sugesti
+                // --- MODIFIKASI POIN 7: Fungsi baru untuk reset order ---
+                function resetTabOrder(panelId) {
+                    const panel = document.getElementById(panelId);
+                    const originalOrder = mapTabPanelAsli.get(panelId);
+
+                    if (!panel || !originalOrder) return; // Keluar jika data tidak ada
+
+                    // Loop melalui array urutan asli
+                    originalOrder.forEach((card) => {
+                        // 1. Reset (tutup) accordion yang mungkin terbuka
+                        const accordionBtn = card.querySelector(
+                            ".produk-judul-accordion",
+                        );
+                        const varianList = card.querySelector(".varian-list");
+                        if (accordionBtn && varianList) {
+                            accordionBtn.classList.remove("active");
+                            varianList.classList.remove("active");
+                        }
+
+                        // 2. Pindahkan card kembali ke urutan yang benar
+                        // appendChild akan otomatis memindahkannya ke akhir panel
+                        panel.appendChild(card);
+                    });
+                }
+                // --- AKHIR MODIFIKASI POIN 7 ---
+
+                // --- Logika Pencarian "Locator" ---
+
                 function tutupSugesti() {
                     suggestionBox.classList.add("hidden");
                     mainOverlay.classList.add("hidden");
                 }
-                
-                // Fungsi untuk menampilkan sugesti
+
                 function tampilkanSugesti(searchTerm) {
                     if (searchTerm.length === 0) {
                         tutupSugesti();
@@ -908,48 +970,56 @@
                     }
 
                     let results = [];
-                    // Cari di data master
                     dataKatalogMaster.forEach((kat, indexKat) => {
                         kat.produk.forEach((prod, indexProd) => {
-                            // Cek Nama Produk
-                            if (prod.nama_produk.toLowerCase().includes(searchTerm)) {
+                            if (
+                                prod.nama_produk
+                                    .toLowerCase()
+                                    .includes(searchTerm)
+                            ) {
                                 results.push({
                                     nama: prod.nama_produk,
                                     tipe: "Produk",
                                     indexKat: indexKat,
-                                    indexProd: indexProd
+                                    indexProd: indexProd,
                                 });
                             }
-                            // Cek Nama Varian
                             prod.varian.forEach((varian) => {
-                                if (varian.nama_varian.toLowerCase().includes(searchTerm)) {
+                                if (
+                                    varian.nama_varian
+                                        .toLowerCase()
+                                        .includes(searchTerm)
+                                ) {
                                     results.push({
                                         nama: varian.nama_varian,
                                         tipe: `dari ${prod.nama_produk}`,
                                         indexKat: indexKat,
-                                        indexProd: indexProd
+                                        indexProd: indexProd,
                                     });
                                 }
                             });
                         });
                     });
 
-                    suggestionBox.innerHTML = ""; // Kosongkan
-                    
-                    if (results.length > 0) {
-                        // Hilangkan duplikat (misal jika cari "Canva", 
-                        // akan muncul "Canva Pro" dan varian "Canva Pro Member")
-                        const uniqueResults = [...new Map(results.map(item => 
-                            [`${item.indexKat}-${item.indexProd}-${item.nama}`, item])).values()];
+                    suggestionBox.innerHTML = "";
 
-                        uniqueResults.forEach(res => {
+                    if (results.length > 0) {
+                        const uniqueResults = [
+                            ...new Map(
+                                results.map((item) => [
+                                    `${item.indexKat}-${item.indexProd}-${item.nama}`,
+                                    item,
+                                ]),
+                            ).values(),
+                        ];
+
+                        uniqueResults.forEach((res) => {
                             const item = document.createElement("div");
                             item.className = "suggestion-item";
                             item.innerHTML = `
                                 <strong>${res.nama}</strong>
                                 <span class="suggestion-type">${res.tipe}</span>
                             `;
-                            // Simpan data untuk aksi klik
                             item.dataset.indexKat = res.indexKat;
                             item.dataset.indexProd = res.indexProd;
                             suggestionBox.appendChild(item);
@@ -957,52 +1027,67 @@
                     } else {
                         suggestionBox.innerHTML = `<div id="suggestion-no-results">Tidak ada hasil ditemukan</div>`;
                     }
-                    
+
                     suggestionBox.classList.remove("hidden");
                     mainOverlay.classList.remove("hidden");
                 }
 
-                // Fungsi untuk menjalankan aksi "Locator"
                 function jalankanAksiLocator(indexKat, indexProd) {
                     tutupSugesti();
-                    searchBar.value = ""; // Kosongkan search bar
+                    searchBar.value = "";
                     searchClearBtn.classList.add("hidden");
 
+                    // --- MODIFIKASI POIN 7: Reset tab yang aktif SEBELUM pindah ---
+                    const currentActivePanel =
+                        tabContentContainer.querySelector(".tab-panel.active");
+                    if (currentActivePanel) {
+                        resetTabOrder(currentActivePanel.id);
+                    }
+                    // --- AKHIR MODIFIKASI POIN 7 ---
+
                     // 1. Pindah Tab
-                    // Nonaktifkan semua
-                    tabNav.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
-                    tabContentContainer.querySelectorAll(".tab-panel").forEach(panel => panel.classList.remove("active"));
-                    // Aktifkan yang benar
+                    tabNav
+                        .querySelectorAll(".tab-button")
+                        .forEach((btn) => btn.classList.remove("active"));
+                    tabContentContainer
+                        .querySelectorAll(".tab-panel")
+                        .forEach((panel) => panel.classList.remove("active"));
+
                     const targetTabButton = tabNav.children[indexKat];
-                    const targetTabPanel = tabContentContainer.children[indexKat];
+                    const targetTabPanel =
+                        tabContentContainer.children[indexKat];
                     targetTabButton.classList.add("active");
                     targetTabPanel.classList.add("active");
-                    
+
                     // 2. Temukan Card dan Pindahkan ke Atas
                     const produkDomId = `${indexKat}-${indexProd}`;
                     const targetCard = mapProdukDOM.get(produkDomId);
-                    
+
                     if (targetCard) {
                         // 3. Pindahkan ke Atas
                         targetTabPanel.prepend(targetCard);
-                        
+
                         // 4. Buka Accordion
-                        const accordionBtn = targetCard.querySelector(".produk-judul-accordion");
-                        const varianList = targetCard.querySelector(".varian-list");
+                        const accordionBtn = targetCard.querySelector(
+                            ".produk-judul-accordion",
+                        );
+                        const varianList =
+                            targetCard.querySelector(".varian-list");
                         if (!accordionBtn.classList.contains("active")) {
                             accordionBtn.classList.add("active");
                             varianList.classList.add("active");
                         }
-                        
+
                         // 5. Scroll ke Card
-                        // Beri sedikit delay agar tab switch selesai
                         setTimeout(() => {
-                            targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }, 100); 
+                            targetCard.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start",
+                            });
+                        }, 100);
                     }
                 }
 
-                // Event listener untuk input
                 searchBar.addEventListener("input", (e) => {
                     const searchTerm = e.target.value.trim().toLowerCase();
                     if (searchTerm.length > 0) {
@@ -1014,71 +1099,86 @@
                     }
                 });
 
-                // Event listener untuk tombol clear
                 searchClearBtn.addEventListener("click", () => {
                     searchBar.value = "";
                     searchClearBtn.classList.add("hidden");
                     tutupSugesti();
                     searchBar.focus();
                 });
-                
-                // Event listener untuk klik di suggestion box (Event Delegation)
+
                 suggestionBox.addEventListener("click", (e) => {
                     const targetItem = e.target.closest(".suggestion-item");
                     if (targetItem) {
                         const indexKat = parseInt(targetItem.dataset.indexKat);
-                        const indexProd = parseInt(targetItem.dataset.indexProd);
+                        const indexProd = parseInt(
+                            targetItem.dataset.indexProd,
+                        );
                         jalankanAksiLocator(indexKat, indexProd);
                     }
                 });
 
-                // Event listener untuk 'Enter' di search bar
                 searchBar.addEventListener("keydown", (e) => {
-                    if (e.key === 'Enter') {
-                        e.preventDefault(); // Hentikan submit form
+                    if (e.key === "Enter") {
+                        e.preventDefault();
                         const searchTerm = searchBar.value.trim().toLowerCase();
                         if (searchTerm.length === 0) return;
 
-                        // Cari kecocokan 100% pada NAMA PRODUK
                         let found = null;
                         dataKatalogMaster.forEach((kat, indexKat) => {
-                            if (found) return; // Hentikan jika sudah ketemu
+                            if (found) return;
                             kat.produk.forEach((prod, indexProd) => {
                                 if (found) return;
-                                if (prod.nama_produk.toLowerCase() === searchTerm) {
+                                if (
+                                    prod.nama_produk.toLowerCase() ===
+                                    searchTerm
+                                ) {
                                     found = { indexKat, indexProd };
                                 }
                             });
                         });
-                        
+
                         if (found) {
-                            // Jika ada kecocokan 100%, jalankan aksi
-                            jalankanAksiLocator(found.indexKat, found.indexProd);
+                            jalankanAksiLocator(
+                                found.indexKat,
+                                found.indexProd,
+                            );
                         } else {
-                            // Jika tidak ada kecocokan 100%,
-                            // jalankan aksi untuk item pertama di suggestion box (jika ada)
-                            const firstSuggestion = suggestionBox.querySelector(".suggestion-item");
+                            const firstSuggestion =
+                                suggestionBox.querySelector(".suggestion-item");
                             if (firstSuggestion) {
                                 firstSuggestion.click();
                             }
                         }
                     }
                 });
-                
-                // Event listener untuk klik di overlay (menutup)
+
                 mainOverlay.addEventListener("click", tutupSugesti);
-                // --- AKHIR MODIFIKASI POIN 6 ---
 
                 // 9. Event Listener untuk Tab
                 tabNav.addEventListener("click", (e) => {
                     const targetButton = e.target.closest(".tab-button");
                     if (!targetButton) return;
-                    
-                    // --- MODIFIKASI POIN 6: Tutup sugesti jika pindah tab ---
+
+                    // --- MODIFIKASI POIN 7: Logika reset saat pindah tab ---
+                    // 1. Temukan panel yang aktif SEKARANG (sebelum pindah)
+                    const currentActivePanel =
+                        tabContentContainer.querySelector(".tab-panel.active");
+                    // 2. Dapatkan ID panel target (yang BARU)
+                    const targetPanelId =
+                        targetButton.getAttribute("data-target");
+
+                    // 3. Hanya reset jika panelnya berbeda
+                    if (
+                        currentActivePanel &&
+                        currentActivePanel.id !== targetPanelId.substring(1)
+                    ) {
+                        resetTabOrder(currentActivePanel.id);
+                    }
+                    // --- AKHIR MODIFIKASI POIN 7 ---
+
                     tutupSugesti();
                     searchBar.value = "";
                     searchClearBtn.classList.add("hidden");
-                    // --- AKHIR MODIFIKASI POIN 6 ---
 
                     tabNav
                         .querySelectorAll(".tab-button")
@@ -1088,8 +1188,6 @@
                         .forEach((panel) => panel.classList.remove("active"));
 
                     targetButton.classList.add("active");
-                    const targetPanelId =
-                        targetButton.getAttribute("data-target");
                     document
                         .querySelector(targetPanelId)
                         .classList.add("active");
