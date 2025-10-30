@@ -923,15 +923,21 @@
         "varian": [
           {
             "nama_varian": "Sharing (5 User) 1 Bulan",
-            "harga": 8000,
+            "harga": 10000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Perplexity%20Pro%20Sharing%20(5%20User)%201%20Bulan%20nya%20ready?"
           },
           {
             "nama_varian": "Private 1 Bulan",
-            "harga": 15000,
+            "harga": 20000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Perplexity%20Pro%20Private%201%20Bulan%20nya%20ready?"
+          },
+          {
+            "nama_varian": "Private 3 Bulan",
+            "harga": 50000,
+            "stok": true,
+            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Perplexity%20Pro%20Private%203%20Bulan%20nya%20ready?"
           }
         ]
       },
@@ -1099,4 +1105,3 @@
     ]
   }
 ]
-
