@@ -167,12 +167,6 @@
             "harga": 23900,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Loklok%20Sharing%20Standar%201%20Bulan%20nya%20ready?"
-          },
-          {
-            "nama_varian": "Sharing (10 User) 1 Bulan",
-            "harga": 10000,
-            "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Loklok%20Sharing%20(10%20User)%201%20Bulan%20nya%20ready?"
           }
         ]
       },
@@ -278,13 +272,13 @@
         "varian": [
           {
             "nama_varian": "Sharing 1 Bulan",
-            "harga": 37900,
+            "harga": 38000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20RCTI%2B%20Ultimate%20Sharing%201%20Bulan%20nya%20ready?"
           },
           {
             "nama_varian": "Private 1 Bulan",
-            "harga": 68900,
+            "harga": 62000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20RCTI%2B%20Ultimate%20Private%201%20Bulan%20nya%20ready?"
           }
@@ -325,7 +319,7 @@
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Vidio%20Private%203%20Bulan%20(TV%20Only)%20nya%20ready?"
           },
           {
-            "nama_varian": "Private 1 Tahun (TV Only)",
+            "nama_varian": "Private 1 Tahun (TV Only) - Garansi 1 Bulan",
             "harga": 12000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Vidio%20Private%201%20Tahun%20(TV%20Only)%20nya%20ready?"
@@ -445,43 +439,43 @@
         "logo_url": "logoyt.png",
         "varian": [
           {
-            "nama_varian": "Individual Plan 1 Bulan",
+            "nama_varian": "Individual Plan 1 Bulan (Full Garansi)",
             "harga": 8000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Individual%20Plan%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Individual Plan 44 Hari",
+            "nama_varian": "Individual Plan 44 Hari (No Garansi)",
             "harga": 8000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Individual%20Plan%2044%20Hari%20nya%20ready?"
           },
           {
-            "nama_varian": "Individual Plan 3 Bulan",
+            "nama_varian": "Individual Plan 3 Bulan (No Garansi)",
             "harga": 19900,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Individual%20Plan%203%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Family Plan (Member) 1 Bulan",
+            "nama_varian": "Family Plan (Member) 1 Bulan (Full Garansi)",
             "harga": 4000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Family%20Plan%20(Member)%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Family Plan (Member) 2 Bulan",
+            "nama_varian": "Family Plan (Member) 2 Bulan (Full Garansi)",
             "harga": 5000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Family%20Plan%20(Member)%202%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Mixed Plan 2 Bulan",
+            "nama_varian": "Mixed Plan 2 Bulan (Full Garansi)",
             "harga": 15000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Mixed%20Plan%202%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Mixed Plan 3 Bulan",
+            "nama_varian": "Mixed Plan 3 Bulan (Full Garansi)",
             "harga": 17500,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Youtube%20Premium%20Mixed%20Plan%203%20Bulan%20nya%20ready?"
@@ -546,7 +540,7 @@
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Spotify%20Premium%20Individual%20Plan%203%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Individual Plan Student 1 Bulan",
+            "nama_varian": "Individual Plan Student 1 Bulan (Tidak Support iOS)",
             "harga": 15000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Spotify%20Premium%20Individual%20Plan%20Student%201%20Bulan%20nya%20ready?"
@@ -576,27 +570,21 @@
         "varian": [
           {
             "nama_varian": "Sharing 1 Tahun",
-            "harga": 5000,
+            "harga": 2000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Alight%20Motion%20Sharing%201%20Tahun%20nya%20ready?"
           },
           {
             "nama_varian": "Private 1 Tahun",
-            "harga": 7000,
+            "harga": 5000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Alight%20Motion%20Private%201%20Tahun%20nya%20ready?"
           },
           {
             "nama_varian": "Private 1 Tahun (Akun Buyer)",
-            "harga": 4000,
+            "harga": 6000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Alight%20Motion%20Private%201%20Tahun%20(Akun%20Buyer)%20nya%20ready?"
-          },
-          {
-            "nama_varian": "Private 1 Tahun (Akun Seller)",
-            "harga": 7000,
-            "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Alight%20Motion%20Private%201%20Tahun%20(Akun%20Seller)%20nya%20ready?"
           }
         ]
       },
@@ -612,7 +600,7 @@
           },
           {
             "nama_varian": "Head Lifetime (Invite 500 member)",
-            "harga": 455000,
+            "harga": 55000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Canva%20Edu%20Head%20Lifetime%20(Invite%20500%20member)%20nya%20ready?"
           }
@@ -809,7 +797,7 @@
         "varian": [
           {
             "nama_varian": "Private 3 Bulan",
-            "harga": 23900,
+            "harga": 25000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20BlackBox%20AI%20Private%203%20Bulan%20nya%20ready?"
           }
@@ -851,7 +839,7 @@
         "varian": [
           {
             "nama_varian": "Invite Team 1 Bulan",
-            "harga": 12000,
+            "harga": 11500,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Deepl%20Pro%20Invite%20Team%201%20Bulan%20nya%20ready?"
           }
@@ -959,13 +947,13 @@
           },
           {
             "nama_varian": "Private 2 Bulan",
-            "harga": 10000,
+            "harga": 16000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Scribd%20Premium%20Private%202%20Bulan%20nya%20ready?"
           },
           {
             "nama_varian": "Jasa Unlock File per Dokumen",
-            "harga": 5000,
+            "harga": 2000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Scribd%20Jasa%20Unlock%20File%20per%20Dokumen%20nya%20ready?"
           }
@@ -994,7 +982,7 @@
         "varian": [
           {
             "nama_varian": "Kode Redeem 50 GB (3 Bulan)",
-            "harga": 15000,
+            "harga": 12000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Apple%20iCloud%20Kode%20Redeem%2050%20GB%20(3%20Bulan)%20nya%20ready?"
           }
@@ -1030,7 +1018,7 @@
         "varian": [
           {
             "nama_varian": "Private 1 Bulan",
-            "harga": 13000,
+            "harga": 10000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Getcontact%20Premium%20Private%201%20Bulan%20nya%20ready?"
           }
@@ -1066,7 +1054,7 @@
         "varian": [
           {
             "nama_varian": "Pro 7 Hari (100 Peserta)",
-            "harga": 4000,
+            "harga": 5000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Zoom%20Pro%207%20Hari%20(100%20Peserta)%20nya%20ready?"
           },
