@@ -177,7 +177,7 @@
           {
             "nama_varian": "Sharing (1 Profile, 1 User) 1 Hari",
             "harga": 3000,
-            "stok": false,
+            "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%201%20User)%201%20Hari%20nya%20ready?"
           },
           {
@@ -188,26 +188,26 @@
           },
           {
             "nama_varian": "Sharing (1 Profile, 1 User) 3 Hari",
-            "harga": 6000,
-            "stok": false,
+            "harga": 8000,
+            "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%201%20User)%203%20Hari%20nya%20ready?"
           },
           {
             "nama_varian": "Sharing (1 Profile, 1 User) 7 Hari",
-            "harga": 9000,
-            "stok": false,
+            "harga": 10000,
+            "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%201%20User)%207%20Hari%20nya%20ready?"
           },
           {
             "nama_varian": "Sharing (1 Profile, 1 User) 1 Bulan",
-            "harga": 29500,
-            "stok": false,
+            "harga": 30000,
+            "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%201%20User)%201%20Bulan%20nya%20ready?"
           },
           {
             "nama_varian": "Sharing (1 Profile, 2 User) 1 Hari",
             "harga": 2500,
-            "stok": false,
+            "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%202%20User)%201%20Hari%20nya%20ready?"
           },
           {
@@ -219,31 +219,31 @@
           {
             "nama_varian": "Sharing (1 Profile, 2 User) 3 Hari",
             "harga": 5000,
-            "stok": false,
+            "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%202%20User)%203%20Hari%20nya%20ready?"
           },
           {
             "nama_varian": "Sharing (1 Profile, 2 User) 7 Hari",
             "harga": 9000,
-            "stok": false,
+            "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%202%20User)%207%20Hari%20nya%20ready?"
           },
           {
             "nama_varian": "Sharing (1 Profile, 2 User) 1 Bulan",
             "harga": 19900,
-            "stok": false,
+            "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Sharing%20(1%20Profile,%202%20User)%201%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Semi Private (1 Profile, 2 Device)",
-            "harga": 33900,
-            "stok": false,
+            "nama_varian": "Semi Private (1 Profile, 2 Device) 1 Bulan",
+            "harga": 37000,
+            "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Semi%20Private%20(1%20Profile,%202%20Device)%20nya%20ready?"
           },
           {
-            "nama_varian": "Semi Private (Request Nama & PIN)",
-            "harga": 26900,
-            "stok": false,
+            "nama_varian": "Semi Private (Request Nama & PIN) 1 Bulan",
+            "harga": 40000,
+            "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Netflix%20Semi%20Private%20(Request%20Nama%20%26%20PIN)%20nya%20ready?"
           }
         ]
@@ -996,7 +996,7 @@
             "nama_varian": "Sharing 1 Tahun",
             "harga": 15000,
             "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20CamScanner%20Sharing%2S%201%20Tahun%20nya%20ready?"
+            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20CamScanner%20Sharing%20%201%20Tahun%20nya%20ready?"
           }
         ]
       },
