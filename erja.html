@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengalihkan...</title>
+    
+    <!-- 1. PENGALIHAN UTAMA (META REFRESH) -->
+    <!-- Ganti link di bawah ini dengan link Google Drive Anda -->
+    <meta http-equiv="refresh" content="0;url=https://drive.google.com/drive/folders/1suedG27fBLZ2QpPRC0Agh4Pk3--dKC3h?usp=sharing">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        // 2. PENGALIHAN CADANGAN (JAVASCRIPT)
+        // Ganti link di bawah ini dengan link Google Drive Anda
+        window.location.replace("https://drive.google.com/drive/folders/1suedG27fBLZ2QpPRC0Agh4Pk3--dKC3h?usp=sharing");
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="loader"></div>
+        <p>Sedang mengalihkan ke Google Drive...</p>
+        <p style="font-size: 0.9em; color: #666;">
+            <!-- 3. LINK MANUAL JIKA MACET -->
+            <!-- Ganti link di bawah ini dengan link Google Drive Anda -->
+            Jika tidak otomatis, <a href="https://drive.google.com/drive/folders/1suedG27fBLZ2QpPRC0Agh4Pk3--dKC3h?usp=sharing">klik di sini</a>.
+        </p>
+    </div>
+</body>
+</html>
