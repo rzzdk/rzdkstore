@@ -401,12 +401,6 @@
             "harga": 4000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Viu%20Private%201%20Tahun%20nya%20ready?"
-          },
-          {
-            "nama_varian": "Private Lifetime",
-            "harga": 5000,
-            "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Viu%20Private%20Lifetime%20nya%20ready?"
           }
         ]
       },
@@ -593,16 +587,16 @@
         "logo_url": "logocanva.png",
         "varian": [
           {
-            "nama_varian": "Member Lifetime",
+            "nama_varian": "Member 6 Bulan",
             "harga": 8500,
             "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Canva%20Edu%20Member%20Lifetime%20nya%20ready?"
+            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Canva%20Edu%20Member%206%20Bulan%20nya%20ready?"
           },
           {
-            "nama_varian": "Head Lifetime (Invite 500 member)",
-            "harga": 55000,
+            "nama_varian": "Head (Invite 500 member)",
+            "harga": 75000,
             "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Canva%20Edu%20Head%20Lifetime%20(Invite%20500%20member)%20nya%20ready?"
+            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Canva%20Edu%20Head%%20(Invite%20500%20member)%20nya%20ready?"
           }
         ]
       },
@@ -621,12 +615,6 @@
             "harga": 5000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Canva%20Pro%20Member%20(Invite)%201%20Tahun%20nya%20ready?"
-          },
-          {
-            "nama_varian": "Member Lifetime",
-            "harga": 7500,
-            "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Canva%20Pro%20Member%20Lifetime%20nya%20ready?"
           }
         ]
       },
@@ -874,10 +862,10 @@
         "logo_url": "logogram.png",
         "varian": [
           {
-            "nama_varian": "Sharing Lifetime",
+            "nama_varian": "Sharing 1 Bulan",
             "harga": 22500,
             "stok": true,
-            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Grammarly%20Sharing%20Lifetime%20nya%20ready?"
+            "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Grammarly%20Sharing%1 Bulan%20nya%20ready?"
           }
         ]
       },
@@ -1053,14 +1041,14 @@
         "logo_url": "logozoom.webp",
         "varian": [
           {
-            "nama_varian": "Pro 7 Hari (100 Peserta)",
-            "harga": 5000,
+            "nama_varian": "Pro 1 Meet (100 Peserta)",
+            "harga": 7000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Zoom%20Pro%207%20Hari%20(100%20Peserta)%20nya%20ready?"
           },
           {
-            "nama_varian": "Pro 14 Hari (100 Peserta)",
-            "harga": 10000,
+            "nama_varian": "Pro 1 Meet (300 Peserta)",
+            "harga": 15000,
             "stok": true,
             "link_wa": "https://wa.me/6282242118818?text=Permisi%20Kak,%0AApakah%20Zoom%20Pro%2014%20Hari%20(100%20Peserta)%20nya%20ready?"
           }
@@ -1069,4 +1057,3 @@
     ]
   }
 ]
-
